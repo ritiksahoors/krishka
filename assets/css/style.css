@@ -649,7 +649,8 @@ footer {
 /* ================= CONTACT CTA ================= */
 
 .contact-cta {
-    background: linear-gradient(135deg,#7a2e2e,#d4af37);
+    /* background: linear-gradient(135deg,#7a2e2e,#d4af37); */
+    background: #800000;
     padding: 70px 0;
     color: white;
 }
@@ -869,7 +870,8 @@ footer {
 /* ================= ABOUT HERO ================= */
 
 .about-hero-new {
-    background: linear-gradient(135deg, #8b0000, #ff4d6d);
+    /* background: linear-gradient(135deg, #8b0000, #ff4d6d); */
+    background: url(https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1920&auto=format&fit=crop) center / cover no-repeat;
     color: white;
     padding: 100px 0;
     text-align: center;
@@ -944,6 +946,7 @@ footer {
 
 .owner-img-new {
     width: 300px;
+    height: 300px;
     border-radius: 50%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
@@ -985,7 +988,8 @@ footer {
 /* ================= CONTACT HERO ================= */
 
 .contact-hero-new {
-    background: linear-gradient(135deg, #8b0000, #ff4d6d);
+    /* background: linear-gradient(135deg, #8b0000, #ff4d6d); */
+    background: url(https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1920&auto=format&fit=crop) center / cover no-repeat;
     color: white;
     padding: 100px 0;
 }
@@ -1036,7 +1040,6 @@ footer {
     color: #8b0000;
 }
 
-
 /* Form Box */
 
 #contactForm {
@@ -1045,7 +1048,6 @@ footer {
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
-
 
 /* Input Fields */
 
@@ -1063,14 +1065,12 @@ footer {
     resize: none;
 }
 
-
 /* Focus Effect */
 
 #contactForm .form-control:focus {
     border-color: #ff4d6d;
     box-shadow: 0 0 10px rgba(255, 77, 109, 0.2);
 }
-
 
 /* Button */
 
@@ -1090,7 +1090,6 @@ footer {
     transform: translateY(-2px);
 }
 
-
 /* ================= WHATSAPP BOX IMPROVED ================= */
 
 .whatsapp-box-new {
@@ -1102,7 +1101,6 @@ footer {
     position: relative;
     overflow: hidden;
 }
-
 
 /* Decorative Circle */
 
@@ -1128,14 +1126,12 @@ footer {
     left: -40px;
 }
 
-
 /* Icon */
 
 .whatsapp-box-new i {
     font-size: 50px;
     margin-bottom: 15px;
 }
-
 
 /* Heading */
 
@@ -1148,7 +1144,6 @@ footer {
     margin-bottom: 20px;
     font-size: 15px;
 }
-
 
 /* Button */
 
@@ -1167,7 +1162,6 @@ footer {
     transform: scale(1.05);
 }
 
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 991px) {
@@ -1180,4 +1174,363 @@ footer {
         padding: 40px 20px;
     }
 
+}
+
+/* ================= AMAZON PRODUCT ================= */
+
+.amazon-product {
+    padding: 40px 0;
+    background: #fff;
+}
+
+/* GALLERY */
+
+.amazon-gallery {
+    display: flex;
+    gap: 55px;
+}
+
+.thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbs img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.thumbs img:hover {
+    border: 2px solid #000;
+}
+
+.main-image img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+/* PRODUCT INFO */
+
+.amazon-info {
+    padding-left: 20px;
+}
+
+.product-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.rating {
+    color: #ff9900;
+    margin: 10px 0;
+}
+
+.rating span {
+    color: #555;
+    margin-left: 10px;
+}
+
+.price {
+    font-size: 28px;
+    color: #b12704;
+    font-weight: 600;
+}
+
+.mrp {
+    color: #555;
+}
+
+.mrp span {
+    text-decoration: line-through;
+}
+
+/* BUY SECTION */
+
+.buy-section {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.buy-now-btn {
+    background: #ffd814;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.buy-now-btn:hover {
+    background: #f7ca00;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebd5a;
+}
+
+/* DETAILS */
+
+.product-details p {
+    margin: 5px 0;
+}
+
+/* ABOUT */
+
+.about-product h4 {
+    margin-bottom: 10px;
+}
+
+.about-product ul {
+    padding-left: 18px;
+}
+
+.about-product li {
+    margin-bottom: 5px;
+}
+
+/* MOBILE */
+
+@media(max-width: 991px) {
+
+    .amazon-gallery {
+        flex-direction: column;
+    }
+
+    .thumbs {
+        flex-direction: row;
+    }
+
+    .amazon-info {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+}
+
+/* ================= HERO ================= */
+
+.categories-hero {
+    /* background: #f5f5f5; */
+        background: url(https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1920&auto=format&fit=crop) center / cover no-repeat;
+        height: 180px;
+    padding: 50px 0;
+}
+
+.categories-hero h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.categories-hero p {
+    color: #555;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories-page {
+    padding: 50px 0;
+}
+
+.category-card {
+    border: 1px solid #ddd;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.category-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.category-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.category-info h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.view-btn {
+    background: #ffd814;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.view-btn:hover {
+    background: #f7ca00;
+}
+
+.category-card:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ================= HERO ================= */
+
+.offers-hero {
+    /* background: linear-gradient(135deg, #800020, #b03052); */
+    background: url(https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1920&auto=format&fit=crop) center / cover no-repeat;
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+}
+
+.offers-hero h1 {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.offers-hero p {
+    opacity: 0.9;
+}
+
+/* ================= BANNER ================= */
+
+.offer-banner {
+    padding: 50px 0;
+    background: #fff7f2;
+}
+
+.offer-banner-box {
+    background: linear-gradient(135deg, #800020, #d4af37);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.shop-offer-btn {
+    background: white;
+    color: #800020;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* ================= OFFERS PRODUCTS ================= */
+
+.offers-products {
+    padding: 60px 0;
+    background: #fafafa;
+}
+
+.offer-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.offer-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.offer-card h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin: 5px 0;
+}
+
+.new-price {
+    color: #800020;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.discount {
+    background: #d4af37;
+    color: white;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* ================= BUTTONS ================= */
+
+.offer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.buy-btn {
+    background: #25D366;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.view-btn {
+    background: #800020;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* ================= LIMITED OFFER ================= */
+
+.limited-offer {
+    background: linear-gradient(135deg, #800020, #b03052);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.limited-btn {
+    background: #d4af37;
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
 }
