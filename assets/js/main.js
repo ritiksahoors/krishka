@@ -271,3 +271,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// =========================================
+
+document.querySelector(".mega-parent > a").addEventListener("click", function(e){
+
+    if(window.innerWidth < 991){
+        e.preventDefault();
+        this.parentElement.classList.toggle("active");
+    }
+
+});
+
+document.querySelectorAll(".sub-parent").forEach(item => {
+
+    item.addEventListener("click", function(e){
+
+        if(window.innerWidth < 991){
+            e.stopPropagation();
+            this.classList.toggle("active");
+        }
+
+    });
+
+});
+
+
+
+// ========================================================
+

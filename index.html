@@ -31,7 +31,7 @@
 
     <!-- ================= TOP BAR ================= -->
 
-    <div class="top-bar">
+    <!-- <div class="top-bar">
         <div class="container d-flex justify-content-between align-items-center">
 
             <div class="top-left">
@@ -46,7 +46,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
     <!-- ================= NAVBAR ================= -->
 
@@ -58,7 +58,7 @@
 
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="assets/img/main_logo-removebg-preview.png" class="logo-img">
+                    <img src="assets/img/main_logo-removebg-preview1.png" class="logo-img">
                 </a>
 
                 <!-- Mobile Toggle -->
@@ -79,8 +79,82 @@
                             <a class="nav-link" href="#">Shop</a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item mega-parent">
+
                             <a class="nav-link" href="#">Categories</a>
+
+                            <div class="mega-menu">
+
+                                <div class="mega-container">
+
+                                    <!-- Sarees -->
+                                    <div class="mega-column">
+
+                                        <h5>Sarees</h5>
+
+                                        <ul>
+
+                                            <li class="sub-parent">
+                                                Silk Sarees
+                                                <ul class="sub-sub-menu">
+                                                    <li>Banarasi</li>
+                                                    <li>Kanjivaram</li>
+                                                    <li>Designer Silk</li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="sub-parent">
+                                                Cotton Sarees
+                                                <ul class="sub-sub-menu">
+                                                    <li>Handloom</li>
+                                                    <li>Printed</li>
+                                                    <li>Daily Wear</li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="sub-parent">
+                                                Wedding Sarees
+                                                <ul class="sub-sub-menu">
+                                                    <li>Bridal</li>
+                                                    <li>Heavy Work</li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                    <!-- Kurtis -->
+                                    <div class="mega-column">
+
+                                        <h5>Kurtis</h5>
+
+                                        <ul>
+
+                                            <li class="sub-parent">
+                                                Party Wear
+                                                <ul class="sub-sub-menu">
+                                                    <li>Designer</li>
+                                                    <li>Embroidered</li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="sub-parent">
+                                                Casual Kurtis
+                                                <ul class="sub-sub-menu">
+                                                    <li>Printed</li>
+                                                    <li>Cotton</li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </li>
 
                         <li class="nav-item">
@@ -100,21 +174,228 @@
                     <!-- Icons -->
                     <div class="nav-icons">
 
-                        <a href="#" class="icon-box">
-                            <i class="fa-regular fa-heart"></i>
-                            <span class="count">0</span>
-                        </a>
+    <a href="#" class="icon-box" data-bs-toggle="modal" data-bs-target="#wishlistModal">
+    <i class="fa-regular fa-heart"></i>
+    <span class="count">2</span>
+</a>
 
-                        <a href="#" class="icon-box">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="count">0</span>
-                        </a>
+<a href="#" class="icon-box" data-bs-toggle="modal" data-bs-target="#cartModal">
+    <i class="fa fa-shopping-cart"></i>
+    <span class="count">3</span>
+</a>
 
-                    </div>
+    <!-- Profile -->
+    <div class="profile-dropdown">
+
+        <div class="icon-box profile-toggle">
+            <i class="fa-regular fa-user"></i>
+        </div>
+
+        <div class="profile-menu">
+
+            <div class="profile-header">
+                <i class="fa fa-user-circle"></i>
+                <div>
+                    <h6>Guest User</h6>
+                    <small>Not Logged In</small>
+                </div>
+            </div>
+
+            <hr>
+
+            <a href="#">
+                <i class="fa fa-user"></i> My Profile
+            </a>
+
+            <a href="#">
+                <i class="fa fa-box"></i> My Orders
+            </a>
+
+            <a href="#">
+                <i class="fa fa-heart"></i> Wishlist
+            </a>
+
+            <a href="#">
+                <i class="fa fa-cog"></i> Settings
+            </a>
+
+            <hr>
+
+            <a href="#" class="login-btn">
+                <i class="fa fa-sign-in"></i> Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
                 </div>
             </div>
         </nav>
+
+        <!-- Wishlist Modal -->
+<div class="modal fade" id="wishlistModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content boutique-modal">
+
+            <div class="modal-header">
+                <h5>❤️ My Wishlist</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="wishlist-item">
+
+                    <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM.jpeg">
+
+                    <div class="wishlist-info">
+                        <h6>Banarasi Silk Saree</h6>
+                        <p>₹2999</p>
+                    </div>
+
+                    <button class="gold-btn">Add to Cart</button>
+
+                </div>
+
+                <div class="wishlist-item">
+
+                    <img src="assets/img/bhandini_sarees/WhatsApp Image2 2026-04-04 at 4.50.37 PM.jpeg">
+
+                    <div class="wishlist-info">
+                        <h6>Designer Party Saree</h6>
+                        <p>₹2499</p>
+                    </div>
+
+                    <button class="gold-btn">Add to Cart</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Cart Modal -->
+<div class="modal fade" id="cartModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content boutique-modal">
+
+            <div class="modal-header">
+                <h5>🛒 My Cart</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="cart-item">
+
+                    <img src="assets/img/bhandini_sarees/WhatsApp Image3 2026-04-04 at 4.50.37 PM.jpeg">
+
+                    <div class="cart-info">
+                        <h6>Wedding Silk Saree</h6>
+                        <p>₹3999</p>
+
+                        <div class="qty-box">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+
+                    <p class="total">₹3999</p>
+
+                </div>
+
+                <hr>
+
+                <div class="cart-summary">
+
+                    <h6>Total: ₹3999</h6>
+
+                    <button class="gold-btn w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#checkoutModal"
+                        data-bs-dismiss="modal">
+                        Proceed to Checkout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Modal -->
+<div class="modal fade" id="checkoutModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content boutique-modal">
+
+            <div class="modal-header">
+                <h5>💳 Checkout</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <!-- Address -->
+                    <div class="col-md-6">
+
+                        <h6>Shipping Address</h6>
+
+                        <input class="form-control mb-2" placeholder="Full Name">
+                        <input class="form-control mb-2" placeholder="Phone">
+                        <input class="form-control mb-2" placeholder="Address">
+                        <input class="form-control mb-2" placeholder="City">
+                        <input class="form-control mb-2" placeholder="Pincode">
+
+                    </div>
+
+                    <!-- Payment -->
+                    <div class="col-md-6">
+
+                        <h6>Payment Method</h6>
+
+                        <div class="payment-option">
+                            <input type="radio" name="pay"> Cash on Delivery
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" name="pay"> UPI
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" name="pay"> Card
+                        </div>
+
+                        <hr>
+
+                        <h6>Order Summary</h6>
+
+                        <p>Wedding Silk Saree - ₹3999</p>
+
+                        <h5>Total: ₹3999</h5>
+
+                        <button class="gold-btn w-100 mt-3">
+                            Place Order
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
     </header>
 
@@ -173,17 +454,40 @@
 
                         <div class="saree-img">
 
-                            <img
-                                src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
+                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
 
                             <span class="discount">20% OFF</span>
 
                             <div class="hover-icons">
 
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                                <a href="#"><i class="fa fa-eye"></i></a>
+    <!-- Wishlist -->
+    <a href="#"
+       class="add-to-wishlist"
+       data-name="Banarasi Silk Saree"
+       data-price="2499"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
 
-                            </div>
+        <i class="fa fa-heart"></i>
+
+    </a>
+
+    <!-- Cart -->
+    <a href="#"
+       class="add-to-cart"
+       data-name="Banarasi Silk Saree"
+       data-price="2499"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
+
+        <i class="fa fa-shopping-cart"></i>
+
+    </a>
+
+    <!-- View -->
+    <a href="#">
+        <i class="fa fa-eye"></i>
+    </a>
+
+</div>
 
                         </div>
 
@@ -212,17 +516,33 @@
 
                         <div class="saree-img">
 
-                            <img
-                                src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
+                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
 
                             <span class="discount">15% OFF</span>
 
                             <div class="hover-icons">
 
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                                <a href="#"><i class="fa fa-eye"></i></a>
+    <a href="#"
+       class="add-to-wishlist"
+       data-name="Designer Saree"
+       data-price="1999"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
+        <i class="fa fa-heart"></i>
+    </a>
 
-                            </div>
+    <a href="#"
+       class="add-to-cart"
+       data-name="Designer Saree"
+       data-price="1999"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
+        <i class="fa fa-shopping-cart"></i>
+    </a>
+
+    <a href="#">
+        <i class="fa fa-eye"></i>
+    </a>
+
+</div>
 
                         </div>
 
@@ -251,17 +571,33 @@
 
                         <div class="saree-img">
 
-                            <img
-                                src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
+                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
 
                             <span class="discount">30% OFF</span>
 
                             <div class="hover-icons">
 
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                                <a href="#"><i class="fa fa-eye"></i></a>
+    <a href="#"
+       class="add-to-wishlist"
+       data-name="Party Wear Saree"
+       data-price="1799"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
+        <i class="fa fa-heart"></i>
+    </a>
 
-                            </div>
+    <a href="#"
+       class="add-to-cart"
+       data-name="Party Wear Saree"
+       data-price="1799"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
+        <i class="fa fa-shopping-cart"></i>
+    </a>
+
+    <a href="#">
+        <i class="fa fa-eye"></i>
+    </a>
+
+</div>
 
                         </div>
 
@@ -290,17 +626,33 @@
 
                         <div class="saree-img">
 
-                            <img
-                                src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
 
                             <span class="discount">10% OFF</span>
 
                             <div class="hover-icons">
 
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                                <a href="#"><i class="fa fa-eye"></i></a>
+    <a href="#"
+       class="add-to-wishlist"
+       data-name="Bridal Saree"
+       data-price="4999"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+        <i class="fa fa-heart"></i>
+    </a>
 
-                            </div>
+    <a href="#"
+       class="add-to-cart"
+       data-name="Bridal Saree"
+       data-price="4999"
+       data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+        <i class="fa fa-shopping-cart"></i>
+    </a>
+
+    <a href="#">
+        <i class="fa fa-eye"></i>
+    </a>
+
+</div>
 
                         </div>
 
@@ -350,8 +702,7 @@
 
                     <div class="category-card">
 
-                        <img
-                            src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
+                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
 
                         <div class="category-overlay">
 
@@ -373,8 +724,7 @@
 
                     <div class="category-card">
 
-                        <img
-                            src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
+                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
 
                         <div class="category-overlay">
 
@@ -396,8 +746,7 @@
 
                     <div class="category-card">
 
-                        <img
-                            src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
+                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
 
                         <div class="category-overlay">
 
@@ -419,8 +768,7 @@
 
                     <div class="category-card">
 
-                        <img
-                            src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
 
                         <div class="category-overlay">
 
@@ -442,8 +790,7 @@
 
                     <div class="category-card">
 
-                        <img
-                            src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
 
                         <div class="category-overlay">
 
@@ -465,8 +812,7 @@
 
                     <div class="category-card">
 
-                        <img
-                            src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM (1).jpeg">
+                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM (1).jpeg">
 
                         <div class="category-overlay">
 
@@ -574,7 +920,7 @@
                                 ₹3999 <span>₹6599</span>
                             </p>
 
-                            <button class="gold-btn w-100">
+                            <button class="gold-btn w-100" data-bs-toggle="modal" data-bs-target="#authModal">
                                 Shop Now
                             </button>
 
@@ -587,6 +933,65 @@
             </div>
 
         </div>
+
+        <!-- AUTH MODAL -->
+<div class="modal fade" id="authModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content auth-modal">
+
+            <button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+
+            <div class="auth-container">
+
+                <!-- LOGIN FORM -->
+                <div class="auth-form login-form active">
+
+                    <h3>Welcome Back 👋</h3>
+                    <p>Login to continue shopping at KRISHIKA COLLECTIONS</p>
+
+                    <input type="email" placeholder="Email Address" class="auth-input">
+                    <input type="password" placeholder="Password" class="auth-input">
+
+                    <button class="gold-btn w-100 mt-3">
+                        Login
+                    </button>
+
+                    <div class="auth-footer">
+                        Doesn't have an account?
+                        <span id="showSignup">Sign Up</span>
+                    </div>
+
+                </div>
+
+
+                <!-- SIGNUP FORM -->
+                <div class="auth-form signup-form">
+
+                    <h3>Create Account ✨</h3>
+                    <p>Join KRISHIKA COLLECTIONS today</p>
+
+                    <input type="text" placeholder="Full Name" class="auth-input">
+                    <input type="email" placeholder="Email Address" class="auth-input">
+                    <input type="tel" placeholder="Phone Number" class="auth-input">
+                    <input type="password" placeholder="Password" class="auth-input">
+                    <input type="password" placeholder="Confirm Password" class="auth-input">
+
+                    <button class="gold-btn w-100 mt-3">
+                        Sign Up
+                    </button>
+
+                    <div class="auth-footer">
+                        Already have an account?
+                        <span id="showLogin">Login</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
     </section>
 
@@ -603,8 +1008,7 @@
 
                     <div class="about-img">
 
-                        <img src="assets/img/main_logo.jpeg" class="img-fluid"
-                            alt="Boutique">
+                        <img src="assets/img/main_logo.jpeg" class="img-fluid" alt="Boutique">
 
                         <div class="experience-box">
                             <h3>5+</h3>
@@ -785,11 +1189,15 @@
 
                         <div class="gallery-grid">
 
-                            <img src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.34 PM (1).jpeg">
+                            <img
+                                src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.34 PM (1).jpeg">
                             <img src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.34 PM.jpeg">
-                            <img src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM (1).jpeg">
-                            <img src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM (2).jpeg">
-                            <img src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM (3).jpeg">
+                            <img
+                                src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM (1).jpeg">
+                            <img
+                                src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM (2).jpeg">
+                            <img
+                                src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM (3).jpeg">
                             <img src="assets/img/maheswari_cotton_sarees/WhatsApp Image 2026-04-04 at 4.54.35 PM.jpeg">
 
                         </div>
@@ -938,6 +1346,338 @@
     <script>
         AOS.init();
     </script>
+
+    <script>
+        const showSignup = document.getElementById("showSignup");
+const showLogin = document.getElementById("showLogin");
+
+const loginForm = document.querySelector(".login-form");
+const signupForm = document.querySelector(".signup-form");
+
+showSignup.addEventListener("click", () => {
+
+    loginForm.classList.remove("active");
+
+    setTimeout(() => {
+        signupForm.classList.add("active");
+    }, 150);
+
+});
+
+showLogin.addEventListener("click", () => {
+
+    signupForm.classList.remove("active");
+
+    setTimeout(() => {
+        loginForm.classList.add("active");
+    }, 150);
+
+});
+    </script>
+
+    <script>
+
+const profileToggle = document.querySelector(".profile-toggle");
+const profileDropdown = document.querySelector(".profile-dropdown");
+
+profileToggle.addEventListener("click", () => {
+    profileDropdown.classList.toggle("active");
+});
+
+/* click outside close */
+
+document.addEventListener("click", function(e){
+
+    if(!profileDropdown.contains(e.target)){
+        profileDropdown.classList.remove("active");
+    }
+
+});
+
+</script>
+
+<script>
+
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+const wishlistCount = document.querySelectorAll(".icon-box .count")[0]
+const cartCount = document.querySelectorAll(".icon-box .count")[1]
+
+const wishlistBody = document.querySelector("#wishlistModal .modal-body")
+const cartBody = document.querySelector("#cartModal .modal-body")
+
+// -------------------
+// Load Data On Start
+// -------------------
+
+loadWishlist()
+loadCart()
+
+// -------------------
+// Add to Wishlist
+// -------------------
+
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("add-to-wishlist")){
+
+        let product = {
+            name: e.target.dataset.name,
+            price: e.target.dataset.price,
+            img: e.target.dataset.img
+        }
+
+        wishlist.push(product)
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+
+        loadWishlist()
+
+        showToast("Added to Wishlist ❤️")
+    }
+
+})
+
+// -------------------
+// Move Wishlist to Cart
+// -------------------
+
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("move-to-cart")){
+
+        let index = e.target.dataset.index
+
+        let product = wishlist[index]
+
+        cart.push({
+            ...product,
+            qty:1
+        })
+
+        wishlist.splice(index,1)
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+        localStorage.setItem("cart", JSON.stringify(cart))
+
+        loadWishlist()
+        loadCart()
+
+        showToast("Moved to Cart 🛒")
+    }
+
+})
+
+// -------------------
+// Add to Cart Direct
+// -------------------
+
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("add-to-cart")){
+
+        let product = {
+            name: e.target.dataset.name,
+            price: parseInt(e.target.dataset.price),
+            img: e.target.dataset.img,
+            qty:1
+        }
+
+        cart.push(product)
+
+        localStorage.setItem("cart", JSON.stringify(cart))
+
+        loadCart()
+
+        showToast("Added to Cart 🛒")
+    }
+
+})
+
+// -------------------
+// Qty Buttons
+// -------------------
+
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("plus")){
+
+        let i = e.target.dataset.index
+
+        cart[i].qty++
+
+        localStorage.setItem("cart", JSON.stringify(cart))
+
+        loadCart()
+    }
+
+    if(e.target.classList.contains("minus")){
+
+        let i = e.target.dataset.index
+
+        if(cart[i].qty > 1){
+            cart[i].qty--
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart))
+
+        loadCart()
+    }
+
+})
+
+// -------------------
+// Load Wishlist
+// -------------------
+
+function loadWishlist(){
+
+    wishlistBody.innerHTML = ""
+
+    wishlist.forEach((item,index)=>{
+
+        wishlistBody.innerHTML += `
+
+        <div class="wishlist-item">
+
+            <img src="${item.img}">
+
+            <div class="wishlist-info">
+                <h6>${item.name}</h6>
+                <p>₹${item.price}</p>
+            </div>
+
+            <button class="gold-btn move-to-cart"
+                data-index="${index}">
+                Add to Cart
+            </button>
+
+        </div>
+        `
+    })
+
+    wishlistCount.innerText = wishlist.length
+}
+
+// -------------------
+// Load Cart
+// -------------------
+
+function loadCart(){
+
+    cartBody.innerHTML = ""
+
+    let total = 0
+
+    cart.forEach((item,index)=>{
+
+        total += item.price * item.qty
+
+        cartBody.innerHTML += `
+
+        <div class="cart-item">
+
+            <img src="${item.img}">
+
+            <div class="cart-info">
+
+                <h6>${item.name}</h6>
+                <p>₹${item.price}</p>
+
+                <div class="qty-box">
+
+                    <button class="minus" data-index="${index}">-</button>
+                    <span>${item.qty}</span>
+                    <button class="plus" data-index="${index}">+</button>
+
+                </div>
+
+            </div>
+
+            <p class="total">₹${item.price * item.qty}</p>
+
+        </div>
+
+        <hr>
+        `
+    })
+
+    cartBody.innerHTML += `
+
+    <div class="cart-summary">
+
+        <h6>Total: ₹${total}</h6>
+
+        <button class="gold-btn w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#checkoutModal"
+            data-bs-dismiss="modal">
+            Proceed to Checkout
+        </button>
+
+    </div>
+    `
+
+    cartCount.innerText = cart.length
+}
+
+// -------------------
+// Place Order
+// -------------------
+
+document.addEventListener("click", function(e){
+
+    if(e.target.innerText.includes("Place Order")){
+
+        showToast("Order Placed Successfully 🎉")
+
+        cart = []
+
+        localStorage.removeItem("cart")
+
+        loadCart()
+
+        setTimeout(()=>{
+            location.reload()
+        },2000)
+    }
+
+})
+
+// -------------------
+// Toast
+// -------------------
+
+function showToast(msg){
+
+    let toast = document.createElement("div")
+
+    toast.innerText = msg
+
+    toast.style.position = "fixed"
+    toast.style.bottom = "20px"
+    toast.style.right = "20px"
+    toast.style.background = "#000"
+    toast.style.color = "#fff"
+    toast.style.padding = "12px 20px"
+    toast.style.borderRadius = "8px"
+    toast.style.zIndex = "9999"
+
+    document.body.appendChild(toast)
+
+    setTimeout(()=>{
+        toast.remove()
+    },3000)
+}
+
+document.querySelectorAll(".hover-icons a").forEach(btn=>{
+    btn.addEventListener("click", function(e){
+        e.preventDefault()
+    })
+})
+
+</script>
 
 </body>
 
