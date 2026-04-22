@@ -73,16 +73,17 @@ body {
 }
 
 .mega-menu {
-    position: absolute;
-    left:-350px;
+        position: absolute;
+    left: -516px;
     top: 100%;
-    width: 1000px;
+    width: 1200px;
     background: white;
     padding: 30px;
     display: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     z-index: 999;
+    height: 500px;
 }
 
 .mega-parent:hover .mega-menu {
@@ -91,11 +92,11 @@ body {
 
 .mega-container {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     gap: 30px;
 }
 
-.mega-column h5 {
+.mega-column h4 {
     color: #800000;
     margin-bottom: 15px;
 }
