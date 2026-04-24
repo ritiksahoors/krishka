@@ -296,7 +296,9 @@ document.querySelectorAll(".sub-parent").forEach(item => {
 
 });
 
-
-
 // ========================================================
 
+// Save product
+let recent = JSON.parse(localStorage.getItem("recent")) || [];
+recent.push(productData);
+localStorage.setItem("recent", JSON.stringify(recent));
