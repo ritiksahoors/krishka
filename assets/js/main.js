@@ -1,3 +1,278 @@
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
+        let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+        const wishlistCount = document.querySelectorAll(".icon-box .count")[0]
+        const cartCount = document.querySelectorAll(".icon-box .count")[1]
+
+        const wishlistBody = document.querySelector("#wishlistModal .modal-body")
+        const cartBody = document.querySelector("#cartModal .modal-body")
+
+        // -------------------
+        // Load Data On Start
+        // -------------------
+
+        loadWishlist()
+        loadCart()
+
+        // -------------------
+        // Add to Wishlist
+        // -------------------
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("fa-heart")) {
+
+                let product = {
+                    name: e.target.dataset.name,
+                    price: e.target.dataset.price,
+                    img: e.target.dataset.img
+                }
+
+                wishlist.push(product)
+
+                localStorage.setItem("wishlist", JSON.stringify(wishlist))
+
+                loadWishlist()
+
+                showToast("Added to Wishlist ❤️")
+            }
+
+        })
+
+        // -------------------
+        // Move Wishlist to Cart
+        // -------------------
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("fa-shopping-cart")) {
+
+                let product = {
+                    name: e.target.dataset.name,
+                    price: parseInt(e.target.dataset.price),
+                    img: e.target.dataset.img,
+                    qty: 1
+                }
+
+                cart.push(product)
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                loadCart()
+
+                showToast("Added to Cart 🛒")
+            }
+
+        })
+
+        // -------------------
+        // Add to Cart Direct
+        // -------------------
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("add-to-cart")) {
+
+                let product = {
+                    name: e.target.dataset.name,
+                    price: parseInt(e.target.dataset.price),
+                    img: e.target.dataset.img,
+                    qty: 1
+                }
+
+                cart.push(product)
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                loadCart()
+
+                showToast("Added to Cart 🛒")
+            }
+
+        })
+
+        // -------------------
+        // Qty Buttons
+        // -------------------
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("plus")) {
+
+                let i = e.target.dataset.index
+
+                cart[i].qty++
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                loadCart()
+            }
+
+            if (e.target.classList.contains("minus")) {
+
+                let i = e.target.dataset.index
+
+                if (cart[i].qty > 1) {
+                    cart[i].qty--
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                loadCart()
+            }
+
+        })
+
+        // -------------------
+        // Load Wishlist
+        // -------------------
+
+        function loadWishlist() {
+
+            wishlistBody.innerHTML = ""
+
+            wishlist.forEach((item, index) => {
+
+                wishlistBody.innerHTML += `
+
+        <div class="wishlist-item">
+
+            <img src="${item.img}">
+
+            <div class="wishlist-info">
+                <h6>${item.name}</h6>
+                <p>₹${item.price}</p>
+            </div>
+
+            <button class="gold-btn move-to-cart"
+                data-index="${index}">
+                Add to Cart
+            </button>
+
+        </div>
+        `
+            })
+
+            wishlistCount.innerText = wishlist.length
+        }
+
+        // -------------------
+        // Load Cart
+        // -------------------
+
+        function loadCart() {
+
+            cartBody.innerHTML = ""
+
+            let total = 0
+
+            cart.forEach((item, index) => {
+
+                total += item.price * item.qty
+
+                cartBody.innerHTML += `
+
+        <div class="cart-item">
+
+            <img src="${item.img}">
+
+            <div class="cart-info">
+
+                <h6>${item.name}</h6>
+                <p>₹${item.price}</p>
+
+                <div class="qty-box">
+
+                    <button class="minus" data-index="${index}">-</button>
+                    <span>${item.qty}</span>
+                    <button class="plus" data-index="${index}">+</button>
+
+                </div>
+
+            </div>
+
+            <p class="total">₹${item.price * item.qty}</p>
+
+        </div>
+
+        <hr>
+        `
+            })
+
+            cartBody.innerHTML += `
+
+    <div class="cart-summary">
+
+        <h6>Total: ₹${total}</h6>
+
+        <button class="gold-btn w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#checkoutModal"
+            data-bs-dismiss="modal">
+            Proceed to Checkout
+        </button>
+
+    </div>
+    `
+
+            cartCount.innerText = cart.length
+        }
+
+        // -------------------
+        // Place Order
+        // -------------------
+
+        document.addEventListener("click", function (e) {
+
+            if (e.target.innerText.includes("Place Order")) {
+
+                showToast("Order Placed Successfully 🎉")
+
+                cart = []
+
+                localStorage.removeItem("cart")
+
+                loadCart()
+
+                setTimeout(() => {
+                    location.reload()
+                }, 2000)
+            }
+
+        })
+
+        // -------------------
+        // Toast
+        // -------------------
+
+        function showToast(msg) {
+
+            let toast = document.createElement("div")
+
+            toast.innerText = msg
+
+            toast.style.position = "fixed"
+            toast.style.bottom = "20px"
+            toast.style.right = "20px"
+            toast.style.background = "#000"
+            toast.style.color = "#fff"
+            toast.style.padding = "12px 20px"
+            toast.style.borderRadius = "8px"
+            toast.style.zIndex = "9999"
+
+            document.body.appendChild(toast)
+
+            setTimeout(() => {
+                toast.remove()
+            }, 3000)
+        }
+
+        document.querySelectorAll(".hover-icons a").forEach(btn => {
+            btn.addEventListener("click", function (e) {
+                e.preventDefault()
+            })
+        })
+
 // ================= VARIABLES =================
 
 const priceRange = document.getElementById("priceRange")

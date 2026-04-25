@@ -73,8 +73,9 @@ body {
 }
 
 .mega-menu {
+        overflow-x: scroll;
         position: absolute;
-    left: -516px;
+    left: -520px;
     top: 100%;
     width: 1200px;
     background: white;
@@ -83,7 +84,21 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     z-index: 999;
-    height: 500px;
+    height: 530px;
+}
+/* SCROLL WORK KAREGA BUT BAR HIDE HOGA */
+.hide-scrollbar {
+    overflow: auto; /* ya scroll */
+
+    /* Chrome, Safari */
+    scrollbar-width: none; /* Firefox */
+
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Chrome, Safari */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
 
 .mega-parent:hover .mega-menu {
@@ -91,8 +106,8 @@ body {
 }
 
 .mega-container {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
+     display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
     gap: 30px;
 }
 
