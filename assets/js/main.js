@@ -1,139 +1,139 @@
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
-        let cart = JSON.parse(localStorage.getItem("cart")) || []
+let cart = JSON.parse(localStorage.getItem("cart")) || []
 
-        const wishlistCount = document.querySelectorAll(".icon-box .count")[0]
-        const cartCount = document.querySelectorAll(".icon-box .count")[1]
+const wishlistCount = document.querySelectorAll(".icon-box .count")[0]
+const cartCount = document.querySelectorAll(".icon-box .count")[1]
 
-        const wishlistBody = document.querySelector("#wishlistModal .modal-body")
-        const cartBody = document.querySelector("#cartModal .modal-body")
+const wishlistBody = document.querySelector("#wishlistModal .modal-body")
+const cartBody = document.querySelector("#cartModal .modal-body")
 
-        // -------------------
-        // Load Data On Start
-        // -------------------
+// -------------------
+// Load Data On Start
+// -------------------
+
+loadWishlist()
+loadCart()
+
+// -------------------
+// Add to Wishlist
+// -------------------
+
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("fa-heart")) {
+
+        let product = {
+            name: e.target.dataset.name,
+            price: e.target.dataset.price,
+            img: e.target.dataset.img
+        }
+
+        wishlist.push(product)
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist))
 
         loadWishlist()
+
+        showToast("Added to Wishlist ❤️")
+    }
+
+})
+
+// -------------------
+// Move Wishlist to Cart
+// -------------------
+
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("fa-shopping-cart")) {
+
+        let product = {
+            name: e.target.dataset.name,
+            price: parseInt(e.target.dataset.price),
+            img: e.target.dataset.img,
+            qty: 1
+        }
+
+        cart.push(product)
+
+        localStorage.setItem("cart", JSON.stringify(cart))
+
         loadCart()
 
-        // -------------------
-        // Add to Wishlist
-        // -------------------
+        showToast("Added to Cart 🛒")
+    }
 
-        document.addEventListener("click", function (e) {
+})
 
-            if (e.target.classList.contains("fa-heart")) {
+// -------------------
+// Add to Cart Direct
+// -------------------
 
-                let product = {
-                    name: e.target.dataset.name,
-                    price: e.target.dataset.price,
-                    img: e.target.dataset.img
-                }
+document.addEventListener("click", function (e) {
 
-                wishlist.push(product)
+    if (e.target.classList.contains("add-to-cart")) {
 
-                localStorage.setItem("wishlist", JSON.stringify(wishlist))
+        let product = {
+            name: e.target.dataset.name,
+            price: parseInt(e.target.dataset.price),
+            img: e.target.dataset.img,
+            qty: 1
+        }
 
-                loadWishlist()
+        cart.push(product)
 
-                showToast("Added to Wishlist ❤️")
-            }
+        localStorage.setItem("cart", JSON.stringify(cart))
 
-        })
+        loadCart()
 
-        // -------------------
-        // Move Wishlist to Cart
-        // -------------------
+        showToast("Added to Cart 🛒")
+    }
 
-        document.addEventListener("click", function (e) {
+})
 
-            if (e.target.classList.contains("fa-shopping-cart")) {
+// -------------------
+// Qty Buttons
+// -------------------
 
-                let product = {
-                    name: e.target.dataset.name,
-                    price: parseInt(e.target.dataset.price),
-                    img: e.target.dataset.img,
-                    qty: 1
-                }
+document.addEventListener("click", function (e) {
 
-                cart.push(product)
+    if (e.target.classList.contains("plus")) {
 
-                localStorage.setItem("cart", JSON.stringify(cart))
+        let i = e.target.dataset.index
 
-                loadCart()
+        cart[i].qty++
 
-                showToast("Added to Cart 🛒")
-            }
+        localStorage.setItem("cart", JSON.stringify(cart))
 
-        })
+        loadCart()
+    }
 
-        // -------------------
-        // Add to Cart Direct
-        // -------------------
+    if (e.target.classList.contains("minus")) {
 
-        document.addEventListener("click", function (e) {
+        let i = e.target.dataset.index
 
-            if (e.target.classList.contains("add-to-cart")) {
+        if (cart[i].qty > 1) {
+            cart[i].qty--
+        }
 
-                let product = {
-                    name: e.target.dataset.name,
-                    price: parseInt(e.target.dataset.price),
-                    img: e.target.dataset.img,
-                    qty: 1
-                }
+        localStorage.setItem("cart", JSON.stringify(cart))
 
-                cart.push(product)
+        loadCart()
+    }
 
-                localStorage.setItem("cart", JSON.stringify(cart))
+})
 
-                loadCart()
+// -------------------
+// Load Wishlist
+// -------------------
 
-                showToast("Added to Cart 🛒")
-            }
+function loadWishlist() {
 
-        })
+    wishlistBody.innerHTML = ""
 
-        // -------------------
-        // Qty Buttons
-        // -------------------
+    wishlist.forEach((item, index) => {
 
-        document.addEventListener("click", function (e) {
-
-            if (e.target.classList.contains("plus")) {
-
-                let i = e.target.dataset.index
-
-                cart[i].qty++
-
-                localStorage.setItem("cart", JSON.stringify(cart))
-
-                loadCart()
-            }
-
-            if (e.target.classList.contains("minus")) {
-
-                let i = e.target.dataset.index
-
-                if (cart[i].qty > 1) {
-                    cart[i].qty--
-                }
-
-                localStorage.setItem("cart", JSON.stringify(cart))
-
-                loadCart()
-            }
-
-        })
-
-        // -------------------
-        // Load Wishlist
-        // -------------------
-
-        function loadWishlist() {
-
-            wishlistBody.innerHTML = ""
-
-            wishlist.forEach((item, index) => {
-
-                wishlistBody.innerHTML += `
+        wishlistBody.innerHTML += `
 
         <div class="wishlist-item">
 
@@ -151,26 +151,26 @@ let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
 
         </div>
         `
-            })
+    })
 
-            wishlistCount.innerText = wishlist.length
-        }
+    wishlistCount.innerText = wishlist.length
+}
 
-        // -------------------
-        // Load Cart
-        // -------------------
+// -------------------
+// Load Cart
+// -------------------
 
-        function loadCart() {
+function loadCart() {
 
-            cartBody.innerHTML = ""
+    cartBody.innerHTML = ""
 
-            let total = 0
+    let total = 0
 
-            cart.forEach((item, index) => {
+    cart.forEach((item, index) => {
 
-                total += item.price * item.qty
+        total += item.price * item.qty
 
-                cartBody.innerHTML += `
+        cartBody.innerHTML += `
 
         <div class="cart-item">
 
@@ -197,9 +197,9 @@ let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
 
         <hr>
         `
-            })
+    })
 
-            cartBody.innerHTML += `
+    cartBody.innerHTML += `
 
     <div class="cart-summary">
 
@@ -215,63 +215,63 @@ let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
     </div>
     `
 
-            cartCount.innerText = cart.length
-        }
+    cartCount.innerText = cart.length
+}
 
-        // -------------------
-        // Place Order
-        // -------------------
+// -------------------
+// Place Order
+// -------------------
 
-        document.addEventListener("click", function (e) {
+document.addEventListener("click", function (e) {
 
-            if (e.target.innerText.includes("Place Order")) {
+    if (e.target.innerText.includes("Place Order")) {
 
-                showToast("Order Placed Successfully 🎉")
+        showToast("Order Placed Successfully 🎉")
 
-                cart = []
+        cart = []
 
-                localStorage.removeItem("cart")
+        localStorage.removeItem("cart")
 
-                loadCart()
+        loadCart()
 
-                setTimeout(() => {
-                    location.reload()
-                }, 2000)
-            }
+        setTimeout(() => {
+            location.reload()
+        }, 2000)
+    }
 
-        })
+})
 
-        // -------------------
-        // Toast
-        // -------------------
+// -------------------
+// Toast
+// -------------------
 
-        function showToast(msg) {
+function showToast(msg) {
 
-            let toast = document.createElement("div")
+    let toast = document.createElement("div")
 
-            toast.innerText = msg
+    toast.innerText = msg
 
-            toast.style.position = "fixed"
-            toast.style.bottom = "20px"
-            toast.style.right = "20px"
-            toast.style.background = "#000"
-            toast.style.color = "#fff"
-            toast.style.padding = "12px 20px"
-            toast.style.borderRadius = "8px"
-            toast.style.zIndex = "9999"
+    toast.style.position = "fixed"
+    toast.style.bottom = "20px"
+    toast.style.right = "20px"
+    toast.style.background = "#000"
+    toast.style.color = "#fff"
+    toast.style.padding = "12px 20px"
+    toast.style.borderRadius = "8px"
+    toast.style.zIndex = "9999"
 
-            document.body.appendChild(toast)
+    document.body.appendChild(toast)
 
-            setTimeout(() => {
-                toast.remove()
-            }, 3000)
-        }
+    setTimeout(() => {
+        toast.remove()
+    }, 3000)
+}
 
-        document.querySelectorAll(".hover-icons a").forEach(btn => {
-            btn.addEventListener("click", function (e) {
-                e.preventDefault()
-            })
-        })
+document.querySelectorAll(".hover-icons a").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+        e.preventDefault()
+    })
+})
 
 // ================= VARIABLES =================
 
@@ -549,9 +549,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // =========================================
 
-document.querySelector(".mega-parent > a").addEventListener("click", function(e){
+document.querySelector(".mega-parent > a").addEventListener("click", function (e) {
 
-    if(window.innerWidth < 991){
+    if (window.innerWidth < 991) {
         e.preventDefault();
         this.parentElement.classList.toggle("active");
     }
@@ -560,9 +560,9 @@ document.querySelector(".mega-parent > a").addEventListener("click", function(e)
 
 document.querySelectorAll(".sub-parent").forEach(item => {
 
-    item.addEventListener("click", function(e){
+    item.addEventListener("click", function (e) {
 
-        if(window.innerWidth < 991){
+        if (window.innerWidth < 991) {
             e.stopPropagation();
             this.classList.toggle("active");
         }
