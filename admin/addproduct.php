@@ -136,6 +136,27 @@
                                                 <textarea id="content" name="about_item" class="form-control" rows="6"
                                                     required></textarea>
                                             </div>
+                                            <div class="form-group col-12">
+                                                <label for="text">Color:</label>
+                                                <input type="text" name="keywords1" id="tag-input1">
+                                            </div>
+                                            <div class="form-group col-8">
+                                                <label for="text">Others:</label>
+                                                <div class="checkbox-container">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="featured_product" name="featured" value="1">
+                                                        <label class="form-check-label" for="featured_product">Featured
+                                                            Product</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="specialoffers" name="specialoffers" value="1">
+                                                        <label class="form-check-label" for="specialoffers">Special
+                                                            Offers</label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -198,13 +219,15 @@
         $ppduct_length = $conn->real_escape_string($_POST["ppduct_length"]);
         $blouse = $conn->real_escape_string($_POST["ppduct_blouse"]);
         $about_item = $conn->real_escape_string($_POST["about_item"]);
-        // $color = $conn->real_escape_string($_POST["color"]);
-    
+        $color = $conn->real_escape_string($_POST["keywords1"]);
+        $featured = isset($_POST["featured"]) ? $_POST["featured"] : 0;
+        $specialoffers = isset($_POST["specialoffers"]) ? $_POST["specialoffers"] : 0;
+
         /* ==============================
            INSERT QUERY
         =============================== */
-        $sql = "INSERT INTO product (pro_name, rating, review, category_id, sub_category_id, sub_subcategory_id, product_price, pro_discount, product_discount_price, fabric, blouse, about_item, product_image1, product_image2, product_image3, product_image4, status
-    ) VALUES ('$productname', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productprice', '$discount1', '$productdiscountprice', '$fabric', '$blouse', '$about_item', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4','1'
+        $sql = "INSERT INTO product (pro_name, rating, review, category_id, sub_category_id, sub_subcategory_id, product_price, pro_discount, product_discount_price, fabric, blouse, about_item, product_image1, product_image2, product_image3, product_image4, color, featured_pro, special_off, status
+    ) VALUES ('$productname', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productprice', '$discount1', '$productdiscountprice', '$fabric', '$blouse', '$about_item', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4', '$color', '$featured', '$specialoffers', '1'
     )";
 
         if ($conn->query($sql)) {

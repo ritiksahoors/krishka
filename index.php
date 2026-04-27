@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Krishika Collections</title>
+    <title>Krishika Collections | Home</title>
+    <link href="admin/dist/img/titleimage1.jpeg" rel="icon">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,609 +50,7 @@
     </div> -->
 
     <!-- ================= NAVBAR ================= -->
-
-    <header>
-
-        <nav class="navbar navbar-expand-lg boutique-navbar">
-
-            <div class="container">
-
-                <!-- Logo -->
-                <a class="navbar-brand" href="index.php">
-                    <img src="assets/img/main_logo-removebg-preview1.png" class="logo-img">
-                </a>
-
-                <!-- Mobile Toggle -->
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Menu -->
-                <div class="collapse navbar-collapse" id="nav">
-
-                    <ul class="navbar-nav mx-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="shop.php">Shop</a>
-                        </li>
-
-                        <li class="nav-item mega-parent">
-
-                            <a class="nav-link" href="#">Categories</a>
-
-                            <div class="mega-menu hide-scrollbar">
-
-                                <div class="mega-container">
-
-                                    <!-- Sarees -->
-                                    <div class="mega-column">
-
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">Sarees</a>
-                                        </h4>
-
-                                        <ul>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Cotton Sarees</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Plain Handloom</a></li>
-                                                    <li><a href="product-details.php">Temple Border</a></li>
-                                                    <li><a href="product-details.php">Checked Cotton</a></li>
-                                                    <li><a href="product-details.php">Floral Prints</a></li>
-                                                    <li><a href="product-details.php">Black Prints</a></li>
-                                                    <li><a href="product-details.php">Daily Wear Prints</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Silk Sarees</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Pure Banarasi</a></li>
-                                                    <li><a href="product-details.php">Semi Banarasi</a></li>
-                                                    <li><a href="product-details.php">Bridal Banarasi</a></li>
-                                                    <li><a href="product-details.php">Pure Kanjivaram</a></li>
-                                                    <li><a href="product-details.php">Soft Kanjivaram</a></li>
-                                                    <li><a href="product-details.php">Bridal Collection</a></li>
-                                                    <li><a href="product-details.php">Lightweight Silk</a></li>
-                                                    <li><a href="product-details.php">Party Wear Silk</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Sambalpuri Sarees</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Single Ikat</a></li>
-                                                    <li><a href="product-details.php">Double Ikat</a></li>
-                                                    <li><a href="product-details.php">Traditional</a></li>
-                                                    <li><a href="product-details.php">Modern Design</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Kalamkari Sarees</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Printed Kalamkari</a></li>
-                                                    <li><a href="product-details.php">Handmade Kalamkari</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Ikat Sarees</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Cotton Ikat</a></li>
-                                                    <li><a href="product-details.php">Silk Ikat</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Designer Sarees</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Sequin Work</a></li>
-                                                    <li><a href="product-details.php">Embroidery Work</a></li>
-                                                    <li><a href="product-details.php">Heavy Work Sarees</a></li>
-                                                    <li><a href="product-details.php">Reception Work</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <!-- Dress Materials -->
-                                    <div class="mega-column">
-
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">Dress Materials</a>
-                                        </h4>
-
-                                        <ul>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Cotton Dress
-                                                    Materials</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Floral Printed</a></li>
-                                                    <li><a href="product-details.php">Casual Wear Printed</a></li>
-                                                    <li><a href="product-details.php">Light EMbroidery</a></li>
-                                                    <li><a href="product-details.php">Heavy EMbroidery</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Silk Dress Materials</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Semi Silk Daily Wear</a></li>
-                                                    <li><a href="product-details.php">Semi Silk Daily Wear</a></li>
-                                                    <li><a href="product-details.php">Pure Silk Bridal Collection</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Pure Silk Premium Range</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Kalamkari Dress
-                                                    Materials</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Printed Kalamkari</a></li>
-                                                    <li><a href="product-details.php">Handpainted Kalamkari</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Ikat Dress Materials</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Cotton Ikat</a></li>
-                                                    <li><a href="product-details.php">Silk Ikat</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Designer Dress
-                                                    Materials</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Fancy Designs Party Wear</a></li>
-                                                    <li><a href="product-details.php">Trendy Collection Party Wear</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Ethnic Wear Festive Collection</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Special Occasion Festive
-                                                            Collection</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <!-- Blouses -->
-                                    <div class="mega-column">
-
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">Blouses</a>
-                                        </h4>
-
-                                        <ul>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Ready-made Blouses</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Party Wear Padded</a></li>
-                                                    <li><a href="product-details.php">Bridal Wear Padded</a></li>
-                                                    <li><a href="product-details.php">Daily-wear Non-Padded</a></li>
-                                                    <li><a href="product-details.php">Cotton Blouses Non-Padded</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Unstitched Blouses</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Cotton Printed</a></li>
-                                                    <li><a href="product-details.php">Cotton Plain</a></li>
-                                                    <li><a href="product-details.php">Silk Banarasi</a></li>
-                                                    <li><a href="product-details.php">Designer Pieces Banarasi</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Designer Blouses</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Bridal Blouses Heavy Work</a></li>
-                                                    <li><a href="product-details.php">Bridal Blouses Custom Designs</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Fancy Blouses Back Designs</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Fancy Blouses Trendy Styles</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <!-- Jewellery -->
-                                    <div class="mega-column">
-
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">Jewellery</a>
-                                        </h4>
-
-                                        <ul>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Necklaces</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Bridal Necklace Sets</a></li>
-                                                    <li><a href="product-details.php">Temple Jewellery</a></li>
-                                                    <li><a href="product-details.php">Choker Necklaces</a></li>
-                                                    <li><a href="product-details.php">Layered Necklaces</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Earrings</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Jhumkas</a></li>
-                                                    <li><a href="product-details.php">Stud Earrings</a></li>
-                                                    <li><a href="product-details.php">Chandbali</a></li>
-                                                    <li><a href="product-details.php">Drop Earrings</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Bangles & Bracelets</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Lac Bangles</a></li>
-                                                    <li><a href="product-details.php">Gold Plated Bangles</a></li>
-                                                    <li><a href="product-details.php">Oxidised Bangles</a></li>
-                                                    <li><a href="product-details.php">Bracelets</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Rings</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Stone Rings</a></li>
-                                                    <li><a href="product-details.php">Adjustable Rings</a></li>
-                                                    <li><a href="product-details.php">Wedding Rings</a></li>
-                                                    <li><a href="product-details.php">Fashion Rings</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Mangalsutra</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Traditional Mangalsutra</a></li>
-                                                    <li><a href="product-details.php">Modern Designs</a></li>
-                                                    <li><a href="product-details.php">Short Mangalsutra</a></li>
-                                                    <li><a href="product-details.php">Long Mangalsutra</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Anklets</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Silver Anklets</a></li>
-                                                    <li><a href="product-details.php">Oxidised Anklets</a></li>
-                                                    <li><a href="product-details.php">Beaded Anklets</a></li>
-                                                    <li><a href="product-details.php">Bridal Anklets</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-
-                                    <!-- Kurtas & Kurtis -->
-                                    <div class="mega-column">
-
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">Kurtas & Kurtis</a>
-                                        </h4>
-
-                                        <ul>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Daily Wear</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Cotton Kurtis Simple Designs</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Party Wear Embroidered Kurtis</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Fancy Kurtas Designer
-                                                            Collection</a></li>
-                                                    <li><a href="product-details.php">Indo-Western Premium Designs</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-
-                                    <!-- Dupattas -->
-                                    <div class="mega-column">
-
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">Dupattas</a>
-                                        </h4>
-
-                                        <ul>
-
-                                            <li class="sub-parent">
-                                                <a href="shop.php" class="fw-bold text-warning">Bangles</a>
-                                                <ul class="sub-sub-menu">
-                                                    <li><a href="product-details.php">Lac Bangles Bridal Sets</a></li>
-                                                    <li><a href="product-details.php">Lac Bangles Daily Wear</a></li>
-                                                    <li><a href="product-details.php">Metal Bangles Gold Plated</a></li>
-                                                    <li><a href="product-details.php">Metal Bangles Oxidised</a></li>
-                                                    <li><a href="product-details.php">Mangalsutra Traditional</a></li>
-                                                    <li><a href="product-details.php">Mangalsutra Modern Designs</a>
-                                                    </li>
-                                                    <li><a href="product-details.php">Beads Chains Single Layer</a></li>
-                                                    <li><a href="product-details.php">Beads Chains Multi Layer</a></li>
-                                                    <li><a href="product-details.php">Bracelets Daily Wear</a></li>
-                                                    <li><a href="product-details.php">Bracelets Party Wear</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="offers.php">Offers</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact</a>
-                        </li>
-
-                    </ul>
-
-                    <!-- Icons -->
-                    <div class="nav-icons">
-
-                        <a href="#" class="icon-box" data-bs-toggle="modal" data-bs-target="#wishlistModal">
-                            <i class="fa-regular fa-heart"></i>
-                            <span class="count">2</span>
-                        </a>
-
-                        <a href="#" class="icon-box" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="count">3</span>
-                        </a>
-
-                        <!-- Profile -->
-                        <div class="profile-dropdown">
-
-                            <div class="icon-box profile-toggle">
-                                <i class="fa-regular fa-user"></i>
-                            </div>
-
-                            <div class="profile-menu">
-
-                                <div class="profile-header">
-                                    <i class="fa fa-user-circle"></i>
-                                    <div>
-                                        <h6>Guest User</h6>
-                                        <small>Not Logged In</small>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <a href="#">
-                                    <i class="fa fa-user"></i> My Profile
-                                </a>
-
-                                <a href="#">
-                                    <i class="fa fa-box"></i> My Orders
-                                </a>
-
-                                <!-- <a href="#">
-                                    <i class="fa fa-heart"></i> Wishlist
-                                </a> -->
-
-                                <a href="#">
-                                    <i class="fa fa-cog"></i> Settings
-                                </a>
-
-                                <hr>
-
-                                <a href="#" class="login-btn">
-                                    <i class="fa fa-sign-in"></i> Login
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </nav>
-
-        <!-- Wishlist Modal -->
-        <div class="modal fade" id="wishlistModal">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content boutique-modal">
-
-                    <div class="modal-header">
-                        <h5>❤️ My Wishlist</h5>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <div class="wishlist-item">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM.jpeg">
-
-                            <div class="wishlist-info">
-                                <h6>Banarasi Silk Saree</h6>
-                                <p>₹2999</p>
-                            </div>
-
-                            <button class="gold-btn">Add to Cart</button>
-
-                        </div>
-
-                        <div class="wishlist-item">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image2 2026-04-04 at 4.50.37 PM.jpeg">
-
-                            <div class="wishlist-info">
-                                <h6>Designer Party Saree</h6>
-                                <p>₹2499</p>
-                            </div>
-
-                            <button class="gold-btn">Add to Cart</button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Cart Modal -->
-        <div class="modal fade" id="cartModal">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content boutique-modal">
-
-                    <div class="modal-header">
-                        <h5>🛒 My Cart</h5>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <div class="cart-item">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image3 2026-04-04 at 4.50.37 PM.jpeg">
-
-                            <div class="cart-info">
-                                <h6>Wedding Silk Saree</h6>
-                                <p>₹3999</p>
-
-                                <div class="qty-box">
-                                    <button>-</button>
-                                    <span>1</span>
-                                    <button>+</button>
-                                </div>
-                            </div>
-
-                            <p class="total">₹3999</p>
-
-                        </div>
-
-                        <hr>
-
-                        <div class="cart-summary">
-
-                            <h6>Total: ₹3999</h6>
-
-                            <button class="gold-btn w-100" data-bs-toggle="modal" data-bs-target="#checkoutModal"
-                                data-bs-dismiss="modal">
-                                Proceed to Checkout
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Checkout Modal -->
-        <div class="modal fade" id="checkoutModal">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content boutique-modal">
-
-                    <div class="modal-header">
-                        <h5>💳 Checkout</h5>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <div class="row">
-
-                            <!-- Address -->
-                            <div class="col-md-6">
-
-                                <h6>Shipping Address</h6>
-
-                                <input class="form-control mb-2" placeholder="Full Name">
-                                <input class="form-control mb-2" placeholder="Phone">
-                                <input class="form-control mb-2" placeholder="Address">
-                                <input class="form-control mb-2" placeholder="City">
-                                <input class="form-control mb-2" placeholder="Pincode">
-
-                            </div>
-
-                            <!-- Payment -->
-                            <div class="col-md-6">
-
-                                <h6>Payment Method</h6>
-
-                                <div class="payment-option">
-                                    <input type="radio" name="pay"> Cash on Delivery
-                                </div>
-
-                                <div class="payment-option">
-                                    <input type="radio" name="pay"> UPI
-                                </div>
-
-                                <div class="payment-option">
-                                    <input type="radio" name="pay"> Card
-                                </div>
-
-                                <hr>
-
-                                <h6>Order Summary</h6>
-
-                                <p>Wedding Silk Saree - ₹3999</p>
-
-                                <h5>Total: ₹3999</h5>
-
-                                <button class="gold-btn w-100 mt-3">
-                                    Place Order
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </header>
-
+    <?php include 'common/header.php'; ?>
     <!-- ================= HERO ================= -->
 
     <section class="hero-banner">
@@ -687,229 +86,49 @@
     <!-- ================= FEATURED SAREES ================= -->
 
     <section class="featured-sarees">
-
         <div class="container">
-
             <div class="section-title text-center" data-aos="fade-up">
 
-                <h2>Featured Sarees</h2>
+                <h2>Featured Products</h2>
                 <p>Explore our premium and trending saree collection</p>
 
             </div>
-
             <div class="row">
-
-                <!-- Saree 1 -->
-
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in">
-
-                    <div class="saree-card">
-
-                        <div class="saree-img">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
-
-                            <span class="discount">20% OFF</span>
-
-                            <div class="hover-icons">
-
-                                <!-- Wishlist -->
-                                <a href="#" class="add-to-wishlist">
-
-                                    <i class="fa fa-heart" data-name="Banarasi Silk Saree" data-price="2499"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg"></i>
-
-                                </a>
-
-                                <!-- Cart -->
-                                <a href="#" class="add-to-cart">
-
-                                    <i class="fa fa-shopping-cart" data-name="Banarasi Silk Saree" data-price="2499"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg"></i>
-
-                                </a>
-
-                                <!-- View -->
-                                <!-- <a href="#">
-                                    <i class="fa fa-eye"></i>
-                                </a> -->
-
+                <?php
+                include 'admin/conn.php';
+                $sql1 = "SELECT * FROM product WHERE status='1' AND featured_pro='1'";
+                $result1 = $conn->query($sql1);
+                while ($row1 = $result1->fetch_assoc()) {
+                    ?>
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="saree-card">
+                            <div class="saree-img">
+                                <img src="admin/upload/product/<?php echo $row1['product_image1']; ?>">
+                                <span class="discount"><?php echo $row1['pro_discount']; ?>% OFF</span>
+                                <div class="hover-icons">
+                                    <a href="#" class="add-to-wishlist">
+                                        <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
+                                            data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                    </a>
+                                    <a href="#" class="add-to-cart">
+                                        <i class="fa fa-shopping-cart" data-name="Bridal Saree" data-price="4999"
+                                            data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                    </a>
+                                </div>
                             </div>
-
-                        </div>
-
-                        <div class="saree-content">
-
-                            <h4>Banarasi Silk Saree</h4>
-
-                            <p class="price">
-                                ₹2,499
-                                <span>₹3,199</span>
-                            </p>
-
-                            <a href="product-details.php" class="view-btn">View Details</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Saree 2 -->
-
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-
-                    <div class="saree-card">
-
-                        <div class="saree-img">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
-
-                            <span class="discount">15% OFF</span>
-
-                            <div class="hover-icons">
-
-                                <a href="#" class="add-to-wishlist">
-
-                                    <i class="fa fa-heart" data-name="Designer Saree" data-price="1999"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg"></i>
-
-                                </a>
-
-                                <a href="#" class="add-to-cart">
-
-                                    <i class="fa fa-shopping-cart" data-name="Designer Saree" data-price="1999"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg"></i>
-
-                                </a>
-
-                                <!-- <a href="#">
-                                    <i class="fa fa-eye"></i>
-                                </a> -->
-
+                            <div class="saree-content">
+                                <h4><?php echo $row1['pro_name']; ?></h4>
+                                <p class="price">
+                                    ₹<?php echo round($row1['product_discount_price']); ?>
+                                    <span>₹<?php echo $row1['product_price']; ?></span>
+                                </p>
+                                <a href="product-details.php" class="view-btn">View Details</a>
                             </div>
-
                         </div>
-
-                        <div class="saree-content">
-
-                            <h4>Designer Saree</h4>
-
-                            <p class="price">
-                                ₹1,999
-                                <span>₹2,399</span>
-                            </p>
-
-                            <a href="product-details.php" class="view-btn">View Details</a>
-
-                        </div>
-
                     </div>
-
-                </div>
-
-                <!-- Saree 3 -->
-
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-
-                    <div class="saree-card">
-
-                        <div class="saree-img">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
-
-                            <span class="discount">30% OFF</span>
-
-                            <div class="hover-icons">
-
-                                <a href="#" class="add-to-wishlist">
-                                    <i class="fa fa-heart" data-name="Party Wear Saree" data-price="1799"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg"></i>
-                                </a>
-
-                                <a href="#" class="add-to-cart">
-                                    <i class="fa fa-shopping-cart" data-name="Party Wear Saree" data-price="1799"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg"></i>
-                                </a>
-
-                                <!-- <a href="#">
-                                    <i class="fa fa-eye"></i>
-                                </a> -->
-
-                            </div>
-
-                        </div>
-
-                        <div class="saree-content">
-
-                            <h4>Party Wear Saree</h4>
-
-                            <p class="price">
-                                ₹1,799
-                                <span>₹2,499</span>
-                            </p>
-
-                            <a href="product-details.php" class="view-btn">View Details</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Saree 4 -->
-
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
-
-                    <div class="saree-card">
-
-                        <div class="saree-img">
-
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
-
-                            <span class="discount">10% OFF</span>
-
-                            <div class="hover-icons">
-
-                                <a href="#" class="add-to-wishlist">
-                                    <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
-                                </a>
-
-                                <a href="#" class="add-to-cart">
-                                    <i class="fa fa-shopping-cart" data-name="Bridal Saree" data-price="4999"
-                                        data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
-                                </a>
-
-                                <!-- <a href="#">
-                                    <i class="fa fa-eye"></i>
-                                </a> -->
-
-                            </div>
-
-                        </div>
-
-                        <div class="saree-content">
-
-                            <h4>Bridal Saree</h4>
-
-                            <p class="price">
-                                ₹4,999
-                                <span>₹5,999</span>
-                            </p>
-
-                            <a href="product-details.php" class="view-btn">View Details</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+                <?php } ?>
             </div>
-
         </div>
-
     </section>
 
     <!-- ================= CATEGORIES ================= -->
@@ -921,150 +140,29 @@
             <!-- Title -->
 
             <div class="section-title text-center" data-aos="fade-up">
-
-                <h2>Saree Categories</h2>
-                <p>Browse our wide range of traditional and designer sarees</p>
-
+                <h2>All Categories</h2>
             </div>
-
             <div class="row">
-
-                <!-- Category 1 -->
-
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
-
-                    <div class="category-card">
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.37 PM.jpeg">
-
-                        <div class="category-overlay">
-
-                            <h4>Banarasi Saree</h4>
-
-                            <a href="shop.php" class="category-btn">
-                                Explore
-                            </a>
-
+                <?php
+                include 'admin/conn.php';
+                $sql = "SELECT * FROM category WHERE status='1'";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
+                        <div class="category-card">
+                            <img src="admin/upload/category/<?php echo $row['image']; ?>">
+                            <div class="category-overlay">
+                                <h4><?php echo $row['category_name']; ?></h4>
+                                <a href="shop.php" class="category-btn">
+                                    Explore
+                                </a>
+                            </div>
                         </div>
-
                     </div>
-
-                </div>
-
-                <!-- Category 2 -->
-
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-
-                    <div class="category-card">
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (1).jpeg">
-
-                        <div class="category-overlay">
-
-                            <h4>Silk Saree</h4>
-
-                            <a href="shop.php" class="category-btn">
-                                Explore
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Category 3 -->
-
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-
-                    <div class="category-card">
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM (2).jpeg">
-
-                        <div class="category-overlay">
-
-                            <h4>Designer Saree</h4>
-
-                            <a href="shop.php" class="category-btn">
-                                Explore
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Category 4 -->
-
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
-
-                    <div class="category-card">
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
-
-                        <div class="category-overlay">
-
-                            <h4>Party Wear Saree</h4>
-
-                            <a href="shop.php" class="category-btn">
-                                Explore
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Category 5 -->
-
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-
-                    <div class="category-card">
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
-
-                        <div class="category-overlay">
-
-                            <h4>Bridal Saree</h4>
-
-                            <a href="shop.php" class="category-btn">
-                                Explore
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Category 6 -->
-
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-
-                    <div class="category-card">
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM (1).jpeg">
-
-                        <div class="category-overlay">
-
-                            <h4>Cotton Saree</h4>
-
-                            <a href="shop.php" class="category-btn">
-                                Explore
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+                <?php } ?>
             </div>
-
         </div>
-
     </section>
 
     <!-- ================= OFFERS ================= -->
@@ -1079,38 +177,32 @@
                     Grab Exclusive Saree Deals at KRISHIKA COLLECTIONS
                 </p>
             </div>
-
             <div class="row g-4">
-
-                <!-- Offer 1 -->
-                <div class="col-md-4" data-aos="zoom-in">
-
-                    <div class="offer-card">
-
-                        <span class="discount">30% OFF</span>
-
-                        <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM.jpeg" alt="Saree">
-
-                        <div class="offer-content">
-
-                            <h4>Banarasi Silk Saree</h4>
-
-                            <p class="price">
-                                ₹2999 <span>₹4299</span>
-                            </p>
-
-                            <button class="gold-btn w-100" data-bs-toggle="modal" data-bs-target="#authModal">
-                                Shop Now
-                            </button>
-
+                <?php
+                include 'admin/conn.php';
+                $sql3 = "SELECT * FROM product WHERE status='1' AND special_off='1'";
+                $result3 = $conn->query($sql3);
+                while ($row3 = $result3->fetch_assoc()) {
+                    ?>
+                    <div class="col-md-4" data-aos="zoom-in">
+                        <div class="offer-card">
+                            <span class="discount"><?php echo $row3['pro_discount']; ?>% OFF</span>
+                            <img src="admin/upload/product/<?php echo $row3['product_image1']; ?>" alt="Saree">
+                            <div class="offer-content">
+                                <h4><?php echo $row3['pro_name']; ?></h4>
+                                <p class="price">
+                                    ₹<?php echo round($row3['product_discount_price']); ?>
+                                    <span>₹<?php echo $row3['product_price']; ?></span>
+                                </p>
+                                <button class="gold-btn w-100" data-bs-toggle="modal" data-bs-target="#authModal">
+                                    Shop Now
+                                </button>
+                            </div>
                         </div>
-
                     </div>
 
-                </div>
-
-                <!-- Offer 2 -->
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- Offer 2 -->
+                    <!-- <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
 
                     <div class="offer-card">
 
@@ -1134,10 +226,10 @@
 
                     </div>
 
-                </div>
+                </div> -->
 
-                <!-- Offer 3 -->
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                    <!-- Offer 3 -->
+                    <!-- <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
 
                     <div class="offer-card">
 
@@ -1161,8 +253,8 @@
 
                     </div>
 
-                </div>
-
+                </div> -->
+                <?php } ?>
             </div>
 
         </div>
@@ -1483,93 +575,7 @@
     </section>
 
     <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="row">
-
-                <!-- Boutique Info -->
-                <div class="col-md-4">
-
-                    <h4>KRISHIKA COLLECTIONS</h4>
-
-                    <p>
-                        Premium Saree Boutique in Bhubaneswar offering
-                        designer silk, wedding and party wear sarees
-                        with affordable pricing and latest fashion trends.
-                    </p>
-
-                    <div class="social-icons">
-
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-whatsapp"></i></a>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-
-                    </div>
-
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-md-2">
-
-                    <h5>Quick Links</h5>
-
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Offers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-
-                </div>
-
-                <!-- Categories -->
-                <div class="col-md-3">
-
-                    <h5>Categories</h5>
-
-                    <ul>
-                        <li><a href="#">Silk Sarees</a></li>
-                        <li><a href="#">Banarasi Sarees</a></li>
-                        <li><a href="#">Designer Sarees</a></li>
-                        <li><a href="#">Wedding Sarees</a></li>
-                        <li><a href="#">Party Wear</a></li>
-                    </ul>
-
-                </div>
-
-                <!-- Contact Info -->
-                <div class="col-md-3">
-
-                    <h5>Contact Info</h5>
-
-                    <p>📍 Bhubaneswar, Odisha</p>
-                    <p>📞 8117049431</p>
-                    <p>📧 krishikacollections@gmail.com</p>
-
-                </div>
-
-            </div>
-
-            <hr>
-
-            <div class="text-center copyright">
-
-                <p>KRISHIKA COLLECTIONS | Ravi Talkies, Lewis Road, Bhubaneswar</p>
-
-                © 2026 | All Rights Reserved
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
+    <?php include 'common/footer.php'; ?>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

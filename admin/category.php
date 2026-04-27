@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishika | Category</title>
+    <title>Krishika Collections | Category</title>
     <link href="dist/img/titleimage1.jpeg" rel="icon">
     <!-- toaster -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
@@ -34,6 +34,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Sl.No</th>
+                                        <th class="text-center">Category Image</th>
                                         <th class="text-center">Category Name</th>
                                         <th class="text-center">Manage</th>
                                     </tr>
@@ -47,6 +48,9 @@
                                         ?>
                                         <tr>
                                             <td class="serial-no text-center"></td>
+                                            <td class="text-center"><img src="upload/category/<?php echo $row['image']; ?>"
+                                                    alt="profile image" width="50" height="50">
+                                            </td>
                                             <td class="text-center"><?php echo $row['category_name']; ?></td>
                                             <td class=text-center>
                                                 <?php
@@ -82,6 +86,7 @@
                                 <tfoot>
                                     <tr>
                                         <th class="text-center">Sl.No</th>
+                                        <th class="text-center">Category Image</th>
                                         <th class="text-center">Category Name</th>
                                         <th class="text-center">Manage</th>
                                     </tr>
@@ -108,6 +113,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="form-group col-12">
+                                <label for="exampleInputcname">Category Image:</label>
+                                <input type="file" class="form-control" name="image" accept="image/*" required>
+                            </div>
+                            <div class="form-group col-12">
                                 <label for="exampleInputcname">Category Name:</label>
                                 <input type="text" class="form-control" id="exampleInputcname" name="name" required>
                             </div>
@@ -126,35 +135,81 @@
 <?php
 if (isset($_POST['category_update'])) {
     include 'conn.php';
-    $name = htmlspecialchars($_POST["name"]);
-    $check_query = "SELECT * FROM category WHERE category_name = '$name'";
-    $result3 = $conn->query($check_query);
-    if ($result3->num_rows > 0) {
-        echo "<script>
+
+    // Get category name
+    $name = $conn->real_escape_string($_POST["name"]);
+
+    // Image upload
+    $image_name = $_FILES['image']['name'];
+    $image_tmp = $_FILES['image']['tmp_name'];
+
+    $file_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+    $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+    if (!empty($image_name) && in_array($file_ext, $allowed)) {
+
+        $new_file_name = uniqid() . '.' . $file_ext;
+        $upload_dir = "upload/category/";
+
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+
+        $target_file = $upload_dir . $new_file_name;
+
+        if (move_uploaded_file($image_tmp, $target_file)) {
+
+            // Check duplicate category
+            $check_query = "SELECT * FROM category WHERE category_name = '$name'";
+            $result = $conn->query($check_query);
+
+            if ($result->num_rows > 0) {
+                echo "<script>
+                    $(document).ready(function(){
+                        toastr.error('Category already exists');
+                        setTimeout(function(){
+                            window.location.href = 'category';
+                        }, 2000);
+                    });
+                </script>";
+            } else {
+
+                // INSERT with image
+                $sql = "INSERT INTO category (category_name, image, status) 
+                        VALUES ('$name', '$new_file_name', '1')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<script>
+                        $(document).ready(function(){
+                            toastr.success('Category added successfully');
+                            setTimeout(function(){
+                                window.location.href = 'category';
+                            }, 2000);
+                        });
+                    </script>";
+                } else {
+                    echo "Error: " . $conn->error;
+                }
+            }
+
+        } else {
+            echo "<script>
                 $(document).ready(function(){
-                toastr.error('Category name already exists for this category');
-                setTimeout(function(){
-                window.location.href = 'category';
-                }, 3000);
+                    toastr.error('Image upload failed');
                 });
             </script>";
-    } else {
-        $sql = "INSERT INTO category (category_name, status) VALUES ('$name', '1')";
-        if ($conn->query($sql) === true) {
-            echo "<script>
-                            $(document).ready(function(){
-                            toastr.success('Form submitted successfully');
-                            setTimeout(function(){
-                            window.location.href = 'category';
-                            }, 2000); // 2000 milliseconds = 1 second
-                            });
-                        </script>";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
         }
+
+    } else {
+        echo "<script>
+            $(document).ready(function(){
+                toastr.error('Invalid image format');
+            });
+        </script>";
     }
+
+    $conn->close();
 }
-$conn->close();
 ?>
 
 <!--Update Modal -->

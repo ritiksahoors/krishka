@@ -8,7 +8,7 @@ $id = urldecode(base64_decode($_GET['id']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utkalikart | Updateproduct</title>
+    <title>Krishika Collections | Updateproduct</title>
     <link href="dist/img/titleimage1.png" rel="icon">
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
     <!-- toaster -->
@@ -46,12 +46,6 @@ $id = urldecode(base64_decode($_GET['id']));
                                                     placeholder="Enter Product Name" name="productname"
                                                     value="<?php echo $row["pro_name"]; ?>"
                                                     title="Enter a valid name (up to 50 characters)">
-                                            </div>
-                                            <div class="form-group col-6">
-                                                <label for="exampleInputcname">Product Short Description:</label>
-                                                <input type="text" class="form-control" id="product_short_desc"
-                                                    placeholder="Enter Product Description" name="productshortname"
-                                                    value="<?php echo $row["product_short_nm"]; ?>" title="Enter a valid name (up to 50 characters)">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="subcategoryDropdown">Select Category:</label>
@@ -103,12 +97,6 @@ $id = urldecode(base64_decode($_GET['id']));
                                                     }
                                                     ?>
                                                 </select>
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Product Code:</label>
-                                                <input type="text" class="form-control" id="procode"
-                                                    name="procode1"
-                                                    value="<?php echo $row["product_code"]; ?>" title="Enter a valid name (up to 50 characters)">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleInputcname">Product Ratings:</label>
@@ -206,55 +194,6 @@ $id = urldecode(base64_decode($_GET['id']));
                                                 }
                                                 ?>
                                             </div>
-                                            <div class="form-group col-4">
-                                                <label>Video 5:</label>
-                                                <input type="file" name="video5" class="form-control"
-                                                    accept="video/mp4"
-                                                    onchange="previewVideo5(this)">
-
-                                                <!-- Default / Selected video preview -->
-                                                <video id="video19" width="100" height="70" controls
-                                                    src="dist/video/novideo.mp4"></video>
-
-                                                <!-- Existing saved video from DB -->
-                                                <?php
-                                                if (!empty($row['product_video5'])) {
-                                                    $videoPath = 'upload/product/video/' . $row['product_video5'];
-                                                    $extension = pathinfo($videoPath, PATHINFO_EXTENSION);
-                                                    if (!empty($extension)) {
-                                                        echo '
-                                                <video width="100" height="70" controls class="mt-2">
-                                                    <source src="' . $videoPath . '" type="video/mp4">
-                                                    Your browser does not support the video tag.
-                                                </video>';
-                                                    }
-                                                }
-                                                ?>
-                                            </div>
-                                            <div class="col-4">
-                                                <label for="text">Type:</label>
-                                                <?php $neww = $row["neww"]; ?>
-                                                <?php $premiumm = $row["premiumm"]; ?>
-                                                <?php $hott = $row["hott"]; ?>
-                                                <div class="checkbox-container">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="new11" name="new1" value="1" <?php if ($neww == 1)
-                                                            echo "checked"; ?>>
-                                                        <label class="form-check-label" for="new">New</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="premiumm11" name="premiumm1" value="1" <?php if ($premiumm == 1)
-                                                            echo "checked"; ?>>
-                                                        <label class="form-check-label" for="premium">Premium
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="hot11" name="hot1" value="1" <?php if ($hott == 1)
-                                                            echo "checked"; ?>>
-                                                        <label class="form-check-label" for="popprou">Hot</label>
-                                                    </div>
-                                                </div>
-                                            </div>
                                              <div class="form-group col-4">
                                                 <label for="exampleInputcname">Fabric:</label>
                                                 <input type="text" class="form-control" id="fabric11" name="fabric1"
@@ -263,23 +202,7 @@ $id = urldecode(base64_decode($_GET['id']));
                                              <div class="form-group col-3">
                                                 <label for="exampleInputcname">Blouse:</label>
                                                 <input type="text" class="form-control" id="blouse11" name="blouse1"
-                                                    value="<?php echo $row["blousee"]; ?>">
-                                            </div>
-                                            
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Care:</label>
-                                                <input type="text" class="form-control" id="care11" name="care1"
-                                                    value="<?php echo $row["caree"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Dimensions:</label>
-                                                <input type="text" class="form-control" id="dimen11" name="dimen1"
-                                                    value="<?php echo $row["dimenn"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Available Offers:</label>
-                                                <input type="text" class="form-control" id="ave_offer11" name="ave_offer1"
-                                                    value="<?php echo $row["ave_offer"]; ?>">
+                                                    value="<?php echo $row["blouse"]; ?>">
                                             </div>
                                             <!-- <div class="form-group col-3">
                                                 <label for="exampleInputcname">About Item:</label>

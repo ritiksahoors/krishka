@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utkalikart | Product</title>
+    <title>Utkalikart Collections | Product</title>
     <link href="dist/img/titleimage1.png" rel="icon">
 </head>
 <?php include 'common/navbar.php'; ?>
@@ -114,7 +113,6 @@
                                                     <i class='fas fa-edit'></i>
                                                 </a>
                                                 <?php
-                                                $status = $row['stockk'];
                                                 $idm = $row['id'];
                                                 $tb = 'stockk';
                                                 $tbc = 'id';

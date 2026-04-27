@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishika | Subcategory</title>
+    <title>Krishika Collections | Subcategory</title>
     <link href="dist/img/titleimage1.jpeg" rel="icon">
     <!-- toaster -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
