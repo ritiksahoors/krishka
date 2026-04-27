@@ -1,0 +1,188 @@
+.table-size {
+    width: 101% !important;
+}
+
+
+/* ckeditor */
+
+.box {
+    /*width: 100%; */
+    max-width: 913px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 0 auto;
+    margin-left: 254px;
+}
+
+.ck-editor__editable[role="textbox"] {
+    /* Editing area */
+    min-height: 300px;
+}
+
+.but-save {
+    margin-top: 29px;
+    margin-left: 0px;
+}
+
+
+/*manage button */
+
+.resize {
+    width: 66px !important;
+}
+
+
+/* for viewproduct page */
+
+.pd-vi {
+    background-color: white;
+    border: 1px solid #8C5342;
+    border-radius: 5px;
+    box-shadow: 0px 0.5px #8C5342;
+}
+
+
+/* for logo text */
+
+.small-text {
+    font-size: 30px;
+}
+
+.resize {
+    margin-left: 12px;
+}
+
+
+/* navbar heading */
+
+.heading_resize {
+    margin-left: 23px;
+    color: aliceblue;
+}
+
+
+/* heading color */
+
+.home_color {
+    color: #8C5342;
+}
+
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8C5342;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+
+/* for keywords */
+
+.tags-input-wrapper {
+    background: transparent;
+    padding: 10px;
+    border-radius: 4px;
+    /* max-width: 400px; */
+    border: 1px solid #ccc
+}
+
+.tags-input-wrapper input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 140px;
+    margin-left: 8px;
+}
+
+.tags-input-wrapper .tag {
+    display: inline-block;
+    background-color: #8C5342;
+    color: white;
+    border-radius: 40px;
+    padding: 0px 3px 0px 7px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 5px 15px -2px rgba(140, 83, 66, 0.5);
+}
+
+.tags-input-wrapper .tag a {
+    margin: 0 7px 3px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/* for checkboxes */
+
+.checkbox-container {
+    display: flex;
+}
+
+.checkbox-container .form-check {
+    margin-right: 20px;
+}
+
+
+/* header color */
+
+.modal-header {
+    background-color: #8C5342;
+}
+
+
+/* logo size */
+
+.newlogo_size {
+    height: 62px;
+    margin-top: 10px
+}
+
+
+/*for profile section */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+/* for catalogue dropdown */
+
+#folder-item a.nav-link,
+#pdfupload-item a.nav-link {
+    background-color: white;
+    color: black;
+}
+
+
+/* logo size */
+
+.incolor {
+    height: 34px;
+    margin-top: 12px;
+}
