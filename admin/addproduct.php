@@ -86,8 +86,18 @@
                                                     id="productdiscountprice1" name="productdiscountprice">
                                             </div>
                                             <div class="form-group col-4">
-                                                <input type="text" class="form-control" placeholder="Enter Fabric"
-                                                    id="fabriic1" name="ppduct_fabric">
+                                                <select class="form-control" name="ppduct_fabric" id="fabriic1">
+                                                    <option value="">Select Fabric</option>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $result = mysqli_query($conn, "SELECT * FROM fabric");
+                                                    while ($row = mysqli_fetch_array($result)) {
+                                                        ?>
+                                                        <option value="<?php echo $row['id']; ?>">
+                                                            <?php echo $row["name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                             <div class="form-group col-4">
                                                 <input type="text" class="form-control" placeholder="Enter Length"
@@ -136,9 +146,23 @@
                                                 <textarea id="content" name="about_item" class="form-control" rows="6"
                                                     required></textarea>
                                             </div>
-                                            <div class="form-group col-12">
+                                            <!-- <div class="form-group col-12">
                                                 <label for="text">Color:</label>
                                                 <input type="text" name="keywords1" id="tag-input1">
+                                            </div> -->
+                                            <div class="form-group col-4">
+                                                <select class="form-control" name="keywords1" id="fabriic1">
+                                                    <option value="">Select Colour</option>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $result = mysqli_query($conn, "SELECT * FROM color");
+                                                    while ($row = mysqli_fetch_array($result)) {
+                                                        ?>
+                                                        <option value="<?php echo $row['id']; ?>">
+                                                            <?php echo $row["name"]; ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                             <div class="form-group col-8">
                                                 <label for="text">Others:</label>

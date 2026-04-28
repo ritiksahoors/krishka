@@ -66,6 +66,7 @@ body {
     padding: 2px 6px;
     border-radius: 50%;
 }
+
 /* mega menu */
 
 .mega-parent {
@@ -73,8 +74,8 @@ body {
 }
 
 .mega-menu {
-        overflow-x: scroll;
-        position: absolute;
+    overflow-x: scroll;
+    position: absolute;
     left: -520px;
     top: 100%;
     width: 1200px;
@@ -86,14 +87,18 @@ body {
     z-index: 999;
     height: 530px;
 }
+
 /* SCROLL WORK KAREGA BUT BAR HIDE HOGA */
 .hide-scrollbar {
-    overflow: auto; /* ya scroll */
+    overflow: auto;
+    /* ya scroll */
 
     /* Chrome, Safari */
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
 
-    -ms-overflow-style: none; /* IE/Edge */
+    -ms-overflow-style: none;
+    /* IE/Edge */
 }
 
 /* Chrome, Safari */
@@ -106,8 +111,9 @@ body {
 }
 
 .mega-container {
-     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 3 columns */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 3 columns */
     gap: 30px;
 }
 
@@ -157,7 +163,7 @@ body {
 
 /* ================= Responsive ================= */
 
-@media(max-width:991px){
+@media(max-width:991px) {
 
     .mega-menu {
         position: static;
@@ -183,6 +189,7 @@ body {
     }
 
 }
+
 /* ================= HERO ================= */
 
 .hero-banner {
@@ -298,13 +305,13 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     transition: 0.4s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     position: relative;
 }
 
 .saree-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Image */
@@ -496,7 +503,7 @@ footer {
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: 0.4s;
     position: relative;
 }
@@ -511,7 +518,7 @@ footer {
 
 .offer-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Discount Badge */
@@ -580,7 +587,7 @@ footer {
 .about-img img {
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Experience Box */
@@ -594,7 +601,7 @@ footer {
     padding: 15px 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .experience-box h3 {
@@ -679,7 +686,7 @@ footer {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .testimonial-card {
@@ -726,12 +733,12 @@ footer {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
@@ -861,9 +868,9 @@ footer {
 /* ================= SHOP BANNER ================= */
 
 .shop-banner {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
-    
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+
     height: 300px;
     display: flex;
     align-items: center;
@@ -917,7 +924,7 @@ footer {
     background: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     text-align: center;
     position: relative;
@@ -1020,7 +1027,7 @@ footer {
 }
 
 .about-story-new img {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* ================= FEATURES ================= */
@@ -1036,7 +1043,7 @@ footer {
     border-radius: 12px;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .feature-box-new i {
@@ -1051,7 +1058,7 @@ footer {
 
 .feature-box-new:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= OWNER ================= */
@@ -1064,7 +1071,7 @@ footer {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .about-btn-new {
@@ -1128,7 +1135,7 @@ footer {
     text-align: center;
     border-radius: 12px;
     transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .contact-box-new i {
@@ -1139,7 +1146,7 @@ footer {
 
 .contact-box-new:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= CONTACT FORM SECTION IMPROVED ================= */
@@ -1162,7 +1169,7 @@ footer {
     background: #ffffff;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Input Fields */
@@ -1213,7 +1220,7 @@ footer {
     padding: 50px 40px;
     color: white;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -1225,7 +1232,7 @@ footer {
     position: absolute;
     width: 200px;
     height: 200px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     top: -50px;
     right: -50px;
@@ -1236,7 +1243,7 @@ footer {
     position: absolute;
     width: 150px;
     height: 150px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     bottom: -40px;
     left: -40px;
@@ -1447,8 +1454,8 @@ footer {
 
 .categories-hero {
     /* background: #f5f5f5; */
-        background: url(https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1920&auto=format&fit=crop) center / cover no-repeat;
-        height: 180px;
+    background: url(https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1920&auto=format&fit=crop) center / cover no-repeat;
+    height: 180px;
     padding: 50px 0;
 }
 
@@ -1502,7 +1509,7 @@ footer {
 }
 
 .category-card:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ================= HERO ================= */
@@ -1569,7 +1576,7 @@ footer {
 
 .offer-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .offer-card img {
@@ -1699,7 +1706,7 @@ footer {
 
 .auth-input:focus {
     border-color: #D4AF37;
-    box-shadow: 0 0 5px rgba(212,175,55,0.3);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
 }
 
 /* footer */
@@ -1753,7 +1760,7 @@ footer {
     width: 220px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     display: none;
     padding: 15px;
     z-index: 999;
@@ -1870,12 +1877,12 @@ footer {
     border-radius: 12px;
     overflow: hidden;
     transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .product-img {
@@ -1997,7 +2004,7 @@ footer {
     border-radius: 14px;
     overflow: hidden;
     transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .krishika-trend-card:hover {
@@ -2080,7 +2087,7 @@ footer {
     background: #ffffff;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Left Content */
@@ -2166,20 +2173,20 @@ footer {
 }
 
 /* Responsive */
-@media(max-width:991px){
-    .krishika-spotlight-box{
+@media(max-width:991px) {
+    .krishika-spotlight-box {
         flex-direction: column;
     }
 
-    .krishika-spotlight-content{
+    .krishika-spotlight-content {
         padding: 30px;
     }
 
-    .krishika-spotlight-content h2{
+    .krishika-spotlight-content h2 {
         font-size: 28px;
     }
 
-    .krishika-spotlight-image img{
+    .krishika-spotlight-image img {
         height: 350px;
     }
 }
@@ -2208,13 +2215,13 @@ footer {
     padding: 30px 20px;
     text-align: center;
     transition: 0.35s ease;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     height: 100%;
 }
 
 .krishika-glow-box-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 /* Icon */
@@ -2234,8 +2241,10 @@ footer {
 
 /* Mega menu ke andar sab links same text jaisa dikhen */
 .mega-column a {
-    color: inherit;          /* parent ka color lega (same design) */
-    text-decoration: none;   /* underline hata diya */
+    color: inherit;
+    /* parent ka color lega (same design) */
+    text-decoration: none;
+    /* underline hata diya */
 }
 
 /* hover pe bhi same rahe */
@@ -2247,7 +2256,7 @@ footer {
 .custom-wishlist-btn,
 .custom-cart-btn {
     display: inline-block;
-        padding: 10px 20px;
+    padding: 10px 20px;
     margin: 0px 5px 0 0;
     /* border-radius: 6px; */
     text-decoration: none;

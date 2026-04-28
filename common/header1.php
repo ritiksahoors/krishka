@@ -40,51 +40,51 @@
                                 $result1 = $conn->query($sql1);
                                 while ($row1 = $result1->fetch_assoc()) {
                                     ?>
-                                    <div class="mega-column">
+                                        <div class="mega-column">
 
-                                        <h4 class="fw-bold">
-                                            <a href="shop.php">
-                                                <?php echo $row1['category_name']; ?>
-                                            </a>
-                                        </h4>
+                                            <h4 class="fw-bold">
+                                                <a href="shop.php">
+                                                    <?php echo $row1['category_name']; ?>
+                                                </a>
+                                            </h4>
 
-                                        <ul>
-                                            <?php
-                                            $cat_id = $row1['id'];
-                                            $sql = "SELECT * FROM sub_category WHERE status='1' AND category_id='$cat_id'";
-                                            $result = $conn->query($sql);
-                                            while ($row = $result->fetch_assoc()) {
+                                            <ul>
+                                                <?php
+                                                $cat_id = $row1['id'];
+                                                $sql = "SELECT * FROM sub_category WHERE status='1' AND category_id='$cat_id'";
+                                                $result = $conn->query($sql);
+                                                while ($row = $result->fetch_assoc()) {
 
-                                                ?>
-                                                <li class="sub-parent">
-                                                    <a href="shop.php"
-                                                        class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
-                                                    </a>
-                                                    <ul class="sub-sub-menu">
-                                                        <?php
-                                                        $sub_cat_id = $row['id'];
+                                                    ?>
+                                                        <li class="sub-parent">
+                                                            <a href="shop.php"
+                                                                class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
+                                                            </a>
+                                                            <ul class="sub-sub-menu">
+                                                                <?php
+                                                                $sub_cat_id = $row['id'];
 
-                                                        $sql3 = "SELECT * FROM sub_subcategory 
+                                                                $sql3 = "SELECT * FROM sub_subcategory 
                                                         WHERE status='1' 
                                                         AND category_id='$cat_id' 
                                                         AND sub_category_id='$sub_cat_id'";
 
-                                                        $result3 = $conn->query($sql3);
+                                                                $result3 = $conn->query($sql3);
 
-                                                        while ($row3 = $result3->fetch_assoc()) {
-                                                            ?>
-                                                            <li>
-                                                                <a href="product-details.php">
-                                                                    <?php echo $row3['sub_subcategoryname']; ?>
-                                                                </a>
-                                                            </li>
-                                                        <?php } ?>
-                                                    </ul>
+                                                                while ($row3 = $result3->fetch_assoc()) {
+                                                                    ?>
+                                                                        <li>
+                                                                            <a href="product-details.php">
+                                                                                <?php echo $row3['sub_subcategoryname']; ?>
+                                                                            </a>
+                                                                        </li>
+                                                                <?php } ?>
+                                                            </ul>
 
-                                                </li>
-                                            <?php } ?>
+                                                        </li>
+                                                <?php } ?>
 
-                                            <!-- <li class="sub-parent">
+                                                <!-- <li class="sub-parent">
                                                 <a href="shop.php" class="fw-bold text-warning">Silk Sarees</a>
                                                 <ul class="sub-sub-menu">
                                                     <li><a href="product-details.php">Pure Banarasi</a></li>
@@ -98,7 +98,7 @@
                                                 </ul>
                                             </li> -->
 
-                                            <!-- <li class="sub-parent">
+                                                <!-- <li class="sub-parent">
                                         <a href="shop.php" class="fw-bold text-warning">Sambalpuri Sarees</a>
                                             <ul class="sub-sub-menu">
                                                 <li><a href="product-details.php">Single Ikat</a></li>
@@ -108,7 +108,7 @@
                                             </ul>
                                         </li> -->
 
-                                            <!-- <li class="sub-parent">
+                                                <!-- <li class="sub-parent">
                                             <a href="shop.php" class="fw-bold text-warning">Kalamkari Sarees</a>
                                             <ul class="sub-sub-menu">
                                                 <li><a href="product-details.php">Printed Kalamkari</a></li>
@@ -123,7 +123,7 @@
                                             </ul>
                                         </li> -->
 
-                                            <!-- <li class="sub-parent">
+                                                <!-- <li class="sub-parent">
                                         <a href="shop.php" class="fw-bold text-warning">Designer Sarees</a>
                                             <ul class="sub-sub-menu">
                                             <li><a href="product-details.php">Sequin Work</a></li>
@@ -133,11 +133,11 @@
                                             </ul>
                                         </li> -->
 
-                                        </ul>
+                                            </ul>
 
-                                    </div>
+                                        </div>
 
-                                    <!-- <div class="mega-column">
+                                        <!-- <div class="mega-column">
 
                                     <h4 class="fw-bold">
                                         <a href="shop.php">Dress Materials</a>
@@ -375,7 +375,7 @@
                                 </div> -->
                                 <?php } ?>
                             </div>
-                        </div>
+
                     </li>
 
                     <li class="nav-item">

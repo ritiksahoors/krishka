@@ -45,69 +45,20 @@
                                 <i class="right fas fa-angle-right"></i>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="pro_highlight" class="nav-link">
-                                <i class="fas fa-star nav-icon"></i>
-                                <p>Product Highlight</p>
+                        <li class="nav-item">
+                            <a href="fabric" class="nav-link">
+                                <i class="fas fa-cut nav-icon"></i>
+                                <p>Fabric</p>
                                 <i class="right fas fa-angle-right"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="occasion" class="nav-link">
-                                <i class="fa fa-book nav-icon"></i>
-                                <p>Occasion</p>
+                            <a href="color" class="nav-link">
+                                <i class="fas fa-palette nav-icon"></i>
+                                <p>Color</p>
                                 <i class="right fas fa-angle-right"></i>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="price" class="nav-link">
-                                <i class="fa fa-money-bill nav-icon"></i>
-                                <p>Price</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="reels" class="nav-link">
-                                <i class="fas fa-video nav-icon"></i>
-                                <p>Trending Reels</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="offer" class="nav-link">
-                                <i class="fa fa-gift nav-icon"></i>
-                                <p>Offers</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="coupon" class="nav-link">
-                                <i class="fas fa-tag nav-icon"></i>
-                                <p>Coupon</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="newsletter" class="nav-link">
-                                <i class="fa fa-address-card nav-icon"></i>
-                                <p>Newsletter</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="metatags" class="nav-link">
-                                <i class="fa fa-address-card nav-icon"></i>
-                                <p>Meta Tags</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="profile" class="nav-link">
-                                <i class="fa fa-cog nav-icon"></i>
-                                <p>Settings</p>
-                                <i class="right fas fa-angle-right"></i>
-                            </a>
-                        </li> -->
                     </ul>
                 </li>
             </ul>

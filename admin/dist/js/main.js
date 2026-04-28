@@ -131,6 +131,17 @@ function myfcn11(idx, occ_video_preview, pro_name12, pro_pro12) {
     document.getElementById("pro_pro12").value = pro_pro12;
 }
 
+/* for fabric id get */
+function myfcn12(idx, fabric_name) {
+    document.getElementById("id12").value = idx;
+    document.getElementById("fabric_name").value = fabric_name;
+}
+
+/* for color id get */
+function myfcn13(idx, color_name) {
+    document.getElementById("id13").value = idx;
+    document.getElementById("color_name").value = color_name;
+}
 
 
 /*categorywise sub-category in insert*/
