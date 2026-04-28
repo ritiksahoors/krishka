@@ -151,17 +151,20 @@
                                                 <input type="text" name="keywords1" id="tag-input1">
                                             </div> -->
                                             <div class="form-group col-4">
-                                                <select class="form-control" name="keywords1" id="fabriic1">
-                                                    <option value="">Select Colour</option>
+                                                <label>Select Colour:</label>
+                                                <select class="form-control" name="keywords1[]" id="fabriic1" multiple>
                                                     <?php
                                                     include "conn.php";
+                                                    $selectedColors = [];
                                                     $result = mysqli_query($conn, "SELECT * FROM color");
-                                                    while ($row = mysqli_fetch_array($result)) {
-                                                        ?>
-                                                        <option value="<?php echo $row['id']; ?>">
-                                                            <?php echo $row["name"]; ?>
-                                                        </option>
-                                                    <?php } ?>
+                                                    while ($color = mysqli_fetch_array($result)) {
+                                                        $selected = in_array($color['id'], $selectedColors) ? "selected" : "";
+
+                                                        echo '<option value="' . $color['id'] . '" ' . $selected . '>';
+                                                        echo $color["name"];
+                                                        echo '</option>';
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
                                             <div class="form-group col-8">
@@ -243,7 +246,12 @@
         $ppduct_length = $conn->real_escape_string($_POST["ppduct_length"]);
         $blouse = $conn->real_escape_string($_POST["ppduct_blouse"]);
         $about_item = $conn->real_escape_string($_POST["about_item"]);
-        $color = $conn->real_escape_string($_POST["keywords1"]);
+        // $color = $conn->real_escape_string($_POST["keywords1"]);
+        // get selected colors (array)
+        $colors = $_POST['keywords1'] ?? [];
+
+        // convert array to string
+        $colorString = implode(',', $colors);
         $featured = isset($_POST["featured"]) ? $_POST["featured"] : 0;
         $specialoffers = isset($_POST["specialoffers"]) ? $_POST["specialoffers"] : 0;
 
@@ -251,7 +259,7 @@
            INSERT QUERY
         =============================== */
         $sql = "INSERT INTO product (pro_name, rating, review, category_id, sub_category_id, sub_subcategory_id, product_price, pro_discount, product_discount_price, fabric, blouse, about_item, product_image1, product_image2, product_image3, product_image4, color, featured_pro, special_off, status
-    ) VALUES ('$productname', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productprice', '$discount1', '$productdiscountprice', '$fabric', '$blouse', '$about_item', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4', '$color', '$featured', '$specialoffers', '1'
+    ) VALUES ('$productname', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productprice', '$discount1', '$productdiscountprice', '$fabric', '$blouse', '$about_item', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4', '$colorString', '$featured', '$specialoffers', '1'
     )";
 
         if ($conn->query($sql)) {

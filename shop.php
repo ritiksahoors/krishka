@@ -91,11 +91,20 @@
 
                         <div class="filter-box">
                             <h6>Category</h6>
+                            <?php
+                            include 'admin/conn.php';
+                            $sql = "SELECT * FROM category WHERE status='1'";
+                            $result = $conn->query($sql);
+                            while ($row = $result->fetch_assoc()) {
+                                ?>
 
-                            <label><input type="checkbox" class="filter-category" value="silk"> Silk</label><br>
-                            <label><input type="checkbox" class="filter-category" value="banarasi"> Banarasi</label><br>
+                                <label><input type="checkbox" class="filter-category" value="silk">
+                                    <?php echo $row['category_name']; ?>
+                                </label><br>
+                                <!-- <label><input type="checkbox" class="filter-category" value="banarasi"> Banarasi</label><br>
                             <label><input type="checkbox" class="filter-category" value="designer"> Designer</label><br>
-                            <label><input type="checkbox" class="filter-category" value="wedding"> Wedding</label>
+                            <label><input type="checkbox" class="filter-category" value="wedding"> Wedding</label> -->
+                            <?php } ?>
                         </div>
 
                         <div class="filter-box">
@@ -106,21 +115,37 @@
 
                         <div class="filter-box">
                             <h6>Fabric</h6>
+                            <?php
+                            include 'admin/conn.php';
+                            $sql1 = "SELECT * FROM fabric WHERE status='1'";
+                            $result1 = $conn->query($sql1);
+                            while ($row1 = $result1->fetch_assoc()) {
+                                ?>
 
-                            <label><input type="checkbox" class="filter-fabric" value="cotton"> Cotton</label><br>
-                            <label><input type="checkbox" class="filter-fabric" value="silk"> Silk</label><br>
+                                <label><input type="checkbox" class="filter-fabric" value="cotton">
+                                    <?php echo $row1['name']; ?></label><br>
+                                <!-- <label><input type="checkbox" class="filter-fabric" value="silk"> Silk</label><br>
                             <label><input type="checkbox" class="filter-fabric" value="georgette"> Georgette</label><br>
-                            <label><input type="checkbox" class="filter-fabric" value="chiffon"> Chiffon</label>
+                            <label><input type="checkbox" class="filter-fabric" value="chiffon"> Chiffon</label> -->
+                            <?php } ?>
                         </div>
 
                         <div class="filter-box">
                             <h6>Color</h6>
+                            <?php
+                            include 'admin/conn.php';
+                            $sql2 = "SELECT * FROM color WHERE status='1'";
+                            $result2 = $conn->query($sql2);
+                            while ($row2 = $result2->fetch_assoc()) {
+                                ?>
 
-                            <label><input type="checkbox" class="filter-color" value="red"> Red</label><br>
-                            <label><input type="checkbox" class="filter-color" value="blue"> Blue</label><br>
+                                <label><input type="checkbox" class="filter-color" value="red">
+                                    <?php echo $row2['name']; ?></label><br>
+                                <!-- <label><input type="checkbox" class="filter-color" value="blue"> Blue</label><br>
                             <label><input type="checkbox" class="filter-color" value="green"> Green</label><br>
                             <label><input type="checkbox" class="filter-color" value="gold"> Gold</label><br>
-                            <label><input type="checkbox" class="filter-color" value="black"> Black</label>
+                            <label><input type="checkbox" class="filter-color" value="black"> Black</label> -->
+                            <?php } ?>
                         </div>
 
                         <button class="clear-filter" onclick="clearFilters()">
@@ -362,7 +387,7 @@
 
 
     <!-- ================= FOOTER ================= -->
-<?php include 'common/footer.php'; ?>
+    <?php include 'common/footer.php'; ?>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

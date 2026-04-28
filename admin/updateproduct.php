@@ -40,7 +40,7 @@ $id = urldecode(base64_decode($_GET['id']));
                                     <input type="hidden" name="id4" value="<?php echo $row["id"]; ?>" id="id4">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="form-group col-6">
+                                            <div class="form-group col-12">
                                                 <label for="exampleInputcname">Product Name:</label>
                                                 <input type="text" class="form-control" id="productname"
                                                     placeholder="Enter Product Name" name="productname"
@@ -98,33 +98,59 @@ $id = urldecode(base64_decode($_GET['id']));
                                                     ?>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-6">
+                                            <div class="form-group col-3">
                                                 <label for="exampleInputcname">Product Ratings:</label>
                                                 <input type="text" class="form-control" id="exampleInputproductname" name="ratingss" value="<?php echo $row["rating"]; ?>">
                                             </div>
-                                            <div class="form-group col-6">
+                                            <div class="form-group col-3">
                                                 <label for="exampleInputcname">Product Reviews:</label>
                                                 <input type="text" class="form-control" id="exampleInputproductname" name="reviewss" value="<?php echo $row["review"]; ?>">
                                             </div>
-                                            <div class="form-group col-4">
+                                            <div class="form-group col-3">
                                                 <label for="exampleInputcname">Product Price:</label>
                                                 <input type="text" class="form-control" id="productprice1"
                                                     placeholder="Enter Product Code"
                                                     value="<?php echo $row["product_price"]; ?>" name="productprice11"
                                                     >
                                             </div>
-                                            <div class="form-group col-4">
+                                            <div class="form-group col-3">
                                                 <label for="exampleInputcname">Discount:</label>
                                                 <input type="text" class="form-control" id="discount1"
                                                     placeholder="Enter Product Color"
                                                     value="<?php echo $row["pro_discount"]; ?>" name="discount11">
                                             </div>
-                                            <div class="form-group col-4">
+                                            <div class="form-group col-3">
                                                 <label for="exampleInputcname">Product Discount Price:</label>
                                                 <input type="text" class="form-control" id="productdiscountprice1"
                                                     placeholder="Enter Product Size"
                                                     value="<?php echo $row["product_discount_price"]; ?>"
                                                     name="productdiscountprice11" pattern="\d+">
+                                            </div>
+                                           <div class="form-group col-4">
+                                                <label>Fabric:</label>
+                                                <select class="form-control" name="fabric" id="fabric-dropdown1">
+                                                    <option value="">Select Fabric</option>
+                                                    <?php
+                                                    $selectedFabric = $row['fabric'];
+                                                    $sql = "SELECT * FROM fabric";
+                                                    $result = $conn->query($sql);
+                                                    while ($fab = $result->fetch_assoc()) {
+                                                        // if you store fabric NAME
+                                                        $selected = ($fab['id'] == $selectedFabric) ? "selected" : "";
+                                                        echo '<option value="' . $fab['id'] . '" ' . $selected . '>';
+                                                        echo $fab['name'];
+                                                        echo '</option>';
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label for="exampleInputcname">Length:</label>
+                                                <input type="text" class="form-control" id="exampleInputproductname" name="reviewss" value="<?php echo $row["length"]; ?>">
+                                            </div>
+                                             <div class="form-group col-4">
+                                                <label for="exampleInputcname">Blouse:</label>
+                                                <input type="text" class="form-control" id="exampleInputproductname" value="<?php echo $row["blouse"]; ?>">
                                             </div>
                                             <div class="form-group col-3">
                                                 <label for="image">Product Image1:</label>
@@ -194,109 +220,45 @@ $id = urldecode(base64_decode($_GET['id']));
                                                 }
                                                 ?>
                                             </div>
-                                             <div class="form-group col-4">
-                                                <label for="exampleInputcname">Fabric:</label>
-                                                <input type="text" class="form-control" id="fabric11" name="fabric1"
-                                                    value="<?php echo $row["fabric"]; ?>">
-                                            </div>
-                                             <div class="form-group col-3">
-                                                <label for="exampleInputcname">Blouse:</label>
-                                                <input type="text" class="form-control" id="blouse11" name="blouse1"
-                                                    value="<?php echo $row["blouse"]; ?>">
-                                            </div>
-                                            <!-- <div class="form-group col-3">
+                                            <div class="form-group col-12">
                                                 <label for="exampleInputcname">About Item:</label>
-                                                <input type="text" class="form-control" id="about_item11" name="about_item1"
-                                                    value="<?php echo $row["about_item"]; ?>">
-                                            </div> -->
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Size:</label>
-                                                <input type="text" class="form-control" id="size11" name="size1"
-                                                    value="<?php echo $row["sizee"]; ?>">
+                                                <textarea id="content" value="<?php echo $row["about_item"]; ?></textarea>" class="form-control" rows="6"
+                                                    required></textarea>
                                             </div>
-                                            <div class="form-group col-3">
-                                                <label for="subcategoryDropdown">Select Price:</label>
-                                                <select class="form-control" name="under_price1" id="under_price11">
-                                                    <option value="">Select Price</option>
-                                                    <?php
-                                                    $sql5 = "SELECT * FROM price";
-                                                    $result5 = $conn->query($sql5);
-                                                    while ($row5 = $result5->fetch_assoc()) {
-                                                        $selectedOccasion = ($row5["id"] == $row["pricee"]) ? "selected" : "";
-                                                    ?>
-                                                        <option value="<?php echo $row5["id"]; ?>"
-                                                            <?php echo $selectedOccasion; ?>>
-                                                            <?php echo $row5["name"]; ?>
-                                                        </option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Color:</label>
-                                                <input type="text" class="form-control" id="color11" name="color1"
-                                                    value="<?php echo $row["colorr"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Stock:</label>
-                                                <input type="text" class="form-control" id="size11" name="size1"
-                                                    value="<?php echo $row["stockk"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Manufacture:</label>
-                                                <input type="text" class="form-control" id="manufacture11" name="manufacture1"
-                                                    value="<?php echo $row["manuufacturee"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Packer:</label>
-                                                <input type="text" class="form-control" id="packer11" name="packer1"
-                                                    value="<?php echo $row["packer"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Item Weight:</label>
-                                                <input type="text" class="form-control" id="itemweight11" name="itemweight1"
-                                                    value="<?php echo $row["item_weight"]; ?>">
-                                            </div>
-                                            <div class="form-group col-3">
-                                                <label for="exampleInputcname">Generic Name:</label>
-                                                <input type="text" class="form-control" id="genericnm11" name="genericnm1"
-                                                    value="<?php echo $row["generic_nm"]; ?>">
-                                            </div>
-                                             <div class="form-group col-12">
-                                                <label for="exampleInputcname">About Item:</label>
-                                                <textarea id="content" name="content"
-                                                    class="form-control"><?php echo $row["about_item"]; ?></textarea>
-                                            </div>
-                                            <?php
-                                            // Convert stored IDs into array
-                                            $selectedHighlights = array_filter(explode(',', $row["pro_high_id"]));
-                                            ?>  
-                                            <div class="form-group col-6">
-                                                <label>Product Highlights</label>
-                                                <select class="form-control" name="pro_high77[]" id="pro_highhh" multiple required>
+                                            <div class="form-group col-4">
+                                                <label>Select Colour:</label>
+                                                <select class="form-control" name="keywords1[]" id="fabriic1" multiple>
                                                     <?php
                                                     include "conn.php";
-                                                    $result6 = mysqli_query($conn, "SELECT * FROM pro_high");
+                                                    $selectedColors = [];
+                                                    $result = mysqli_query($conn, "SELECT * FROM color");
+                                                    while ($color = mysqli_fetch_array($result)) {
+                                                        $selected = in_array($color['id'], $selectedColors) ? "selected" : "";
 
-                                                    while ($row6 = mysqli_fetch_assoc($result6)) {
-                                                        $selected = in_array($row6['id'], $selectedHighlights) ? 'selected' : '';
-                                                        ?>
-                                                        <option value="<?= $row6['id']; ?>" <?= $selected; ?>>
-                                                            <?= htmlspecialchars($row6['name']); ?>
-                                                        </option>
-                                                    <?php } ?>
+                                                        echo '<option value="' . $color['id'] . '" ' . $selected . '>';
+                                                        echo $color["name"];
+                                                        echo '</option>';
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-12">
-                                                <label for="text">Keywords:</label>
-                                                <input type="text" class="form-control" id="tag-input1" name="keywords1"
-                                                    value="<?php echo $row["keywordss"]; ?>">
-                                            </div>
-                                            <div class="form-group col-12">
-                                            <label for="exampleInputcname">Meta Description:</label>
-                                            <input type="text"
-                                                class="form-control"
-                                                name="metadescription1"
-                                                value="<?php echo htmlspecialchars($row['meta_desc'] ?? ''); ?>">
+                                           <div class="col-8">
+                                                <label for="text">Others:</label>
+                                            <?php $featured_product = $row["featured_pro"]; ?>
+                                            <?php $specialoffers = $row["special_off"]; ?>
+                                            <div class="checkbox-container">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="featured_product" name="featured" value="1" <?php if ($featured_product == 1)
+                                                        echo "checked"; ?>>
+                                                    <label class="form-check-label" for="featured_product">Featured
+                                                        Product</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="specialoffers" name="specialoffers" value="1" <?php if ($specialoffers == 1)
+                                                        echo "checked"; ?>>
+                                                    <label class="form-check-label" for="specialoffers">Special
+                                                        Offers</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -496,12 +458,13 @@ $id = urldecode(base64_decode($_GET['id']));
 
     <?php include 'common/footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script>
-    CKEDITOR.replace('content', {
-        height: 300,
-        filebrowserUploadUrl: "upload.php"
-    });
+     <script>
+        CKEDITOR.replace('content', {
+            height: 300,
+            filebrowserUploadUrl: "upload.php"
+        });
     </script>
+
     <script>
         //for keywords
         (function() {
