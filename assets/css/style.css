@@ -6,6 +6,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+     padding-top: 110px; /* navbar height ke hisab se adjust kar lena */
+}
+
+@media (max-width: 991px) {
+    body {
+        padding-top: 68px; /* mobile */
+    }
 }
 
 /* ================= TOP BAR ================= */
@@ -29,6 +36,12 @@ body {
 .boutique-navbar {
     background: #800000;
     padding: 6px 0;
+
+    position: fixed;   /* 🔥 main fix */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo-img {
@@ -2283,6 +2296,4 @@ footer {
     background: #333;
 }
 
-
 /* ================================== */
-
