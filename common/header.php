@@ -57,7 +57,7 @@
 
                                                 ?>
                                                 <li class="sub-parent">
-                                                    <a href="shop.php"
+                                                    <a href="javascript:void(0)"
                                                         class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
                                                     </a>
                                                     <ul class="sub-sub-menu">
