@@ -24,7 +24,7 @@
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
 
 </head>
 
@@ -121,7 +121,7 @@
                                 <h4><?php echo $row1['pro_name']; ?></h4>
                                 <p class="price">
                                     ₹<?php echo round($row1['product_discount_price']); ?>
-                                    <span>₹<?php echo $row1['product_price']; ?></span>
+                                    <span class="feat-old" >₹<?php echo $row1['product_price']; ?></span>
                                 </p>
                                 <a href="product-details.php?id=<?php echo $encoded_id; ?>" class="view-btn">View
                                     Details</a>
@@ -194,7 +194,7 @@
                                 <h4><?php echo $row3['pro_name']; ?></h4>
                                 <p class="price">
                                     ₹<?php echo round($row3['product_discount_price']); ?>
-                                    <span>₹<?php echo $row3['product_price']; ?></span>
+                                    <span class="special-price" >₹<?php echo $row3['product_price']; ?></span>
                                 </p>
                                 <button class="gold-btn w-100" data-bs-toggle="modal" data-bs-target="#authModal">
                                     Shop Now

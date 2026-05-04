@@ -399,10 +399,10 @@ footer {
     font-weight: 600;
 }
 
-.price span .old-price {
-    text-decoration: line-through;
-    color: gray;
-    margin-left: 10px;
+.price .feat-old {
+    text-decoration: line-through !important;
+    color: gray !important;
+    margin-left: 10px !important;
 }
 
 /* Button */
@@ -565,7 +565,14 @@ footer {
     color: #7a2e2e;
 }
 
-.price .old-price {
+.price span {
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.price .special-price {
     text-decoration: line-through;
     color: gray;
     margin-left: 10px;
