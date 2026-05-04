@@ -99,6 +99,7 @@
                 $sql1 = "SELECT * FROM product WHERE status='1' AND featured_pro='1'";
                 $result1 = $conn->query($sql1);
                 while ($row1 = $result1->fetch_assoc()) {
+                    $encoded_id = base64_encode($row1['id']);
                     ?>
                     <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
                         <div class="saree-card">
@@ -122,7 +123,8 @@
                                     ₹<?php echo round($row1['product_discount_price']); ?>
                                     <span>₹<?php echo $row1['product_price']; ?></span>
                                 </p>
-                                <a href="product-details.php" class="view-btn">View Details</a>
+                                <a href="product-details.php?id=<?php echo $encoded_id; ?>" class="view-btn">View
+                                    Details</a>
                             </div>
                         </div>
                     </div>
@@ -582,7 +584,7 @@
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    <script src="assets/js/main.js" ></script>
+    <script src="assets/js/main.js"></script>
 
     <script>
         AOS.init();
