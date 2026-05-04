@@ -25,30 +25,33 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <style>
+        .badge-sm {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            display: inline-block;
+            line-height: 1;
+            margin-right: 4px;
+        }
+
+        /* HOT badge */
+        .badge-sm.hot {
+            background: #ff3b3b;
+            color: #fff;
+        }
+
+        /* NEW badge */
+        .badge-sm.new {
+            background: #28a745;
+            color: #fff;
+        }
+    </style> -->
 
 </head>
 
 <body>
-
-    <!-- ================= TOP BAR ================= -->
-
-    <!-- <div class="top-bar">
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <div class="top-left">
-                📍 Ravi Talkies, Lewis Road, Bhubaneswar |
-                📞 8249403184
-            </div>
-
-            <div class="top-right">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-
-        </div>
-    </div> -->
-
     <!-- ================= NAVBAR ================= -->
     <?php include 'common/header.php'; ?>
     <!-- ================= OFFERS HERO ================= -->
@@ -96,142 +99,81 @@
         <div class="container">
 
             <div class="row g-4">
+                <?php
+                include 'admin/conn.php';
+                $sql = "SELECT * FROM product WHERE status='1' AND special_off='1'";
+                $result = $conn->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    ?>
 
-                <!-- Offer 1 -->
+                    <!-- Offer 1 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
-
-                    <div class="offer-card">
-
-                        <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.30 PM (1).jpeg">
-
-                        <h4>Banarasi Silk Saree</h4>
-
-                        <p class="old-price">₹3,999</p>
-
-                        <p class="new-price">₹2,499</p>
-
-                        <span class="discount">38% OFF</span>
-
-                        <div class="offer-buttons">
-
-                            <a href="product-details.php" class="view-btn">
-                                View Details
-                            </a>
-
-                            <!-- <a href="https://wa.me/918117049431" class="buy-btn">
-                                WhatsApp
-                            </a> -->
-
+                        <div class="offer-card">
+                            <img src="admin/upload/product/<?php echo $row['product_image1']; ?>">
+                            <h4><?php echo $row['pro_name']; ?></h4>
+                            <p class="old-price">₹<?php echo $row['product_price']; ?></p>
+                            <p class="new-price">₹<?php echo round($row['product_discount_price']); ?></p>
+                            <span class="discount"><?php echo $row['pro_discount']; ?>% OFF</span>
+                            <div class="offer-buttons">
+                                <a href="product-details.php" class="view-btn">
+                                    View Details
+                                </a>
+                            </div>
                         </div>
 
                     </div>
 
-                </div>
-
-
-                <!-- Offer 2 -->
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-
+                    <!-- Offer 2 -->
+                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="offer-card">
-
                         <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.30 PM.jpeg">
-
                         <h4>Designer Saree</h4>
-
                         <p class="old-price">₹3,499</p>
-
                         <p class="new-price">₹1,999</p>
-
                         <span class="discount">42% OFF</span>
-
                         <div class="offer-buttons">
-
                             <a href="product-details.php" class="view-btn">
                                 View Details
                             </a>
-
-                            <!-- <a href="https://wa.me/918117049431" class="buy-btn">
-                                WhatsApp
-                            </a> -->
-
                         </div>
-
                     </div>
+                </div> -->
 
-                </div>
-
-
-                <!-- Offer 3 -->
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-
+                    <!-- Offer 3 -->
+                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="offer-card">
-
                         <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.31 PM (1).jpeg">
-
                         <h4>Wedding Saree</h4>
-
                         <p class="old-price">₹4,999</p>
-
                         <p class="new-price">₹2,999</p>
-
                         <span class="discount">40% OFF</span>
-
                         <div class="offer-buttons">
-
                             <a href="product-details.php" class="view-btn">
                                 View Details
                             </a>
-
-                            <!-- <a href="https://wa.me/918117049431" class="buy-btn">
-                                WhatsApp
-                            </a> -->
-
                         </div>
-
                     </div>
+                </div> -->
 
-                </div>
-
-
-                <!-- Offer 4 -->
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-
+                    <!-- Offer 4 -->
+                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="offer-card">
-
                         <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.31 PM (2).jpeg">
-
                         <h4>Silk Saree</h4>
-
                         <p class="old-price">₹2,999</p>
-
                         <p class="new-price">₹1,799</p>
-
                         <span class="discount">35% OFF</span>
-
                         <div class="offer-buttons">
-
                             <a href="product-details.php" class="view-btn">
                                 View Details
                             </a>
-
-                            <!-- <a href="https://wa.me/918117049431" class="buy-btn">
-                                WhatsApp
-                            </a> -->
-
                         </div>
-
                     </div>
-
-                </div>
-
+                </div> -->
+                <?php } ?>
             </div>
-
         </div>
-
     </section>
 
     <!-- ================= TRENDING NOW UNIQUE SECTION ================= -->
@@ -246,102 +188,85 @@
             </div>
 
             <div class="row g-4">
-
-                <!-- Item 1 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="krishika-trend-card">
-
-                        <div class="krishika-trend-img">
-                            <img src="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.39 PM.jpeg">
-                            <span class="krishika-badge-hot">HOT</span>
-                        </div>
-
-                        <div class="krishika-trend-info">
-                            <h6>Banarasi Wedding Saree</h6>
-                            <p class="krishika-trend-price">₹2,799</p>
-
-                            <div class="krishika-trend-btns">
-                                <!-- <a href="#" class="krishika-cart-btn">
-                                Add to Cart
-                            </a> -->
-
-                                <a href="product-details.php" class="krishika-view-btn">
-                                    View Details
-                                </a>
+                <?php
+                include 'admin/conn.php';
+                $sql1 = "SELECT * FROM product WHERE status='1' AND trending_now='1' LIMIT 4";
+                $result1 = $conn->query($sql1);
+                while ($row1 = $result1->fetch_assoc()) {
+                    ?>
+                    <!-- Item 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="krishika-trend-card">
+                            <div class="krishika-trend-img">
+                                <img src="admin/upload/product/<?php echo $row1['product_image1']; ?>">
+                                <?php
+                                $badge = (rand(0, 1) == 0) ? 'NEW' : 'HOT';
+                                ?>
+                                <span class="krishika-badge-hot"><?php echo $badge; ?></span>
+                            </div>
+                            <div class="krishika-trend-info">
+                                <h6><?php echo $row1['pro_name']; ?></h6>
+                                <p class="krishika-trend-price">₹<?php echo $row1['product_price']; ?></p>
+                                <div class="krishika-trend-btns">
+                                    <a href="product-details.php" class="krishika-view-btn">
+                                        View Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
 
-                <!-- Item 2 -->
-                <div class="col-lg-3 col-md-6">
+                    <!-- Item 2 -->
+                    <!-- <div class="col-lg-3 col-md-6">
                     <div class="krishika-trend-card">
-
                         <div class="krishika-trend-img">
                             <img src="assets/img/bhandini_sarees/WhatsApp Image2 2026-04-04 at 4.50.37 PM.jpeg">
                             <span class="krishika-badge-hot">NEW</span>
                         </div>
-
                         <div class="krishika-trend-info">
                             <h6>Designer Party Saree</h6>
                             <p class="krishika-trend-price">₹1,999</p>
-
                             <div class="krishika-trend-btns">
-                                <!-- <a href="#" class="krishika-cart-btn">Add to Cart</a> -->
                                 <a href="product-details.php" class="krishika-view-btn">View Details</a>
                             </div>
                         </div>
-
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Item 3 -->
-                <div class="col-lg-3 col-md-6">
+                    <!-- Item 3 -->
+                    <!-- <div class="col-lg-3 col-md-6">
                     <div class="krishika-trend-card">
-
                         <div class="krishika-trend-img">
                             <img src="assets/img/bhandini_sarees/WhatsApp Image3 2026-04-04 at 4.50.37 PM.jpeg">
                         </div>
-
                         <div class="krishika-trend-info">
                             <h6>Silk Festival Saree</h6>
                             <p class="krishika-trend-price">₹3,299</p>
-
                             <div class="krishika-trend-btns">
-                                <!-- <a href="#" class="krishika-cart-btn">Add to Cart</a> -->
                                 <a href="product-details.php" class="krishika-view-btn">View Details</a>
                             </div>
                         </div>
-
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Item 4 -->
-                <div class="col-lg-3 col-md-6">
+                    <!-- Item 4 -->
+                    <!-- <div class="col-lg-3 col-md-6">
                     <div class="krishika-trend-card">
-
                         <div class="krishika-trend-img">
                             <img src="assets/img/three_set_sarees/WhatsApp Image 2026-04-04 at 4.56.21 PM (1).jpeg">
                         </div>
-
                         <div class="krishika-trend-info">
                             <h6>Premium Bridal Saree</h6>
                             <p class="krishika-trend-price">₹4,499</p>
-
                             <div class="krishika-trend-btns">
-                                <!-- <a href="#" class="krishika-cart-btn">Add to Cart</a> -->
                                 <a href="product-details.php" class="krishika-view-btn">View Details</a>
                             </div>
                         </div>
-
                     </div>
-                </div>
-
+                </div> -->
+                <?php } ?>
             </div>
-
         </div>
-
     </section>
 
     <!-- ================= PREMIUM SPOTLIGHT SECTION ================= -->

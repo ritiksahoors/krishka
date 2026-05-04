@@ -146,10 +146,6 @@
                                                 <textarea id="content" name="about_item" class="form-control" rows="6"
                                                     required></textarea>
                                             </div>
-                                            <!-- <div class="form-group col-12">
-                                                <label for="text">Color:</label>
-                                                <input type="text" name="keywords1" id="tag-input1">
-                                            </div> -->
                                             <div class="form-group col-4">
                                                 <label>Select Colour:</label>
                                                 <select class="form-control" name="keywords1[]" id="fabriic1" multiple>
@@ -181,6 +177,22 @@
                                                             id="specialoffers" name="specialoffers" value="1">
                                                         <label class="form-check-label" for="specialoffers">Special
                                                             Offers</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="trendingnow"
+                                                            name="trendingnoww" value="1">
+                                                        <label class="form-check-label" for="trendingnow">Trending
+                                                            Now</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="new"
+                                                            name="pro_new" value="1">
+                                                        <label class="form-check-label" for="new">New</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="hot"
+                                                            name="pro_hot" value="1">
+                                                        <label class="form-check-label" for="hot">Hot</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -254,12 +266,15 @@
         $colorString = implode(',', $colors);
         $featured = isset($_POST["featured"]) ? $_POST["featured"] : 0;
         $specialoffers = isset($_POST["specialoffers"]) ? $_POST["specialoffers"] : 0;
+        $trendingnoww = isset($_POST["trendingnoww"]) ? $_POST["trendingnoww"] : 0;
+        $pro_new = isset($_POST["pro_new"]) ? $_POST["pro_new"] : 0;
+        $pro_hot = isset($_POST["pro_hot"]) ? $_POST["pro_hot"] : 0;
 
         /* ==============================
            INSERT QUERY
         =============================== */
-        $sql = "INSERT INTO product (pro_name, rating, review, category_id, sub_category_id, sub_subcategory_id, product_price, pro_discount, product_discount_price, fabric, blouse, about_item, product_image1, product_image2, product_image3, product_image4, color, featured_pro, special_off, status
-    ) VALUES ('$productname', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productprice', '$discount1', '$productdiscountprice', '$fabric', '$blouse', '$about_item', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4', '$colorString', '$featured', '$specialoffers', '1'
+        $sql = "INSERT INTO product (pro_name, rating, review, category_id, sub_category_id, sub_subcategory_id, product_price, pro_discount, product_discount_price, fabric, blouse, about_item, product_image1, product_image2, product_image3, product_image4, color, featured_pro, special_off, trending_now, neww, hott, status
+    ) VALUES ('$productname', '$ratingss', '$reviewss', '$category', '$subcategory', '$subsubcategory', '$productprice', '$discount1', '$productdiscountprice', '$fabric', '$blouse', '$about_item', '$new_file_name1', '$new_file_name2', '$new_file_name3', '$new_file_name4', '$colorString', '$featured', '$specialoffers', '$trendingnoww', '$pro_new', '$pro_hot', '1'
     )";
 
         if ($conn->query($sql)) {
