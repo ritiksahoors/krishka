@@ -399,7 +399,7 @@ footer {
     font-weight: 600;
 }
 
-.price span {
+.price span .old-price {
     text-decoration: line-through;
     color: gray;
     margin-left: 10px;
@@ -565,7 +565,7 @@ footer {
     color: #7a2e2e;
 }
 
-.price span {
+.price .old-price {
     text-decoration: line-through;
     color: gray;
     margin-left: 10px;
@@ -956,6 +956,25 @@ footer {
     transform: translateY(-5px);
 }
 
+.price {
+    margin: 5px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.new-price {
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    font-weight: 600;
+
+}
 /* Wishlist */
 
 .wishlist {
@@ -1614,6 +1633,8 @@ footer {
     color: #800020;
     font-size: 20px;
     font-weight: 600;
+    color: #000;
+    font-weight: 600;
 }
 
 .discount {
@@ -1933,7 +1954,7 @@ footer {
     font-weight: 600;
 }
 
-.price span {
+.price .old-price {
     text-decoration: line-through;
     color: #888;
     font-size: 14px;
