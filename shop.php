@@ -24,7 +24,7 @@
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
 
 </head>
 
@@ -174,7 +174,7 @@
                                 <h5>Silk Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -200,7 +200,7 @@
                                 <h5>Banarasi Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -226,7 +226,7 @@
                                 <h5>Designer Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -250,7 +250,7 @@
                                 <h5>Silk Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -276,7 +276,7 @@
                                 <h5>Banarasi Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -302,7 +302,7 @@
                                 <h5>Designer Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -326,7 +326,7 @@
                                 <h5>Silk Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -352,7 +352,7 @@
                                 <h5>Banarasi Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
@@ -378,7 +378,7 @@
                                 <h5>Designer Saree</h5>
                                 <p class="price">
     <span class="old-price">₹3999</span>
-    <span class="new-price">₹2999</span>
+    <span class="new-prices">₹2999</span>
 </p>
 
                                 <div class="product-btns">
