@@ -105,7 +105,9 @@
                         <div class="saree-card">
                             <div class="saree-img">
                                 <img src="admin/upload/product/<?php echo $row1['product_image1']; ?>">
-                                <span class="discount"><?php echo $row1['pro_discount']; ?>% OFF</span>
+                                <span class="discount">
+                                    <?php echo $row1['pro_discount']; ?>% OFF
+                                </span>
                                 <div class="hover-icons">
                                     <a href="#" class="add-to-wishlist">
                                         <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
@@ -118,13 +120,20 @@
                                 </div>
                             </div>
                             <div class="saree-content">
-                                <h4><?php echo $row1['pro_name']; ?></h4>
+                                <h4>
+                                    <?php echo $row1['pro_name']; ?>
+                                </h4>
                                 <p class="price">
-                                    ₹<?php echo round($row1['product_discount_price']); ?>
-                                    <span class="feat-old" >₹<?php echo $row1['product_price']; ?></span>
+                                    ₹
+                                    <?php echo round($row1['product_discount_price']); ?>
+                                    <span class="feat-old">₹
+                                        <?php echo $row1['product_price']; ?>
+                                    </span>
                                 </p>
-                                <a href="product-details.php?id=<?php echo $encoded_id; ?>" class="view-btn">View
-                                    Details</a>
+                                <button class="gold-btn w-100"
+                                    onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+                                    View Details
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -194,10 +203,10 @@
                                 <h4><?php echo $row3['pro_name']; ?></h4>
                                 <p class="price">
                                     ₹<?php echo round($row3['product_discount_price']); ?>
-                                    <span class="special-price" >₹<?php echo $row3['product_price']; ?></span>
+                                    <span class="special-price">₹<?php echo $row3['product_price']; ?></span>
                                 </p>
-                                <button class="gold-btn w-100" data-bs-toggle="modal" data-bs-target="#authModal">
-                                    Shop Now
+                                <button class="gold-btn w-100" onclick="window.location.href='shop.php'">
+                                    View Details
                                 </button>
                             </div>
                         </div>

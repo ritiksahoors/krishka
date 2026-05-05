@@ -163,236 +163,160 @@
                     <div class="row" id="productContainer">
 
                         <!-- Product 1 -->
-                        <div class="col-md-4 product" data-category="silk" data-price="2999">
-
-                            <div class="product-card" data-name="Silk Saree" data-price="2999"  data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
-
-                                <h5>Silk Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="saree-card">
+                                    <div class="saree-img">
+                                        <img
+                                            src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
+                                        <span class="discount">
+                                            10% OFF
+                                        </span>
+                                        <div class="hover-icons">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                            <a href="#" class="add-to-cart">
+                                                <i class="fa fa-shopping-cart" data-name="Bridal Saree"
+                                                    data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="saree-content">
+                                        <h4>
+                                            Banarasi Saree
+                                        </h4>
+                                        <p class="price">
+                                            ₹2999
+                                            <span class="feat-old">₹3999
+                                            </span>
+                                        </p>
+                                        <button class="gold-btn w-100"
+                                            onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+                                            View Details
+                                        </button>
+                                    </div>
                                 </div>
-
                             </div>
 
-                        </div>
-
-
-                        <!-- Product 2 -->
-                        <div class="col-md-4 product" data-category="banarasi" data-price="3499">
-
-                            <div class="product-card" data-name="Banarasi Saree" data-price="3499" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
-
-                                <h5>Banarasi Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
+                            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="saree-card">
+                                    <div class="saree-img">
+                                        <img
+                                            src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
+                                        <span class="discount">
+                                            10% OFF
+                                        </span>
+                                        <div class="hover-icons">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                            <a href="#" class="add-to-cart">
+                                                <i class="fa fa-shopping-cart" data-name="Bridal Saree"
+                                                    data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="saree-content">
+                                        <h4>
+                                            Banarasi Saree
+                                        </h4>
+                                        <p class="price">
+                                            ₹2999
+                                            <span class="feat-old">₹3999
+                                            </span>
+                                        </p>
+                                        <button class="gold-btn w-100"
+                                            onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+                                            View Details
+                                        </button>
+                                    </div>
                                 </div>
-
                             </div>
 
-                        </div>
 
 
-                        <!-- Product 3 -->
-                        <div class="col-md-4 product" data-category="designer" data-price="2599">
-
-                            <div class="product-card" data-name="Designer Saree" data-price="2599" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
-
-                                <h5>Designer Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
+                            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="saree-card">
+                                    <div class="saree-img">
+                                        <img
+                                            src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
+                                        <span class="discount">
+                                            10% OFF
+                                        </span>
+                                        <div class="hover-icons">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                            <a href="#" class="add-to-cart">
+                                                <i class="fa fa-shopping-cart" data-name="Bridal Saree"
+                                                    data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="saree-content">
+                                        <h4>
+                                            Banarasi Saree
+                                        </h4>
+                                        <p class="price">
+                                            ₹2999
+                                            <span class="feat-old">₹3999
+                                            </span>
+                                        </p>
+                                        <button class="gold-btn w-100"
+                                            onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+                                            View Details
+                                        </button>
+                                    </div>
                                 </div>
-
                             </div>
 
-                        </div>
-                        <!-- Product 1 -->
-                        <div class="col-md-4 product" data-category="silk" data-price="2999">
 
-                            <div class="product-card" data-name="Silk Saree" data-price="2999" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
-                                <h5>Silk Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
+                            <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="saree-card">
+                                    <div class="saree-img">
+                                        <img
+                                            src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
+                                        <span class="discount">
+                                            10% OFF
+                                        </span>
+                                        <div class="hover-icons">
+                                            <a href="#" class="add-to-wishlist">
+                                                <i class="fa fa-heart" data-name="Bridal Saree" data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                            <a href="#" class="add-to-cart">
+                                                <i class="fa fa-shopping-cart" data-name="Bridal Saree"
+                                                    data-price="4999"
+                                                    data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="saree-content">
+                                        <h4>
+                                            Banarasi Saree
+                                        </h4>
+                                        <p class="price">
+                                            ₹2999
+                                            <span class="feat-old">₹3999
+                                            </span>
+                                        </p>
+                                        <button class="gold-btn w-100"
+                                            onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+                                            View Details
+                                        </button>
+                                    </div>
                                 </div>
-
                             </div>
-
                         </div>
-
-
-                        <!-- Product 2 -->
-                        <div class="col-md-4 product" data-category="banarasi" data-price="3499">
-
-                            <div class="product-card" data-name="Banarasi Saree" data-price="3499" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
-
-                                <h5>Banarasi Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Product 3 -->
-                        <div class="col-md-4 product" data-category="designer" data-price="2599">
-
-                            <div class="product-card" data-name="Designer Saree" data-price="2599" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
-
-                                <h5>Designer Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- Product 1 -->
-                        <div class="col-md-4 product" data-category="silk" data-price="2999">
-
-                            <div class="product-card" data-name="Silk Saree" data-price="2999" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
-
-                                <h5>Silk Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Product 2 -->
-                        <div class="col-md-4 product" data-category="banarasi" data-price="3499">
-
-                            <div class="product-card" data-name="Banarasi Saree" data-price="3499" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
-
-                                <h5>Banarasi Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Product 3 -->
-                        <div class="col-md-4 product" data-category="designer" data-price="2599">
-
-                            <div class="product-card" data-name="Designer Saree" data-price="2599" data-old-price="3999"
-                                data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
-
-                                <img
-                                    src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
-
-                                <h5>Designer Saree</h5>
-                                <p class="price">
-    <span class="old-price">₹3999</span>
-    <span class="new-prices">₹2999</span>
-</p>
-
-                                <div class="product-btns">
-                                    <button onclick="goToDetails(this.parentElement.parentElement)">
-                                        👁️ View Details
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
                     </div>
 
                     <div id="loader" class="text-center my-4" style="display:none;">

@@ -247,8 +247,6 @@ $id = urldecode(base64_decode($_GET['id']));
                                             <?php $featured_product = $row["featured_pro"]; ?>
                                             <?php $specialoffers = $row["special_off"]; ?>
                                             <?php $trending_now = $row["trending_now"]; ?>
-                                            <?php $neww = $row["neww"]; ?>
-                                            <?php $hott = $row["hott"]; ?>
                                             <div class="checkbox-container">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" id="featured_product" name="featured" value="1" <?php if ($featured_product == 1)
@@ -266,16 +264,6 @@ $id = urldecode(base64_decode($_GET['id']));
                                                     <input class="form-check-input" type="checkbox" id="trending_now" name="trending_now" value="1" <?php if ($trending_now == 1)
                                                         echo "checked"; ?>>
                                                     <label class="form-check-label" for="specialoffers">Trending Now</label>
-                                                </div>
-                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="neww" name="neww" value="1" <?php if ($neww == 1)
-                                                        echo "checked"; ?>>
-                                                    <label class="form-check-label" for="specialoffers">New</label>
-                                                </div>
-                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="hott" name="hott" value="1" <?php if ($hott == 1)
-                                                        echo "checked"; ?>>
-                                                    <label class="form-check-label" for="specialoffers">Hot</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -395,8 +383,6 @@ $id = urldecode(base64_decode($_GET['id']));
         $featured = $_POST["featured"] ?? 0;
         $specialoffers = $_POST["specialoffers"] ?? 0;
         $trending_now = $_POST["trending_now"] ?? 0;
-        $neww = $_POST["neww"] ?? 0;
-        $hott = $_POST["hott"] ?? 0;
 
         $fabric1 = $_POST["fabric1"];
         $blouse1 = $_POST["blouse1"];
@@ -431,8 +417,6 @@ $id = urldecode(base64_decode($_GET['id']));
             featured_pro='$featured',
             special_off='$specialoffers',
             trending_now='$trending_now',
-            neww='$neww',
-            hott='$hott',
             fabric='$fabric1',
             blousee='$blouse1',
             caree='$care1',

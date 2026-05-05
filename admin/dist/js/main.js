@@ -96,12 +96,6 @@ function myfcn6(idx, offer_name, offer_id, offer_dis) {
     document.getElementById("offer_dis").value = offer_dis;
 }
 
-
-/*for addproduct close button*/
-document.getElementById("closeModalBtn").addEventListener("click", function () {
-    window.location.href = "product.php";
-});
-
 /* for occasion id get */
 function myfcn8(idx, image, occasion1_name) {
     document.getElementById("id88").value = idx;

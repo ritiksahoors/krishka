@@ -7,7 +7,7 @@ $id = urldecode(base64_decode($_GET['id']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishika Collections | Viewproduct</title>
+    <title>Utkalikart | Viewproduct</title>
     <link href="dist/img/titleimage1.png" rel="icon">
     <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 </head>
@@ -83,8 +83,8 @@ $id = urldecode(base64_decode($_GET['id']));
                                     $category_id = $row["category_id"];
                                     $subcategory_id = $row["sub_category_id"];
                                     $subsubcategory_id = $row["sub_subcategory_id"];
-                                    // $occ_id = $row["occ_id"];
-                                
+                                    $fabric = $row["fabric"];
+
                                     $sql1 = "SELECT * FROM category WHERE id = $category_id";
                                     $result1 = $conn->query($sql1);
                                     $row1 = $result1->fetch_assoc();
@@ -97,9 +97,9 @@ $id = urldecode(base64_decode($_GET['id']));
                                     $result3 = $conn->query($sql3);
                                     $row3 = $result3->fetch_assoc();
 
-                                    // $sql4 = "SELECT * FROM occasion WHERE id = $occ_id";
-                                    // $result4 = $conn->query($sql4);
-                                    // $row4 = $result4->fetch_assoc();
+                                    $sql4 = "SELECT * FROM fabric WHERE id = $fabric";
+                                    $result4 = $conn->query($sql4);
+                                    $row4 = $result4->fetch_assoc();
                                     ?>
                                     <h3 class="mb-3 home_color">View Product</h3>
                                     <div class="product-details">
@@ -151,13 +151,11 @@ $id = urldecode(base64_decode($_GET['id']));
                                             </div>
                                             <div class="col-4">
                                                 <h6 class="text-black"><strong>Fabric:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row["fabric"]; ?>
-                                                </p>
+                                                <p class="pd-vi p-2"><?php echo $row4["name"]; ?></p>
                                             </div>
                                             <div class="col-4">
                                                 <h6 class="text-black"><strong>Length:</strong></h6>
-                                                <p class="pd-vi p-2"><?php echo $row["length"]; ?>
-                                                </p>
+                                                <p class="pd-vi p-2"><?php echo $row["length"]; ?></p>
                                             </div>
                                             <div class="col-4">
                                                 <h6 class="text-black"><strong>Blouse:</strong></h6>
@@ -202,25 +200,41 @@ $id = urldecode(base64_decode($_GET['id']));
                                             </div>
                                             <div class="col-12">
                                                 <h6 class="text-black"><strong>About Item:</strong></h6>
-                                                <textarea class="form-control pd-vi p-2" rows="4"
-                                                    name="about_item"><?php echo htmlspecialchars($row["about_item"]); ?></textarea>
+                                                <textarea class="pd-vi p-2" id="content" name="content" rows="5" cols="50"
+                                                    readonly>
+                                                                            <?php echo htmlspecialchars($row['about_item']); ?>
+                                                                        </textarea>
                                             </div>
+                                            <div class="form-group col-4">
+                                                <label>Select Colour:</label>
+                                                <select class="form-control" name="keywords1[]" id="fabriic1" multiple>
+                                                    <?php
+                                                    include "conn.php";
+                                                    $selectedColors = [];
+                                                    $result = mysqli_query($conn, "SELECT * FROM color");
+                                                    while ($color = mysqli_fetch_array($result)) {
+                                                        $selected = in_array($color['id'], $selectedColors) ? "selected" : "";
 
-                                            <div class="col-4">
+                                                        echo '<option value="' . $color['id'] . '" ' . $selected . '>';
+                                                        echo $color["name"];
+                                                        echo '</option>';
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
                                                 <label for="text">Others:</label>
-                                                <?php $featured_product = $row["featured_pro"]; ?>
-                                                <?php $specialoffers = $row["special_off"]; ?>
+                                                <?php $featured_pro = $row["featured_pro"]; ?>
+                                                <?php $special_off = $row["special_off"]; ?>
                                                 <?php $trending_now = $row["trending_now"]; ?>
-                                                <?php $neww = $row["neww"]; ?>
-                                                <?php $hott = $row["hott"]; ?>
                                                 <div class="checkbox-container">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" <?php if ($featured_product == 1)
+                                                        <input class="form-check-input" type="checkbox" <?php if ($featured_pro == 1)
                                                             echo "checked"; ?> disabled>
                                                         <label class="form-check-label">Featured Product</label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" <?php if ($specialoffers == 1)
+                                                        <input class="form-check-input" type="checkbox" <?php if ($special_off == 1)
                                                             echo "checked"; ?> disabled>
                                                         <label class="form-check-label">Special Offers</label>
                                                     </div>
@@ -229,19 +243,8 @@ $id = urldecode(base64_decode($_GET['id']));
                                                             echo "checked"; ?> disabled>
                                                         <label class="form-check-label">Trending Now</label>
                                                     </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" <?php if ($neww == 1)
-                                                            echo "checked"; ?> disabled>
-                                                        <label class="form-check-label">New</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" <?php if ($hott == 1)
-                                                            echo "checked"; ?> disabled>
-                                                        <label class="form-check-label">Hot</label>
-                                                    </div>
                                                 </div>
                                             </div>
-
                                         <?php } ?>
                                         <button type="button" class="btn btn-success"
                                             onclick="window.location.href='product.php';">Back
