@@ -648,7 +648,7 @@
 
     </script>
 
-    <script>
+    <!-- <script>
         let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
         let cart = JSON.parse(localStorage.getItem("cart")) || []
 
@@ -925,7 +925,7 @@
         })
 
 
-    </script>
+    </script> -->
 
 </body>
 

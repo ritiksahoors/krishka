@@ -335,8 +335,6 @@
         </div>
 
     </section>
-
-
     <!-- ================= FOOTER ================= -->
     <?php include 'common/footer.php'; ?>
     <!-- Bootstrap -->
