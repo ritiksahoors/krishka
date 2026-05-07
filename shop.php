@@ -165,14 +165,17 @@
                         <!-- Product 1 -->
                         <div class="col-md-4 product" data-category="silk" data-price="2999">
 
-                            <div class="product-card" data-name="Silk Saree" data-price="2999"
+                            <div class="product-card" data-name="Silk Saree" data-price="2999"  data-old-price="3999"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <img
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <h5>Silk Saree</h5>
-                                <p class="price">₹2999</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -195,7 +198,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
 
                                 <h5>Banarasi Saree</h5>
-                                <p class="price">₹3499</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -218,7 +224,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
 
                                 <h5>Designer Saree</h5>
-                                <p class="price">₹2599</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -239,7 +248,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <h5>Silk Saree</h5>
-                                <p class="price">₹2999</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -262,7 +274,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
 
                                 <h5>Banarasi Saree</h5>
-                                <p class="price">₹3499</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -285,7 +300,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
 
                                 <h5>Designer Saree</h5>
-                                <p class="price">₹2599</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2599</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -306,7 +324,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <h5>Silk Saree</h5>
-                                <p class="price">₹2999</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -329,7 +350,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
 
                                 <h5>Banarasi Saree</h5>
-                                <p class="price">₹3499</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹3499</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
@@ -352,7 +376,10 @@
                                     src="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
 
                                 <h5>Designer Saree</h5>
-                                <p class="price">₹2599</p>
+                                <p class="price">
+    <span class="old-price">₹3999</span>
+    <span class="new-prices">₹2999</span>
+</p>
 
                                 <div class="product-btns">
                                     <button onclick="goToDetails(this.parentElement.parentElement)">
