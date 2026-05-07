@@ -144,10 +144,19 @@ function loadWishlist() {
                 <p>₹${item.price}</p>
             </div>
 
-            <button class="gold-btn move-to-cart"
-                data-index="${index}">
-                Add to Cart
-            </button>
+            <div class="d-flex gap-2">
+
+                <button class="gold-btn move-to-cart"
+                    data-index="${index}">
+                    Add to Cart
+                </button>
+
+                <button class="btn btn-danger remove-wishlist"
+                    data-index="${index}">
+                    ✖
+                </button>
+
+            </div>
 
         </div>
         `
@@ -191,7 +200,16 @@ function loadCart() {
 
             </div>
 
-            <p class="total">₹${item.price * item.qty}</p>
+            <div class="d-flex align-items-center gap-2">
+
+                <p class="total mb-0">₹${item.price * item.qty}</p>
+
+                <button class="btn btn-danger remove-cart"
+                    data-index="${index}">
+                    ✖
+                </button>
+
+            </div>
 
         </div>
 
@@ -217,6 +235,44 @@ function loadCart() {
 
     cartCount.innerText = cart.length
 }
+
+// Remove Wishlist Product
+
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("remove-wishlist")) {
+
+        let index = e.target.dataset.index
+
+        wishlist.splice(index, 1)
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+
+        loadWishlist()
+
+        showToast("Removed from Wishlist ❌")
+    }
+
+})
+
+// Remove Cart Product
+
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("remove-cart")) {
+
+        let index = e.target.dataset.index
+
+        cart.splice(index, 1)
+
+        localStorage.setItem("cart", JSON.stringify(cart))
+
+        loadCart()
+
+        showToast("Removed from Cart ❌")
+    }
+
+})
 
 // -------------------
 // Place Order
