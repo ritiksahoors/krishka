@@ -23,9 +23,9 @@
                         <a class="nav-link active" href="index.php">Home</a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="shop.php">Shop</a>
-                    </li>
+                    </li> -->
 
                     <li class="nav-item mega-parent">
 

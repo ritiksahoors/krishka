@@ -100,7 +100,7 @@
                 $result1 = $conn->query($sql1);
                 while ($row1 = $result1->fetch_assoc()) {
                     $encoded_id = base64_encode($row1['id']);
-                ?>
+                    ?>
                     <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
                         <div class="saree-card">
                             <div class="saree-img">
@@ -159,7 +159,7 @@
                 $sql = "SELECT * FROM category WHERE status='1'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
-                ?>
+                    ?>
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
                         <div class="category-card">
                             <img src="admin/upload/category/<?php echo $row['image']; ?>">
@@ -194,18 +194,18 @@
                 $sql3 = "SELECT * FROM product WHERE status='1' AND special_off='1'";
                 $result3 = $conn->query($sql3);
                 while ($row3 = $result3->fetch_assoc()) {
-                ?>
+                    ?>
                     <div class="col-md-4" data-aos="zoom-in">
                         <div class="offer-card">
                             <span class="discount"><?php echo $row3['pro_discount']; ?>% OFF</span>
                             <div class="offer-img">
-                                <img src="admin/upload/product/<?php echo $row3['product_image1']; ?>" alt="Saree">
+    <img src="admin/upload/product/<?php echo $row3['product_image1']; ?>" alt="Saree">
 
-                                <div class="hover-icons">
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                </div>
-                            </div>
+    <div class="hover-icons">
+        <a href="#"><i class="fa fa-heart"></i></a>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+    </div>
+</div>
                             <div class="offer-content">
                                 <h4><?php echo $row3['pro_name']; ?></h4>
                                 <p class="price">
@@ -635,6 +635,7 @@
     </script>
 
     <script>
+
         const profileToggle = document.querySelector(".profile-toggle");
         const profileDropdown = document.querySelector(".profile-dropdown");
 
@@ -644,13 +645,14 @@
 
         /* click outside close */
 
-        document.addEventListener("click", function(e) {
+        document.addEventListener("click", function (e) {
 
             if (!profileDropdown.contains(e.target)) {
                 profileDropdown.classList.remove("active");
             }
 
         });
+
     </script>
 
     <!-- <script>
