@@ -586,6 +586,47 @@ footer {
     font-size: 14px;
 }
 
+/* IMAGE WRAPPER */
+.offer-img {
+    position: relative;
+    overflow: hidden;
+}
+
+/* IMAGE ZOOM SAME */
+.offer-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.offer-card:hover .offer-img img {
+    transform: scale(1.1);
+}
+
+/* HOVER ICONS SAME */
+.offer-card .hover-icons {
+    position: absolute;
+    top: 15px;
+    right: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.4s;
+}
+
+.offer-card .hover-icons a {
+    background: #D4AF37;
+    color: black;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+/* MAIN TRIGGER */
+.offer-card:hover .hover-icons {
+    right: 15px;
+}
+
 /* Button */
 
 .gold-btn {
