@@ -57,7 +57,7 @@
 
                                                 ?>
                                                 <li class="sub-parent">
-                                                    <a href="javascript:void(0)"
+                                                    <a href="sub-products.php?sub_cat_id=<?php echo $row['id']; ?>"
                                                         class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
                                                     </a>
                                                     <ul class="sub-sub-menu">
@@ -74,7 +74,7 @@
                                                         while ($row3 = $result3->fetch_assoc()) {
                                                             ?>
                                                             <li>
-                                                                <a href="product-details.php">
+                                                                <a href="sub-sub-products.php?sub_sub_cat_id=<?php echo $row3['id']; ?>">
                                                                     <?php echo $row3['sub_subcategoryname']; ?>
                                                                 </a>
                                                             </li>
