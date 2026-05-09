@@ -28,13 +28,22 @@ document.addEventListener("click", function (e) {
             img: e.target.dataset.img
         }
 
-        wishlist.push(product)
+        let exists = wishlist.find(item => item.name === product.name)
 
-        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+if (exists) {
 
-        loadWishlist()
+    showToast("Already in Wishlist ❤️")
 
-        showToast("Added to Wishlist ❤️")
+} else {
+
+    wishlist.push(product)
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist))
+
+    loadWishlist()
+
+    showToast("Added to Wishlist ❤️")
+}
     }
 
 })
@@ -54,13 +63,22 @@ document.addEventListener("click", function (e) {
             qty: 1
         }
 
-        cart.push(product)
+        let exists = cart.find(item => item.name === product.name)
 
-        localStorage.setItem("cart", JSON.stringify(cart))
+if (exists) {
 
-        loadCart()
+    showToast("Already in Cart 🛒")
 
-        showToast("Added to Cart 🛒")
+} else {
+
+    cart.push(product)
+
+    localStorage.setItem("cart", JSON.stringify(cart))
+
+    loadCart()
+
+    showToast("Added to Cart 🛒")
+}
     }
 
 })
