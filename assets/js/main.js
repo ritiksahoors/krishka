@@ -18,35 +18,43 @@ loadCart()
 // Add to Wishlist
 // -------------------
 
+// -------------------
+// Add to Wishlist
+// -------------------
+
 document.addEventListener("click", function (e) {
 
     if (e.target.classList.contains("fa-heart")) {
 
         let card = e.target.closest(".product-card")
 
-let product = {
-    id: card.dataset.id,
-    name: card.dataset.name,
-    price: card.dataset.price,
-    img: card.dataset.img
-}
+        let product = {
+            id: card.dataset.id,
+            name: card.dataset.name,
+            price: card.dataset.price,
+            img: card.dataset.img
+        }
 
-        let exists = wishlist.find(item => item.id === product.id)
+        let exists = wishlist.findIndex(item => item.id === product.id)
 
-        if (exists) {
+        // IF EXISTS -> REMOVE
+        if (exists !== -1) {
 
-            showToast("Already in Wishlist ❤️")
+            wishlist.splice(exists, 1)
+
+            showToast("Removed from Wishlist ❌")
 
         } else {
 
+            // ADD
             wishlist.push(product)
-
-            localStorage.setItem("wishlist", JSON.stringify(wishlist))
-
-            loadWishlist()
 
             showToast("Added to Wishlist ❤️")
         }
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+
+        loadWishlist()
     }
 
 })
