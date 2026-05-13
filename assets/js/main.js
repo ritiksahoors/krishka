@@ -22,28 +22,31 @@ document.addEventListener("click", function (e) {
 
     if (e.target.classList.contains("fa-heart")) {
 
-        let product = {
-            name: e.target.dataset.name,
-            price: e.target.dataset.price,
-            img: e.target.dataset.img
-        }
+        let card = e.target.closest(".product-card")
 
-        let exists = wishlist.find(item => item.name === product.name)
-
-if (exists) {
-
-    showToast("Already in Wishlist ❤️")
-
-} else {
-
-    wishlist.push(product)
-
-    localStorage.setItem("wishlist", JSON.stringify(wishlist))
-
-    loadWishlist()
-
-    showToast("Added to Wishlist ❤️")
+let product = {
+    id: card.dataset.id,
+    name: card.dataset.name,
+    price: card.dataset.price,
+    img: card.dataset.img
 }
+
+        let exists = wishlist.find(item => item.id === product.id)
+
+        if (exists) {
+
+            showToast("Already in Wishlist ❤️")
+
+        } else {
+
+            wishlist.push(product)
+
+            localStorage.setItem("wishlist", JSON.stringify(wishlist))
+
+            loadWishlist()
+
+            showToast("Added to Wishlist ❤️")
+        }
     }
 
 })
@@ -56,29 +59,32 @@ document.addEventListener("click", function (e) {
 
     if (e.target.classList.contains("fa-shopping-cart")) {
 
-        let product = {
-            name: e.target.dataset.name,
-            price: parseInt(e.target.dataset.price),
-            img: e.target.dataset.img,
-            qty: 1
-        }
+        let card = e.target.closest(".product-card")
 
-        let exists = cart.find(item => item.name === product.name)
-
-if (exists) {
-
-    showToast("Already in Cart 🛒")
-
-} else {
-
-    cart.push(product)
-
-    localStorage.setItem("cart", JSON.stringify(cart))
-
-    loadCart()
-
-    showToast("Added to Cart 🛒")
+let product = {
+    id: card.dataset.id,
+    name: card.dataset.name,
+    price: parseInt(card.dataset.price),
+    img: card.dataset.img,
+    qty: 1
 }
+
+        let exists = cart.find(item => item.id === product.id)
+
+        if (exists) {
+
+            showToast("Already in Cart 🛒")
+
+        } else {
+
+            cart.push(product)
+
+            localStorage.setItem("cart", JSON.stringify(cart))
+
+            loadCart()
+
+            showToast("Added to Cart 🛒")
+        }
     }
 
 })

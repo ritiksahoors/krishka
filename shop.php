@@ -165,7 +165,7 @@
                         <!-- Product 1 -->
                         <div class="col-md-4 product" data-category="silk" data-price="2999">
 
-                            <div class="product-card" data-name="Silk Saree" data-price="2999" data-old-price="3999"
+                            <div class="product-card" data-id="1" data-name="Silk Saree" data-price="2999" data-old-price="3999"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <img
@@ -196,7 +196,7 @@
                         <!-- Product 2 -->
                         <div class="col-md-4 product" data-category="banarasi" data-price="3499">
 
-                            <div class="product-card" data-name="Banarasi Saree" data-price="3499"
+                            <div class="product-card" data-id="2" data-name="Banarasi Saree" data-price="3499"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
 
                                 <img
@@ -226,7 +226,7 @@
                         <!-- Product 3 -->
                         <div class="col-md-4 product" data-category="designer" data-price="2599">
 
-                            <div class="product-card" data-name="Designer Saree" data-price="2599"
+                            <div class="product-card" data-id="3" data-name="Designer Saree" data-price="2599"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
 
                                 <img
@@ -254,7 +254,7 @@
                         <!-- Product 1 -->
                         <div class="col-md-4 product" data-category="silk" data-price="2999">
 
-                            <div class="product-card" data-name="Silk Saree" data-price="2999"
+                            <div class="product-card" data-id="4" data-name="Silk Saree" data-price="2999"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <img
@@ -284,7 +284,7 @@
                         <!-- Product 2 -->
                         <div class="col-md-4 product" data-category="banarasi" data-price="3499">
 
-                            <div class="product-card" data-name="Banarasi Saree" data-price="3499"
+                            <div class="product-card" data-id="5" data-name="Banarasi Saree" data-price="3499"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
 
                                 <img
@@ -314,7 +314,7 @@
                         <!-- Product 3 -->
                         <div class="col-md-4 product" data-category="designer" data-price="2599">
 
-                            <div class="product-card" data-name="Designer Saree" data-price="2599"
+                            <div class="product-card" data-id="6" data-name="Designer Saree" data-price="2599"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
 
                                 <img
@@ -342,7 +342,7 @@
                         <!-- Product 1 -->
                         <div class="col-md-4 product" data-category="silk" data-price="2999">
 
-                            <div class="product-card" data-name="Silk Saree" data-price="2999"
+                            <div class="product-card" data-id="7" data-name="Silk Saree" data-price="2999"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
                                 <img
@@ -372,7 +372,7 @@
                         <!-- Product 2 -->
                         <div class="col-md-4 product" data-category="banarasi" data-price="3499">
 
-                            <div class="product-card" data-name="Banarasi Saree" data-price="3499"
+                            <div class="product-card" data-id="7" data-name="Banarasi Saree" data-price="3499"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (2).jpeg">
 
                                 <img
@@ -402,7 +402,7 @@
                         <!-- Product 3 -->
                         <div class="col-md-4 product" data-category="designer" data-price="2599">
 
-                            <div class="product-card" data-name="Designer Saree" data-price="2599"
+                            <div class="product-card" data-id="8" data-name="Designer Saree" data-price="2599"
                                 data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM.jpeg">
 
                                 <img
