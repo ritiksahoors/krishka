@@ -187,6 +187,8 @@ function loadWishlist() {
     })
 
     wishlistCount.innerText = wishlist.length
+
+    updateIcons()
 }
 
 // -------------------
@@ -258,6 +260,8 @@ function loadCart() {
     `
 
     cartCount.innerText = cart.length
+
+    updateIcons()
 }
 
 // Remove Wishlist Product
@@ -345,6 +349,49 @@ function showToast(msg) {
     setTimeout(() => {
         toast.remove()
     }, 3000)
+}
+
+// -------------------
+// Update Icon Colors
+// -------------------
+
+function updateIcons() {
+
+    document.querySelectorAll(".product-card").forEach(card => {
+
+        let id = card.dataset.id
+
+        let heart = card.querySelector(".fa-heart")
+        let cartIcon = card.querySelector(".fa-shopping-cart")
+
+        // Wishlist check
+        let inWishlist = wishlist.find(item => item.id === id)
+
+        if (inWishlist) {
+
+            heart.style.color = "red"
+
+        } else {
+
+            heart.style.color = ""
+
+        }
+
+        // Cart check
+        let inCart = cart.find(item => item.id === id)
+
+        if (inCart) {
+
+            cartIcon.style.color = "red"
+
+        } else {
+
+            cartIcon.style.color = ""
+
+        }
+
+    })
+
 }
 
 document.querySelectorAll(".hover-icons a").forEach(btn => {
