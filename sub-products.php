@@ -160,6 +160,7 @@ if (isset($_GET['subcategory_id'])) {
                         $sql10 = "SELECT * FROM product WHERE sub_category_id='$decoded_id' AND status='1'";
                         $result10 = $conn->query($sql10);
                         while ($row10 = $result10->fetch_assoc()) {
+                            $encoded_id = base64_encode($row10['id']);
                             ?>
                             <div class="col-md-4 product" data-category="silk" data-price="2999">
 
@@ -174,7 +175,7 @@ if (isset($_GET['subcategory_id'])) {
                                         <a href="#"><i class="fa fa-shopping-cart"></i></a>
                                     </div>
 
-                                    <h5>Silk Saree</h5>
+                                    <h5><?php echo $row10['pro_name']; ?></h5>
                                     <p class="price">
                                         <span class="old-price">₹<?php echo $row10['product_price']; ?></span>
                                         <span
@@ -182,7 +183,8 @@ if (isset($_GET['subcategory_id'])) {
                                     </p>
 
                                     <div class="product-btns">
-                                        <button onclick="goToDetails(this.parentElement.parentElement)">
+                                        <button
+                                            onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
                                             👁️ View Details
                                         </button>
                                     </div>

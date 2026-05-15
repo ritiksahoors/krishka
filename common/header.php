@@ -39,11 +39,15 @@
                                 $sql1 = "SELECT * FROM category WHERE status='1'";
                                 $result1 = $conn->query($sql1);
                                 while ($row1 = $result1->fetch_assoc()) {
+<<<<<<< Updated upstream
                                 ?>
+=======
+                                    $category_id = base64_encode($row1['id']);
+                                    ?>
+>>>>>>> Stashed changes
                                     <div class="mega-column">
-
                                         <h4 class="fw-bold">
-                                            <a href="shop.php">
+                                            <a href="shop.php?category_id=<?php echo $category_id; ?>">
                                                 <?php echo $row1['category_name']; ?>
                                             </a>
                                         </h4>
@@ -55,28 +59,35 @@
                                             $result = $conn->query($sql);
                                             while ($row = $result->fetch_assoc()) {
                                                 $sub_category_id = base64_encode($row['id']);
+<<<<<<< Updated upstream
 
                                             ?>
+=======
+                                                ?>
+>>>>>>> Stashed changes
                                                 <li class="sub-parent">
                                                     <a href="sub-products.php?subcategory_id=<?php echo $sub_category_id; ?>"
                                                         class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
                                                     </a>
                                                     <ul class="sub-sub-menu">
                                                         <?php
+                                                        $cat_id = $row1['id'];
                                                         $sub_cat_id = $row['id'];
-
                                                         $sql3 = "SELECT * FROM sub_subcategory 
                                                         WHERE status='1' 
                                                         AND category_id='$cat_id' 
                                                         AND sub_category_id='$sub_cat_id'";
-
                                                         $result3 = $conn->query($sql3);
-
                                                         while ($row3 = $result3->fetch_assoc()) {
+<<<<<<< Updated upstream
                                                         ?>
+=======
+                                                            $sub_sub_category_id = base64_encode($row3['id']);
+                                                            ?>
+>>>>>>> Stashed changes
                                                             <li>
                                                                 <a
-                                                                    href="sub-sub-products.php?sub_sub_cat_id=<?php echo $row3['id']; ?>">
+                                                                    href="sub-sub-products.php?sub_subcategory_id=<?php echo $sub_sub_category_id; ?>">
                                                                     <?php echo $row3['sub_subcategoryname']; ?>
                                                                 </a>
                                                             </li>
