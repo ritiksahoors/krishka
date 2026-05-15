@@ -166,7 +166,7 @@ if (isset($_GET['subcategory_id'])) {
                                 <div class="product-card" data-name="Silk Saree" data-price="2999" data-old-price="3999"
                                     data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
 
-                                    <img src="admin/upload/product/<?php echo $row1['product_image1']; ?>"
+                                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
                                         class="img-fluid">
 
                                     <div class="hover-icons">
@@ -176,8 +176,9 @@ if (isset($_GET['subcategory_id'])) {
 
                                     <h5>Silk Saree</h5>
                                     <p class="price">
-                                        <span class="old-price">₹3999</span>
-                                        <span class="new-prices">₹2999</span>
+                                        <span class="old-price">₹<?php echo $row10['product_price']; ?></span>
+                                        <span
+                                            class="new-prices">₹<?php echo round($row10['product_discount_price']); ?></span>
                                     </p>
 
                                     <div class="product-btns">
