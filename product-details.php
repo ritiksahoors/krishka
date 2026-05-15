@@ -585,7 +585,7 @@ document.getElementById("placeOrderBtn")
 
         });
 
-        // Modal close
+        // Close Checkout Modal
         let checkoutModal =
             bootstrap.Modal.getInstance(
                 document.getElementById('checkoutModal')
@@ -616,6 +616,36 @@ document.getElementById("placeOrderBtn")
             "image":
                 "admin/dist/img/titleimage1.jpeg",
 
+            // ENABLE / DISABLE METHODS
+            "method": {
+
+                "upi": true,
+                "card": true,
+                "netbanking": true,
+                "wallet": true,
+                "emi": false,
+                "paylater": false
+
+            },
+
+            // SHOW UPI ON TOP
+            "config": {
+
+                "display": {
+
+                    "sequence": [
+
+                        "block.upi",
+                        "block.card",
+                        "block.netbanking",
+                        "block.wallet"
+
+                    ]
+
+                }
+
+            },
+
             "handler": function (response) {
 
                 Swal.fire({
@@ -644,6 +674,16 @@ document.getElementById("placeOrderBtn")
             "theme": {
 
                 "color": "#c5a15f"
+
+            },
+
+            "modal": {
+
+                "ondismiss": function () {
+
+                    console.log("Payment popup closed");
+
+                }
 
             }
 
