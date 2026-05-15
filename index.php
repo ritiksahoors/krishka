@@ -24,7 +24,7 @@
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.3">
 
 </head>
 
@@ -194,25 +194,27 @@
                 $sql3 = "SELECT * FROM product WHERE status='1' AND special_off='1'";
                 $result3 = $conn->query($sql3);
                 while ($row3 = $result3->fetch_assoc()) {
+                    $encoded_id1 = base64_encode($row3['id']);
                     ?>
                     <div class="col-md-4" data-aos="zoom-in">
                         <div class="offer-card">
                             <span class="discount"><?php echo $row3['pro_discount']; ?>% OFF</span>
                             <div class="offer-img">
-    <img src="admin/upload/product/<?php echo $row3['product_image1']; ?>" alt="Saree">
+                                <img src="admin/upload/product/<?php echo $row3['product_image1']; ?>" alt="Saree">
 
-    <div class="hover-icons">
-        <a href="#"><i class="fa fa-heart"></i></a>
-        <a href="#"><i class="fa fa-shopping-cart"></i></a>
-    </div>
-</div>
+                                <div class="hover-icons">
+                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
                             <div class="offer-content">
                                 <h4><?php echo $row3['pro_name']; ?></h4>
                                 <p class="price">
                                     ₹<?php echo round($row3['product_discount_price']); ?>
                                     <span class="special-price">₹<?php echo $row3['product_price']; ?></span>
                                 </p>
-                                <button class="gold-btn w-100" onclick="window.location.href='shop.php'">
+                                <button class="gold-btn w-100"
+                                    onclick="product-details.php?id=<?php echo $encoded_id1; ?>'">
                                     View Details
                                 </button>
                             </div>

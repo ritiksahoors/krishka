@@ -29,7 +29,7 @@
 
                     <li class="nav-item mega-parent">
 
-                        <a class="nav-link" href="#">Categories</a>
+                        <a class="nav-link" href="javascript:void(0)">Categories</a>
 
                         <div class="mega-menu hide-scrollbar">
 
@@ -54,10 +54,11 @@
                                             $sql = "SELECT * FROM sub_category WHERE status='1' AND category_id='$cat_id'";
                                             $result = $conn->query($sql);
                                             while ($row = $result->fetch_assoc()) {
+                                                $sub_category_id = base64_encode($row['id']);
 
                                                 ?>
                                                 <li class="sub-parent">
-                                                    <a href="sub-products.php?sub_cat_id=<?php echo $row['id']; ?>"
+                                                    <a href="sub-products.php?subcategory_id=<?php echo $sub_category_id; ?>"
                                                         class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
                                                     </a>
                                                     <ul class="sub-sub-menu">
@@ -74,7 +75,8 @@
                                                         while ($row3 = $result3->fetch_assoc()) {
                                                             ?>
                                                             <li>
-                                                                <a href="sub-sub-products.php?sub_sub_cat_id=<?php echo $row3['id']; ?>">
+                                                                <a
+                                                                    href="sub-sub-products.php?sub_sub_cat_id=<?php echo $row3['id']; ?>">
                                                                     <?php echo $row3['sub_subcategoryname']; ?>
                                                                 </a>
                                                             </li>
