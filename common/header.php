@@ -39,12 +39,8 @@
                                 $sql1 = "SELECT * FROM category WHERE status='1'";
                                 $result1 = $conn->query($sql1);
                                 while ($row1 = $result1->fetch_assoc()) {
-<<<<<<< Updated upstream
-                                ?>
-=======
                                     $category_id = base64_encode($row1['id']);
-                                    ?>
->>>>>>> Stashed changes
+                                ?>
                                     <div class="mega-column">
                                         <h4 class="fw-bold">
                                             <a href="shop.php?category_id=<?php echo $category_id; ?>">
@@ -59,12 +55,7 @@
                                             $result = $conn->query($sql);
                                             while ($row = $result->fetch_assoc()) {
                                                 $sub_category_id = base64_encode($row['id']);
-<<<<<<< Updated upstream
-
                                             ?>
-=======
-                                                ?>
->>>>>>> Stashed changes
                                                 <li class="sub-parent">
                                                     <a href="sub-products.php?subcategory_id=<?php echo $sub_category_id; ?>"
                                                         class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
@@ -79,12 +70,8 @@
                                                         AND sub_category_id='$sub_cat_id'";
                                                         $result3 = $conn->query($sql3);
                                                         while ($row3 = $result3->fetch_assoc()) {
-<<<<<<< Updated upstream
-                                                        ?>
-=======
                                                             $sub_sub_category_id = base64_encode($row3['id']);
-                                                            ?>
->>>>>>> Stashed changes
+                                                        ?>
                                                             <li>
                                                                 <a
                                                                     href="sub-sub-products.php?sub_subcategory_id=<?php echo $sub_sub_category_id; ?>">
@@ -582,27 +569,71 @@
 
                             <h6>Shipping Address</h6>
 
-                            <input class="form-control mb-2" placeholder="Full Name">
-                            <input class="form-control mb-2" placeholder="Phone">
-                            <input class="form-control mb-2" placeholder="Address">
-                            <input class="form-control mb-2" placeholder="City">
-                            <input class="form-control mb-2" placeholder="Pincode">
+                            <input type="text"
+                                id="customer_name"
+                                class="form-control mb-2"
+                                placeholder="Full Name">
+
+                            <input type="text"
+                                id="customer_phone"
+                                class="form-control mb-2"
+                                placeholder="Phone">
+
+                            <input type="text"
+                                class="form-control mb-2"
+                                placeholder="Address">
+
+                            <input type="text"
+                                class="form-control mb-2"
+                                placeholder="City">
+
+                            <input type="text"
+                                class="form-control mb-2"
+                                placeholder="Pincode">
 
                         </div>
 
+                        <!-- Payment -->
                         <!-- Payment -->
                         <div class="col-md-6">
 
                             <h6>Payment Method</h6>
 
+                            <!-- COD -->
+                            <div class="payment-option border rounded p-3 mb-3">
+
+                                <label class="w-100">
+
+                                    <input type="radio"
+                                        name="payment_method"
+                                        value="cod"
+                                        checked>
+
+                                    Cash on Delivery
+
+                                </label>
+
+                            </div>
+
+                            <!-- Razorpay -->
                             <div class="payment-option border rounded p-3 text-center">
 
-                                <img src="https://razorpay.com/assets/razorpay-logo.svg"
-                                    width="140">
+                                <label class="w-100">
 
-                                <p class="mt-2 mb-0">
-                                    Secure Payment via Razorpay
-                                </p>
+                                    <input type="radio"
+                                        name="payment_method"
+                                        value="razorpay">
+
+                                    <br><br>
+
+                                    <img src="https://razorpay.com/assets/razorpay-logo.svg"
+                                        width="140">
+
+                                    <p class="mt-2 mb-0">
+                                        Secure Payment via Razorpay
+                                    </p>
+
+                                </label>
 
                             </div>
 
@@ -614,8 +645,12 @@
 
                             <h5>Total: ₹3999</h5>
 
-                            <button class="gold-btn w-100 mt-3" data-bs-toggle="modal" data-bs-target="#razorpayModal" data-bs-dismiss="modal">
+                            <button type="button"
+                                id="placeOrderBtn"
+                                class="gold-btn w-100 mt-3">
+
                                 Place Order
+
                             </button>
 
                         </div>

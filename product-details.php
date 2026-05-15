@@ -138,7 +138,7 @@ if (isset($_GET['id'])) {
                                 <i class="fa fa-share"></i> Share
                             </button> -->
 
-                            <a href="#" class="buy-now-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                            <a href="javascript:void(0)" class="buy-now-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
                                 Buy Now
                             </a>
 
@@ -486,7 +486,7 @@ if (isset($_GET['id'])) {
     </section>
 
     <!-- CHECKOUT MODAL -->
-
+<!-- 
 <div class="modal fade" id="razorpayModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content p-3">
@@ -531,7 +531,7 @@ if (isset($_GET['id'])) {
 
         </div>
     </div>
-</div>
+</div> -->
 
     <!-- ================= FOOTER ================= -->
     <?php include 'common/footer.php'; ?>
@@ -545,76 +545,115 @@ if (isset($_GET['id'])) {
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 
-document.getElementById("checkoutForm")
-.addEventListener("submit", function(e) {
+document.getElementById("placeOrderBtn")
+.addEventListener("click", function () {
 
-    e.preventDefault();
+    let paymentMethod =
+        document.querySelector('input[name="payment_method"]:checked').value;
 
     let name =
         document.getElementById("customer_name").value;
 
-    let email =
-        document.getElementById("customer_email").value;
-
     let phone =
         document.getElementById("customer_phone").value;
 
-    let options = {
+    // Validation
+    if(name == "" || phone == ""){
 
-        "key": "rzp_test_SpaUNwlmRXm5aP",
+        Swal.fire({
+            icon: "warning",
+            title: "Please fill all required fields"
+        });
 
-        "amount":
-            <?php echo $row['product_discount_price'] * 100; ?>,
+        return;
+    }
 
-        "currency": "INR",
+    // ================= COD =================
 
-        "name": "Krishika Collections",
+    if(paymentMethod === "cod"){
 
-        "description":
-            "<?php echo $row['pro_name']; ?>",
+        Swal.fire({
 
-        "image":
-            "admin/dist/img/titleimage1.jpeg",
+            icon: "success",
+            title: "Order Placed Successfully 🎉",
+            text: "Cash on Delivery Selected"
 
-        "handler": function (response) {
+        });
 
-            window.location.href =
-                "success.php?payment_id="
-                + response.razorpay_payment_id;
+        // Modal close
+        let checkoutModal =
+            bootstrap.Modal.getInstance(
+                document.getElementById('checkoutModal')
+            );
 
-        },
+        checkoutModal.hide();
 
-        "prefill": {
+    }
 
-            "name": name,
-            "email": email,
-            "contact": phone
+    // ================= RAZORPAY =================
 
-        },
+    else if(paymentMethod === "razorpay"){
 
-        "theme": {
+        let options = {
 
-            "color": "#c5a15f"
+            "key": "rzp_test_SpaUNwlmRXm5aP",
 
-        },
+            "amount":
+                <?php echo $row['product_discount_price'] * 100; ?>,
 
-        "modal": {
+            "currency": "INR",
 
-            "ondismiss": function() {
+            "name": "Krishika Collections",
 
-                console.log("Payment Popup Closed");
+            "description":
+                "<?php echo $row['pro_name']; ?>",
+
+            "image":
+                "admin/dist/img/titleimage1.jpeg",
+
+            "handler": function (response) {
+
+                Swal.fire({
+
+                    icon: "success",
+                    title: "Payment Successful 🎉",
+                    text: response.razorpay_payment_id
+
+                }).then(() => {
+
+                    window.location.href =
+                        "success.php?payment_id=" +
+                        response.razorpay_payment_id;
+
+                });
+
+            },
+
+            "prefill": {
+
+                "name": name,
+                "contact": phone
+
+            },
+
+            "theme": {
+
+                "color": "#c5a15f"
 
             }
 
-        }
+        };
 
-    };
+        let rzp1 = new Razorpay(options);
 
-    let rzp1 = new Razorpay(options);
+        rzp1.open();
 
-    rzp1.open();
+    }
 
 });
 
