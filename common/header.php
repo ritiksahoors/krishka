@@ -39,7 +39,7 @@
                                 $sql1 = "SELECT * FROM category WHERE status='1'";
                                 $result1 = $conn->query($sql1);
                                 while ($row1 = $result1->fetch_assoc()) {
-                                    ?>
+                                ?>
                                     <div class="mega-column">
 
                                         <h4 class="fw-bold">
@@ -56,7 +56,7 @@
                                             while ($row = $result->fetch_assoc()) {
                                                 $sub_category_id = base64_encode($row['id']);
 
-                                                ?>
+                                            ?>
                                                 <li class="sub-parent">
                                                     <a href="sub-products.php?subcategory_id=<?php echo $sub_category_id; ?>"
                                                         class="fw-bold text-warning"><?php echo $row['sub_category_name']; ?>
@@ -73,7 +73,7 @@
                                                         $result3 = $conn->query($sql3);
 
                                                         while ($row3 = $result3->fetch_assoc()) {
-                                                            ?>
+                                                        ?>
                                                             <li>
                                                                 <a
                                                                     href="sub-sub-products.php?sub_sub_cat_id=<?php echo $row3['id']; ?>">
@@ -584,16 +584,15 @@
 
                             <h6>Payment Method</h6>
 
-                            <div class="payment-option">
-                                <input type="radio" name="pay"> Cash on Delivery
-                            </div>
+                            <div class="payment-option border rounded p-3 text-center">
 
-                            <div class="payment-option">
-                                <input type="radio" name="pay"> UPI
-                            </div>
+                                <img src="https://razorpay.com/assets/razorpay-logo.svg"
+                                    width="140">
 
-                            <div class="payment-option">
-                                <input type="radio" name="pay"> Card
+                                <p class="mt-2 mb-0">
+                                    Secure Payment via Razorpay
+                                </p>
+
                             </div>
 
                             <hr>
@@ -604,7 +603,7 @@
 
                             <h5>Total: ₹3999</h5>
 
-                            <button class="gold-btn w-100 mt-3">
+                            <button class="gold-btn w-100 mt-3" data-bs-toggle="modal" data-bs-target="#razorpayModal" data-bs-dismiss="modal">
                                 Place Order
                             </button>
 

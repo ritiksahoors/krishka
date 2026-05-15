@@ -485,6 +485,54 @@ if (isset($_GET['id'])) {
 
     </section>
 
+    <!-- CHECKOUT MODAL -->
+
+<div class="modal fade" id="razorpayModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Checkout</h5>
+
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form id="checkoutForm">
+
+                    <input type="text"
+                        id="customer_name"
+                        class="form-control mb-3"
+                        placeholder="Enter Name"
+                        required>
+
+                    <input type="email"
+                        id="customer_email"
+                        class="form-control mb-3"
+                        placeholder="Enter Email"
+                        required>
+
+                    <input type="text"
+                        id="customer_phone"
+                        class="form-control mb-3"
+                        placeholder="Enter Phone"
+                        required>
+
+                    <button type="submit"
+                        class="btn btn-dark w-100">
+                        Pay Now
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
     <!-- ================= FOOTER ================= -->
     <?php include 'common/footer.php'; ?>
     <!-- Bootstrap -->
@@ -494,6 +542,83 @@ if (isset($_GET['id'])) {
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+document.getElementById("checkoutForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let name =
+        document.getElementById("customer_name").value;
+
+    let email =
+        document.getElementById("customer_email").value;
+
+    let phone =
+        document.getElementById("customer_phone").value;
+
+    let options = {
+
+        "key": "rzp_test_SpaUNwlmRXm5aP",
+
+        "amount":
+            <?php echo $row['product_discount_price'] * 100; ?>,
+
+        "currency": "INR",
+
+        "name": "Krishika Collections",
+
+        "description":
+            "<?php echo $row['pro_name']; ?>",
+
+        "image":
+            "admin/dist/img/titleimage1.jpeg",
+
+        "handler": function (response) {
+
+            window.location.href =
+                "success.php?payment_id="
+                + response.razorpay_payment_id;
+
+        },
+
+        "prefill": {
+
+            "name": name,
+            "email": email,
+            "contact": phone
+
+        },
+
+        "theme": {
+
+            "color": "#c5a15f"
+
+        },
+
+        "modal": {
+
+            "ondismiss": function() {
+
+                console.log("Payment Popup Closed");
+
+            }
+
+        }
+
+    };
+
+    let rzp1 = new Razorpay(options);
+
+    rzp1.open();
+
+});
+
+</script>
 
     <script>
         AOS.init();
