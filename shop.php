@@ -1,5 +1,6 @@
 <?php
 include 'admin/conn.php';
+$decoded_id = '';
 if (isset($_GET['category_id'])) {
     $decoded_id = intval(base64_decode($_GET['category_id']));
 }
@@ -31,30 +32,11 @@ if (isset($_GET['category_id'])) {
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
 
 </head>
 
 <body>
-
-    <!-- ================= TOP BAR ================= -->
-
-    <!-- <div class="top-bar">
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <div class="top-left">
-                📍 Ravi Talkies, Lewis Road, Bhubaneswar |
-                📞 8249403184
-            </div>
-
-            <div class="top-right">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-
-        </div>
-    </div> -->
 
     <!-- ================= NAVBAR ================= -->
 
@@ -93,9 +75,7 @@ if (isset($_GET['category_id'])) {
                 <div class="col-md-3">
 
                     <div class="filter-sidebar">
-
                         <h4>Filter Sarees</h4>
-
                         <div class="filter-box">
                             <h6>Category</h6>
                             <?php
@@ -103,24 +83,28 @@ if (isset($_GET['category_id'])) {
                             $sql = "SELECT * FROM category WHERE status='1'";
                             $result = $conn->query($sql);
                             while ($row = $result->fetch_assoc()) {
+                                $checked = ($decoded_id == $row['id']) ? 'checked' : '';
                                 ?>
-
-                                <label><input type="checkbox" class="filter-category" value="silk">
-                                    <?php echo $row['category_name']; ?>
-                                </label><br>
-                                <!-- <label><input type="checkbox" class="filter-category" value="banarasi"> Banarasi</label><br>
-                            <label><input type="checkbox" class="filter-category" value="designer"> Designer</label><br>
-                            <label><input type="checkbox" class="filter-category" value="wedding"> Wedding</label> -->
-                            <?php } ?>
+                                        <label>
+                                    <input type="checkbox"
+                                                class="filter-category"
+                                                value="<?php echo $row['id']; ?>"
+                                    <?php echo $checked; ?>>
+        
+                                            <?php echo $row['category_name']; ?>
+                                </label>
+                                        <br>
+        
+                                <?php } ?>
                         </div>
 
                         <div class="filter-box">
                             <h6>Max Price</h6>
                             <input type="range" id="priceRange" min="1000" max="6000" step="500" value="6000">
                             <p>Up to ₹ <span id="priceValue">6000</span></p>
-                        </div>
+                            </div>
 
-                        <div class="filter-box">
+                           <div class="filter-box">
                             <h6>Fabric</h6>
                             <?php
                             include 'admin/conn.php';
@@ -128,16 +112,15 @@ if (isset($_GET['category_id'])) {
                             $result1 = $conn->query($sql1);
                             while ($row1 = $result1->fetch_assoc()) {
                                 ?>
-
-                                <label><input type="checkbox" class="filter-fabric" value="cotton">
-                                    <?php echo $row1['name']; ?></label><br>
-                                <!-- <label><input type="checkbox" class="filter-fabric" value="silk"> Silk</label><br>
-                            <label><input type="checkbox" class="filter-fabric" value="georgette"> Georgette</label><br>
-                            <label><input type="checkbox" class="filter-fabric" value="chiffon"> Chiffon</label> -->
+                                <label>
+                                    <input type="checkbox" class="filter-fabric" value="<?php echo $row1['id']; ?>">
+                                    <?php echo $row1['name']; ?>
+                                </label>
+                                <br>
                             <?php } ?>
                         </div>
-
-                        <div class="filter-box">
+     
+                        <div cla    ss="filter-box">
                             <h6>Color</h6>
                             <?php
                             include 'admin/conn.php';
@@ -145,71 +128,91 @@ if (isset($_GET['category_id'])) {
                             $result2 = $conn->query($sql2);
                             while ($row2 = $result2->fetch_assoc()) {
                                 ?>
-
                                 <label><input type="checkbox" class="filter-color" value="red">
-                                    <?php echo $row2['name']; ?></label><br>
-                                <!-- <label><input type="checkbox" class="filter-color" value="blue"> Blue</label><br>
-                            <label><input type="checkbox" class="filter-color" value="green"> Green</label><br>
-                            <label><input type="checkbox" class="filter-color" value="gold"> Gold</label><br>
-                            <label><input type="checkbox" class="filter-color" value="black"> Black</label> -->
-                            <?php } ?>
+                                        <?php echo $row2['name']; ?></label><br>
+                                <?php } ?>
                         </div>
-
-                        <button class="clear-filter" onclick="clearFilters()">
-                            Clear Filters
-                        </button>
+  
+                          <button class="clear-filter" onclick="clearFilters()">
+                                Clear Filters
+                            </button>
 
                     </div>
 
                 </div>
 
                 <!-- PRODUCTS -->
-
                 <div class="col-md-9">
-
                     <div class="row" id="productContainer">
-                        <?php
-                        include 'admin/conn.php';
-                        $sql10 = "SELECT * FROM product WHERE category_id='$decoded_id' AND status='1'";
-                        $result10 = $conn->query($sql10);
-                        while ($row10 = $result10->fetch_assoc()) {
-                            $encoded_id = base64_encode($row10['id']);
-                            ?>
-                            <div class="col-md-4 product" data-category="silk" data-price="2999">
+                    <?php
+                    include 'admin/conn.php';
 
-                                <div class="product-card" data-id="1" data-name="Silk Saree" data-price="2999"
-                                    data-old-price="3999"
-                                    data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
+                    $sql10 = "SELECT * FROM product WHERE status='1'";
+                    $result10 = $conn->query($sql10);
 
-                                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
-                                        class="img-fluid">
+                    while ($row10 = $result10->fetch_assoc()) {
 
-                                    <div class="hover-icons">
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                    <h5>
-                                        <?php echo $row10['pro_name']; ?>
-                                    </h5>
-                                    <p class="price">
-                                        <span class="old-price">₹<?php echo $row10['product_price']; ?></span>
-                                        <span
-                                            class="new-prices">₹<?php echo round($row10['product_discount_price']); ?></span>
-                                    </p>
-                                    <div class="product-btns">
-                                        <button
-                                            onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
-                                            👁️ View Details
-                                        </button>
-                                    </div>
+                        $encoded_id = base64_encode($row10['id']);
+                    ?>
+
+                        <div class="col-md-4 product"
+
+                            data-category="<?php echo $row10['category_id']; ?>"
+                            data-fabric="<?php echo $row10['fabric']; ?>">
+
+                            <div class="product-card">
+
+                                <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
+                                    class="img-fluid">
+
+                                <div class="hover-icons">
+
+                                    <a href="#">
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+
                                 </div>
-                            </div>
-                        <?php } ?>
-                    </div>
 
-                    <div id="loader" class="text-center my-4" style="display:none;">
-                        <div class="spinner-border text-danger"></div>
-                        <p>Loading more sarees...</p>
+                                <h5>
+                                    <?php echo $row10['pro_name']; ?>
+                                </h5>
+
+                                <p class="price">
+
+                                    <span class="old-price">
+                                        ₹<?php echo $row10['product_price']; ?>
+                                    </span>
+
+                                    <span class="new-prices">
+                                        ₹<?php echo round($row10['product_discount_price']); ?>
+                                    </span>
+
+                                </p>
+
+                                <div class="product-btns">
+
+                                    <button onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+
+                                        👁️ View Details
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    <?php } ?>
+
+                    </div>         
+                      <div id="loader" class="text-center my-4" style="display:none;">
+                            <div class="spinner-border text-danger"></div>
+                            <p>Loading more sarees...</p>
                     </div>
 
                     <div id="noProducts" class="no-products text-center">
@@ -234,6 +237,102 @@ if (isset($_GET['category_id'])) {
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    function filterProducts(){
+
+        var selectedCategory = [];
+        var selectedFabric = [];
+
+        // CATEGORY
+        $('.filter-category:checked').each(function(){
+
+            selectedCategory.push($(this).val());
+
+        });
+
+        // FABRIC
+        $('.filter-fabric:checked').each(function(){
+
+            selectedFabric.push($(this).val());
+
+        });
+
+        var visibleProducts = 0;
+
+        $('.product').each(function(){
+
+            var productCategory =
+                $(this).attr('data-category');
+
+            var productFabric =
+                $(this).attr('data-fabric');
+
+            // CATEGORY MATCH
+            var categoryMatch =
+                selectedCategory.length == 0 ||
+                selectedCategory.includes(productCategory);
+
+            // FABRIC MATCH
+            var fabricMatch =
+                selectedFabric.length == 0 ||
+                selectedFabric.includes(productFabric);
+
+            // FINAL MATCH
+            if(categoryMatch && fabricMatch){
+
+                $(this).show();
+
+                visibleProducts++;
+
+            } else {
+
+                $(this).hide();
+
+            }
+
+        });
+
+        // NO PRODUCT
+        if(visibleProducts == 0){
+
+            $('#no-product').show();
+
+        } else {
+
+            $('#no-product').hide();
+
+        }
+
+    }
+
+    // CATEGORY FILTER
+    $('.filter-category').on('change', function(){
+
+        filterProducts();
+
+    });
+
+    // FABRIC FILTER
+    $('.filter-fabric').on('change', function(){
+
+        filterProducts();
+
+    });
+
+    // PAGE LOAD
+    filterProducts();
+
+});
+
+</script>
 
     <script>
         AOS.init();

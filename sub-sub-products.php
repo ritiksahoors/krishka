@@ -1,9 +1,19 @@
 <?php
 include 'admin/conn.php';
+$decoded_id = '';
 if (isset($_GET['sub_subcategory_id'])) {
     $decoded_id = intval(base64_decode($_GET['sub_subcategory_id']));
 }
 ?>
+
+<?php
+include 'admin/conn.php';
+$sql55 = "SELECT * FROM sub_subcategory WHERE id='$decoded_id'";
+$result55 = $conn->query($sql55);
+$row55 = $result55->fetch_assoc();
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,26 +46,6 @@ if (isset($_GET['sub_subcategory_id'])) {
 </head>
 
 <body>
-
-    <!-- ================= TOP BAR ================= -->
-
-    <!-- <div class="top-bar">
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <div class="top-left">
-                📍 Ravi Talkies, Lewis Road, Bhubaneswar |
-                📞 8249403184
-            </div>
-
-            <div class="top-right">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-
-        </div>
-    </div> -->
-
     <!-- ================= NAVBAR ================= -->
 
     <?php include 'common/header.php'; ?>
@@ -97,20 +87,21 @@ if (isset($_GET['sub_subcategory_id'])) {
                         <h4>Filter Sarees</h4>
 
                         <div class="filter-box">
-                            <h6>Category</h6>
+                            <h6>Sub Subcategory</h6>
                             <?php
                             include 'admin/conn.php';
-                            $sql = "SELECT * FROM category WHERE status='1'";
-                            $result = $conn->query($sql);
-                            while ($row = $result->fetch_assoc()) {
+                            $sql33 = "SELECT * FROM sub_subcategory 
+                            WHERE category_id='" . $row55['category_id'] . "' 
+                            AND sub_category_id='" . $row55['sub_category_id'] . "' 
+                            AND status='1'";
+                            $result33 = $conn->query($sql33);
+                            while ($row33 = $result33->fetch_assoc()) {
+                                $checked = ($decoded_id == $row33['id']) ? 'checked' : '';
                                 ?>
-
-                                <label><input type="checkbox" class="filter-category" value="silk">
-                                    <?php echo $row['category_name']; ?>
+                                <label><input type="checkbox" class="filter-subsubcategory" value="<?php echo $row33['id']; ?>"
+                                        <?php echo $checked; ?>>
+                                    <?php echo $row33['sub_subcategoryname']; ?>
                                 </label><br>
-                                <!-- <label><input type="checkbox" class="filter-category" value="banarasi"> Banarasi</label><br>
-                            <label><input type="checkbox" class="filter-category" value="designer"> Designer</label><br>
-                            <label><input type="checkbox" class="filter-category" value="wedding"> Wedding</label> -->
                             <?php } ?>
                         </div>
 
@@ -120,20 +111,21 @@ if (isset($_GET['sub_subcategory_id'])) {
                             <p>Up to ₹ <span id="priceValue">6000</span></p>
                         </div>
 
-                        <div class="filter-box">
+                       <div class="filter-box">
                             <h6>Fabric</h6>
                             <?php
                             include 'admin/conn.php';
                             $sql1 = "SELECT * FROM fabric WHERE status='1'";
                             $result1 = $conn->query($sql1);
                             while ($row1 = $result1->fetch_assoc()) {
-                                ?>
-
-                                <label><input type="checkbox" class="filter-fabric" value="cotton">
-                                    <?php echo $row1['name']; ?></label><br>
-                                <!-- <label><input type="checkbox" class="filter-fabric" value="silk"> Silk</label><br>
-                            <label><input type="checkbox" class="filter-fabric" value="georgette"> Georgette</label><br>
-                            <label><input type="checkbox" class="filter-fabric" value="chiffon"> Chiffon</label> -->
+                            ?>
+                                <label>
+                                    <input type="checkbox"
+                                        class="filter-fabric"
+                                        value="<?php echo $row1['id']; ?>">
+                                    <?php echo $row1['name']; ?>
+                                </label>
+                                <br>
                             <?php } ?>
                         </div>
 
@@ -148,10 +140,6 @@ if (isset($_GET['sub_subcategory_id'])) {
 
                                 <label><input type="checkbox" class="filter-color" value="red">
                                     <?php echo $row2['name']; ?></label><br>
-                                <!-- <label><input type="checkbox" class="filter-color" value="blue"> Blue</label><br>
-                            <label><input type="checkbox" class="filter-color" value="green"> Green</label><br>
-                            <label><input type="checkbox" class="filter-color" value="gold"> Gold</label><br>
-                            <label><input type="checkbox" class="filter-color" value="black"> Black</label> -->
                             <?php } ?>
                         </div>
 
@@ -166,49 +154,106 @@ if (isset($_GET['sub_subcategory_id'])) {
                 <!-- PRODUCTS -->
 
                 <div class="col-md-9">
-
                     <div class="row" id="productContainer">
-                        <?php
-                        include 'admin/conn.php';
-                        $sql10 = "SELECT * FROM product WHERE sub_subcategory_id='$decoded_id' AND status='1'";
-                        $result10 = $conn->query($sql10);
-                        while ($row10 = $result10->fetch_assoc()) {
-                            $encoded_id = base64_encode($row10['id']);
-                            ?>
-                            <!-- Product 1 -->
-                            <div class="col-md-4 product" data-category="silk" data-price="2999">
 
-                                <div class="product-card" data-name="Silk Saree" data-price="2999" data-old-price="3999"
-                                    data-img="assets/img/ikkath_masereced_cotton_sarees_matching_blouse/WhatsApp Image 2026-04-04 at 4.46.32 PM (1).jpeg">
+                    <?php
+                    $sql10 = "SELECT * FROM product WHERE status='1'";
+                    $result10 = $conn->query($sql10);
 
-                                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
-                                        class="img-fluid">
+                    while ($row10 = $result10->fetch_assoc()) {
 
-                                    <div class="hover-icons">
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
+                        $encoded_id = base64_encode($row10['id']);
+                    ?>
 
-                                    <h5><?php echo $row10['pro_name']; ?></h5>
-                                    <p class="price">
-                                        <span class="old-price">₹<?php echo $row10['product_price']; ?></span>
-                                        <span
-                                            class="new-prices">₹<?php echo round($row10['product_discount_price']); ?></span>
-                                    </p>
+                        <div class="col-md-4 mb-4 product"
 
-                                    <div class="product-btns">
-                                        <button
+                            data-category="<?php echo $row10['category_id']; ?>"
+                            data-subcategory="<?php echo $row10['sub_category_id']; ?>"
+                            data-subsubcategory="<?php echo $row10['sub_subcategory_id']; ?>"
+                            data-fabric="<?php echo $row10['fabric']; ?>">
+
+                            <div class="product-card border p-3">
+
+                                <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
+                                    class="img-fluid">
+
+                                <div class="hover-icons mt-2">
+
+                                    <a href="#">
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+
+                                </div>
+
+                                <h5 class="mt-2">
+
+                                    <?php echo $row10['pro_name']; ?>
+
+                                </h5>
+
+                                <p class="price">
+
+                                    <span class="old-price text-decoration-line-through">
+
+                                        ₹<?php echo $row10['product_price']; ?>
+
+                                    </span>
+
+                                    <br>
+
+                                    <span class="new-prices">
+
+                                        ₹<?php echo round($row10['product_discount_price']); ?>
+
+                                    </span>
+
+                                </p>
+
+                                <div class="product-btns">
+
+                                    <button class="btn btn-dark w-100"
                                             onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
-                                            👁️ View Details
-                                        </button>
-                                    </div>
+
+                                        👁️ View Details
+
+                                    </button>
 
                                 </div>
 
                             </div>
-                        <?php } ?>
+
+                        </div>
+
+                    <?php } ?>
 
                     </div>
+
+                    <div id="no-product"
+                        style="display:none;"
+                        class="text-center mt-4">
+
+                        <h4>No Product Available</h4>
+
+                    </div>
+           
+                    <!-- NO PRODUCT -->
+                            <div id="no-product"
+                                style="display:none;"
+                                class="text-center mt-5">
+
+                                <h4>No Product Available</h4>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
                     <div id="loader" class="text-center my-4" style="display:none;">
                         <div class="spinner-border text-danger"></div>
@@ -237,6 +282,126 @@ if (isset($_GET['sub_subcategory_id'])) {
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+
+$(document).ready(function () {
+
+    function filterProducts() {
+
+        var category = [];
+        var subcategory = [];
+        var subsubcategory = [];
+        var fabric = [];
+
+        // CATEGORY
+        $('.filter-category:checked').each(function () {
+
+            category.push($(this).val().toString());
+
+        });
+
+        // SUBCATEGORY
+        $('.filter-subcategory:checked').each(function () {
+
+            subcategory.push($(this).val().toString());
+
+        });
+
+        // SUB SUBCATEGORY
+        $('.filter-subsubcategory:checked').each(function () {
+
+            subsubcategory.push($(this).val().toString());
+
+        });
+
+        // FABRIC
+        $('.filter-fabric:checked').each(function () {
+
+            fabric.push($(this).val().toString());
+
+        });
+
+        var visibleProducts = 0;
+
+        $('.product').each(function () {
+
+            var productCategory =
+                $(this).attr('data-category');
+
+            var productSubcategory =
+                $(this).attr('data-subcategory');
+
+            var productSubsubcategory =
+                $(this).attr('data-subsubcategory');
+
+            var productFabric =
+                $(this).attr('data-fabric');
+
+            // MATCHES
+
+            var categoryMatch =
+                category.length === 0 ||
+                category.includes(productCategory);
+
+            var subcategoryMatch =
+                subcategory.length === 0 ||
+                subcategory.includes(productSubcategory);
+
+            var subsubcategoryMatch =
+                subsubcategory.length === 0 ||
+                subsubcategory.includes(productSubsubcategory);
+
+            var fabricMatch =
+                fabric.length === 0 ||
+                fabric.includes(productFabric);
+
+            // FINAL MATCH
+
+            if (categoryMatch &&
+                subcategoryMatch &&
+                subsubcategoryMatch &&
+                fabricMatch) {
+
+                $(this).show();
+
+                visibleProducts++;
+
+            } else {
+
+                $(this).hide();
+
+            }
+
+        });
+
+        // NO PRODUCT
+
+        if (visibleProducts === 0) {
+
+            $('#no-product').show();
+
+        } else {
+
+            $('#no-product').hide();
+
+        }
+
+    }
+
+    $('.filter-category, .filter-subcategory, .filter-subsubcategory, .filter-fabric')
+    .on('change', function () {
+
+        filterProducts();
+
+    });
+
+    // PAGE LOAD
+    filterProducts();
+
+});
+
+</script>
 
     <script>
         AOS.init();
