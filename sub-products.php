@@ -184,6 +184,18 @@ while ($row10 = $result10->fetch_assoc()) {
             <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
                  class="img-fluid">
 
+                 <div class="hover-icons">
+                            
+                                    <a href="#">
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+                            
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+                            
+                                </div>
+
             <h5 class="mt-2">
 
                 <?php echo $row10['pro_name']; ?>

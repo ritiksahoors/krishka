@@ -59,7 +59,7 @@ if (isset($_GET['category_id'])) {
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
 
 </head>
 
