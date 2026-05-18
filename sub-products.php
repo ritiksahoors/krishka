@@ -39,7 +39,7 @@ $row55 = $result55->fetch_assoc();
         rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
 
 </head>
 
@@ -93,7 +93,7 @@ $row55 = $result55->fetch_assoc();
                             $result33 = $conn->query($sql33);
                             while ($row33 = $result33->fetch_assoc()) {
                                 $checked = ($decoded_id == $row33['id']) ? 'checked' : '';
-                                ?>
+                            ?>
 
                                 <label><input type="checkbox" class="filter-category filter-subcategory" value="<?php echo $row33['id']; ?>"
                                         <?php echo $checked; ?>>
@@ -143,7 +143,7 @@ $row55 = $result55->fetch_assoc();
                             $sql2 = "SELECT * FROM color WHERE status='1'";
                             $result2 = $conn->query($sql2);
                             while ($row2 = $result2->fetch_assoc()) {
-                                ?>
+                            ?>
                                 <label><input type="checkbox" class="filter-color" value="<?php echo $row2['id']; ?>">
                                     <?php echo $row2['name']; ?></label><br>
                             <?php } ?>
@@ -160,90 +160,90 @@ $row55 = $result55->fetch_assoc();
                 <!-- PRODUCTS -->
 
                 <div class="col-md-9">
-                   <div class="row" id="productContainer">
+                    <div class="row" id="productContainer">
 
-<?php
-include 'admin/conn.php';
+                        <?php
+                        include 'admin/conn.php';
 
-$sql10 = "SELECT * FROM product WHERE status='1'";
-$result10 = $conn->query($sql10);
+                        $sql10 = "SELECT * FROM product WHERE status='1'";
+                        $result10 = $conn->query($sql10);
 
-while ($row10 = $result10->fetch_assoc()) {
+                        while ($row10 = $result10->fetch_assoc()) {
 
-    $encoded_id = base64_encode($row10['id']);
-?>
+                            $encoded_id = base64_encode($row10['id']);
+                        ?>
 
-    <div class="col-md-4 mb-4 product"
+                            <div class="col-md-4 mb-4 product"
 
-         data-subcategory="<?php echo $row10['sub_category_id']; ?>"
-         data-fabric="<?php echo $row10['fabric']; ?>"
-         data-color="<?php echo $row10['color']; ?>">
+                                data-subcategory="<?php echo $row10['sub_category_id']; ?>"
+                                data-fabric="<?php echo $row10['fabric']; ?>"
+                                data-color="<?php echo $row10['color']; ?>">
 
-        <div class="product-card border p-3">
+                                <div class="product-card border p-3">
 
-            <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
-                 class="img-fluid">
+                                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
+                                        class="img-fluid">
 
-                 <div class="hover-icons">
-                            
-                                    <a href="#">
-                                        <i class="fa fa-heart"></i>
-                                    </a>
-                            
-                                    <a href="#">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </a>
-                            
+                                    <div class="hover-icons">
+
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <h5 class="mt-2 text-center">
+
+                                        <?php echo $row10['pro_name']; ?>
+
+                                    </h5>
+
+                                    <p class="price text-center">
+
+                                        <span class="old-price">
+
+                                            ₹<?php echo $row10['product_price']; ?>
+
+                                        </span>
+
+                                        <br>
+
+                                        <span class="new-prices">
+
+                                            ₹<?php echo round($row10['product_discount_price']); ?>
+
+                                        </span>
+
+                                    </p>
+
+                                    <button class="btn btn-dark w-100 mt-2"
+                                        onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+
+                                        👁️ View Details
+
+                                    </button>
+
                                 </div>
 
-            <h5 class="mt-2">
+                            </div>
 
-                <?php echo $row10['pro_name']; ?>
+                        <?php } ?>
 
-            </h5>
+                    </div>
 
-            <p class="price">
+                    <!-- NO PRODUCT -->
+                    <div id="no-product"
+                        style="display:none;"
+                        class="text-center mt-4">
 
-                <span class="old-price">
+                        <h4>No Product Available 😔</h4>
 
-                    ₹<?php echo $row10['product_price']; ?>
+                    </div>
 
-                </span>
-
-                <br>
-
-                <span class="new-prices">
-
-                    ₹<?php echo round($row10['product_discount_price']); ?>
-
-                </span>
-
-            </p>
-
-            <button class="btn btn-dark w-100 mt-2"
-                    onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
-
-                👁️ View Details
-
-            </button>
-
-        </div>
-
-    </div>
-
-<?php } ?>
-
-</div>
-
-<!-- NO PRODUCT -->
-                        <div id="no-product"
-                            style="display:none;"
-                            class="text-center mt-4">
-
-                            <h4>No Product Available 😔</h4>
-
-                        </div>
-                        
 
                     <div id="loader" class="text-center my-4" style="display:none;">
                         <div class="spinner-border text-danger"></div>
@@ -264,96 +264,92 @@ while ($row10 = $result10->fetch_assoc()) {
     <script src="assets/js/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function(){
-    function filterProducts(){
-        var selectedSubcategory = [];
-        var selectedFabric = [];
-        var selectedColor = [];
-        // SUBCATEGORY
-        $('.filter-subcategory:checked').each(function(){
-            selectedSubcategory.push($(this).val());
-        });
+    <script>
+        $(document).ready(function() {
+            function filterProducts() {
+                var selectedSubcategory = [];
+                var selectedFabric = [];
+                var selectedColor = [];
+                // SUBCATEGORY
+                $('.filter-subcategory:checked').each(function() {
+                    selectedSubcategory.push($(this).val());
+                });
 
-        // FABRIC
-        $('.filter-fabric:checked').each(function(){
-            selectedFabric.push($(this).val());
-        });
+                // FABRIC
+                $('.filter-fabric:checked').each(function() {
+                    selectedFabric.push($(this).val());
+                });
 
-        // COLOR
-        $('.filter-color:checked').each(function(){
-            selectedColor.push($(this).val());
-        });
-        var visibleProducts = 0;
-        $('.product').each(function(){
-            var productSubcategory =
-                $(this).attr('data-subcategory');
-            var productFabric =
-                $(this).attr('data-fabric');
-            var productColor =
-                $(this).attr('data-color');
+                // COLOR
+                $('.filter-color:checked').each(function() {
+                    selectedColor.push($(this).val());
+                });
+                var visibleProducts = 0;
+                $('.product').each(function() {
+                    var productSubcategory =
+                        $(this).attr('data-subcategory');
+                    var productFabric =
+                        $(this).attr('data-fabric');
+                    var productColor =
+                        $(this).attr('data-color');
 
-            // MULTIPLE COLOR SUPPORT
-            var productColors = [];
-            if(productColor != ''){
-                productColors = productColor.split(',');
-            }
+                    // MULTIPLE COLOR SUPPORT
+                    var productColors = [];
+                    if (productColor != '') {
+                        productColors = productColor.split(',');
+                    }
 
-            // SUBCATEGORY MATCH
-            var subcategoryMatch =
-                selectedSubcategory.length == 0 ||
-                selectedSubcategory.includes(productSubcategory);
+                    // SUBCATEGORY MATCH
+                    var subcategoryMatch =
+                        selectedSubcategory.length == 0 ||
+                        selectedSubcategory.includes(productSubcategory);
 
-            // FABRIC MATCH
-            var fabricMatch =
-                selectedFabric.length == 0 ||
-                selectedFabric.includes(productFabric);
+                    // FABRIC MATCH
+                    var fabricMatch =
+                        selectedFabric.length == 0 ||
+                        selectedFabric.includes(productFabric);
 
-            // COLOR MATCH
-            var colorMatch = false;
-            if(selectedColor.length == 0){
-                colorMatch = true;
-            }
-            else{
-                $.each(productColors, function(index, color){
-                    color = color.trim();
-                    if(selectedColor.includes(color)){
+                    // COLOR MATCH
+                    var colorMatch = false;
+                    if (selectedColor.length == 0) {
                         colorMatch = true;
+                    } else {
+                        $.each(productColors, function(index, color) {
+                            color = color.trim();
+                            if (selectedColor.includes(color)) {
+                                colorMatch = true;
+                            }
+                        });
+                    }
+
+                    // FINAL MATCH
+                    if (subcategoryMatch && fabricMatch && colorMatch) {
+                        $(this).show();
+                        visibleProducts++;
+                    } else {
+                        $(this).hide();
                     }
                 });
+
+                // NO PRODUCT
+                if (visibleProducts == 0) {
+                    $('#no-product').show();
+                } else {
+                    $('#no-product').hide();
+                }
             }
 
-            // FINAL MATCH
-            if(subcategoryMatch && fabricMatch && colorMatch){
-                $(this).show();
-                visibleProducts++;
-            }
-            else{
-                $(this).hide();
-            }
+            // FILTER CHANGE
+            $('.filter-subcategory, .filter-fabric, .filter-color')
+                .on('change', function() {
+                    filterProducts();
+
+                });
+
+            // PAGE LOAD
+            filterProducts();
         });
-
-        // NO PRODUCT
-        if(visibleProducts == 0){
-            $('#no-product').show();
-        }
-        else{
-            $('#no-product').hide();
-        }
-    }
-
-    // FILTER CHANGE
-    $('.filter-subcategory, .filter-fabric, .filter-color')
-    .on('change', function(){
-        filterProducts();
-
-    });
-
-    // PAGE LOAD
-    filterProducts();
-});
-
-</script>
+    </script>
     <script>
         AOS.init();
     </script>

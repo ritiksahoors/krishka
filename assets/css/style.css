@@ -986,56 +986,61 @@ footer {
     padding: 10px;
     width: 100%;
 }
+/* ================= PRODUCT CARD ================= */
+/* ================= PRODUCT CARD ================= */
 
-/* Product */
 .product-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     position: relative;
-    cursor: pointer;
-    transition: 0.3s;
+    height: 100%;
+    padding: 0 !important;
+    border: none !important;
+    text-align: left;
 }
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= IMAGE ================= */
 
 .product-img {
     position: relative;
     overflow: hidden;
-
-    /* FIXED IMAGE AREA */
     width: 100%;
-    height: 150px !important;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 280px;
+    background: #fff;
 }
+
+/* IMAGE FULL CARD */
 
 .product-img img {
     width: 100%;
     height: 100%;
-
-    /* image card ke andar fit rahega */
-    object-fit: contain;
-
-    border-radius: 8px;
+    object-fit: cover;
     transition: 0.5s;
+    display: block;
 }
 
 .product-card img {
-    height: 220px !important;
+        height: 180px !important;
+    width: 100% !important;
 }
 
-/* image zoom same as featured */
-.product-card:hover img {
-    /* transform: scale(1.1); */
+/* HOVER ZOOM */
+
+.product-card:hover .product-img img {
+    transform: scale(1.1);
 }
 
-/* HOVER ICONS SAME */
+/* ================= HOVER ICONS ================= */
+
 .hover-icons {
-    padding: 10px;
     position: absolute;
     top: 15px;
     right: -50px;
@@ -1043,42 +1048,106 @@ footer {
     flex-direction: column;
     gap: 10px;
     transition: 0.4s;
+    z-index: 99;
 }
 
 .hover-icons a {
+    width: 38px;
+    height: 38px;
     background: #D4AF37;
-    color: black;
-    padding: 8px;
+    color: #000;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hover-icons a:hover {
+    background: #800000;
+    color: #fff;
 }
 
 /* EXACT SAME TRIGGER */
+
 .product-card:hover .hover-icons {
     right: 15px;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
+/* ================= CONTENT ================= */
+
+.product-content {
+    padding: 18px;
+    text-align: center;
 }
 
+.product-content h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    min-height: 50px;
+}
+
+/* ================= PRICE ================= */
+
 .price {
-    margin: 5px 0;
+    margin-bottom: 15px;
 }
 
 .old-price {
     text-decoration: line-through;
-    color: #888;
-    margin-right: 8px;
+    color: gray;
     font-size: 14px;
+    margin-right: 8px;
 }
 
-.new-price {
-    color: #d4af37;
-    font-size: 18px;
-    font-weight: 600;
-    color: #000;
-    font-weight: 600;
+.new-price,
+.new-prices {
+    color: #800000;
+    font-size: 20px;
+    font-weight: 700;
+}
 
+/* ================= BUTTON ================= */
+
+.product-card .btn {
+    background: #800000;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.product-card .btn:hover {
+    background: #D4AF37;
+    color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 768px) {
+
+    .product-img {
+        height: 230px;
+    }
+
+    .product-content {
+        padding: 15px;
+    }
+
+    .product-content h5 {
+        font-size: 16px;
+        min-height: auto;
+    }
+
+    .new-price,
+    .new-prices {
+        font-size: 18px;
+    }
 }
 /* Wishlist */
 
@@ -2010,7 +2079,7 @@ footer {
     color: #777;
 }
 /* Card */
-.product-card {
+/* .product-card {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -2028,8 +2097,6 @@ footer {
     width: 100%;
     height: 150px !important;
     overflow: hidden;
-
-    /* image center */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2038,12 +2105,10 @@ footer {
 .product-img img {
     width: 100%;
     height: 100%;
-
-    /* image automatically fit hoga */
     object-fit: contain;
 
     transition: 0.3s;
-}
+} */
 
 .product-img .badge {
     position: absolute;
