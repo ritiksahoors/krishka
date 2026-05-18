@@ -14,9 +14,6 @@ const cartBody = document.querySelector("#cartModal .modal-body")
 loadWishlist()
 loadCart()
 
-// -------------------
-// Add to Wishlist
-// -------------------
 
 // -------------------
 // Add to Wishlist
@@ -69,13 +66,13 @@ document.addEventListener("click", function (e) {
 
         let card = e.target.closest(".product-card")
 
-let product = {
-    id: card.dataset.id,
-    name: card.dataset.name,
-    price: parseInt(card.dataset.price),
-    img: card.dataset.img,
-    qty: 1
-}
+        let product = {
+            id: card.dataset.id,
+            name: card.dataset.name,
+            price: parseInt(card.dataset.price),
+            img: card.dataset.img,
+            qty: 1
+        }
 
         let exists = cart.find(item => item.id === product.id)
 

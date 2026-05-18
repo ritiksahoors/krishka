@@ -1,5 +1,31 @@
 <?php
 include 'admin/conn.php';
+
+
+// Get Minimum & Maximum Price
+$price_query = mysqli_query($conn, "
+    SELECT 
+    MIN(product_discount_price) AS min_price,
+    MAX(product_discount_price) AS max_price
+    FROM product
+    WHERE status='1'
+");
+
+$price_row = mysqli_fetch_assoc($price_query);
+
+$min_price = (int) $price_row['min_price'];
+$max_price = (int) $price_row['max_price'];
+
+
+// Selected Price
+$selected_price = isset($_GET['price'])
+    ? (int) $_GET['price']
+    : $max_price;
+
+?>
+
+<?php
+include 'admin/conn.php';
 $decoded_id = '';
 if (isset($_GET['category_id'])) {
     $decoded_id = intval(base64_decode($_GET['category_id']));
@@ -10,6 +36,7 @@ if (isset($_GET['category_id'])) {
 <html lang="en">
 
 <head>
+    
 
     <!-- Meta -->
     <meta charset="UTF-8">
@@ -103,7 +130,6 @@ if (isset($_GET['category_id'])) {
                             <input type="range" id="priceRange" min="1000" max="6000" step="500" value="6000">
                             <p>Up to ₹ <span id="priceValue">6000</span></p>
                             </div>
-
                            <div class="filter-box">
                             <h6>Fabric</h6>
                             <?php
@@ -120,7 +146,7 @@ if (isset($_GET['category_id'])) {
                             <?php } ?>
                         </div>
      
-                        <div cla    ss="filter-box">
+                        <div class="filter-box">
                             <h6>Color</h6>
                             <?php
                             include 'admin/conn.php';
@@ -128,7 +154,7 @@ if (isset($_GET['category_id'])) {
                             $result2 = $conn->query($sql2);
                             while ($row2 = $result2->fetch_assoc()) {
                                 ?>
-                                <label><input type="checkbox" class="filter-color" value="red">
+                                <label><input type="checkbox" class="filter-color" value="<?php echo $row2['id']; ?>">
                                         <?php echo $row2['name']; ?></label><br>
                                 <?php } ?>
                         </div>
@@ -158,68 +184,67 @@ if (isset($_GET['category_id'])) {
                         <div class="col-md-4 product"
 
                             data-category="<?php echo $row10['category_id']; ?>"
-                            data-fabric="<?php echo $row10['fabric']; ?>">
+                            data-fabric="<?php echo $row10['fabric']; ?>"
+                            data-color="<?php echo $row10['color']; ?>">
 
                             <div class="product-card">
 
-                                <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
-                                    class="img-fluid">
-
+                                <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>" class="img-fluid">
+                            
                                 <div class="hover-icons">
-
+                            
                                     <a href="#">
                                         <i class="fa fa-heart"></i>
                                     </a>
-
+                            
                                     <a href="#">
                                         <i class="fa fa-shopping-cart"></i>
                                     </a>
-
+                            
                                 </div>
-
+                            
                                 <h5>
                                     <?php echo $row10['pro_name']; ?>
                                 </h5>
-
+                            
                                 <p class="price">
-
+                            
                                     <span class="old-price">
                                         ₹<?php echo $row10['product_price']; ?>
                                     </span>
-
+                            
                                     <span class="new-prices">
                                         ₹<?php echo round($row10['product_discount_price']); ?>
                                     </span>
-
+                            
                                 </p>
-
+                            
                                 <div class="product-btns">
-
+                            
                                     <button onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
-
+                            
                                         👁️ View Details
-
+                            
                                     </button>
-
+                            
                                 </div>
-
+                            
                             </div>
 
                         </div>
-
                     <?php } ?>
+                            <div id="no-product"
+                                style="display:none;"
+                                class="text-center mt-5">
 
+                                <h4>No Product Available 😔</h4>
+
+                            </div>
                     </div>         
                       <div id="loader" class="text-center my-4" style="display:none;">
                             <div class="spinner-border text-danger"></div>
                             <p>Loading more sarees...</p>
                     </div>
-
-                    <div id="noProducts" class="no-products text-center">
-                        <h4>No Sarees Found 😔</h4>
-                        <p>Try changing filters or increase price</p>
-                    </div>
-
                 </div>
 
             </div>
@@ -240,40 +265,47 @@ if (isset($_GET['category_id'])) {
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
-
-$(document).ready(function(){
-
-    function filterProducts(){
-
+$(document).ready(function () {
+    function filterProducts() {
         var selectedCategory = [];
         var selectedFabric = [];
+        var selectedColor = [];
 
         // CATEGORY
-        $('.filter-category:checked').each(function(){
+        $('.filter-category:checked').each(function () {
 
             selectedCategory.push($(this).val());
 
         });
-
         // FABRIC
-        $('.filter-fabric:checked').each(function(){
+
+        $('.filter-fabric:checked').each(function () {
 
             selectedFabric.push($(this).val());
 
         });
+        // COLOR
+
+        $('.filter-color:checked').each(function () {
+
+            selectedColor.push($(this).val());
+
+        });
 
         var visibleProducts = 0;
+        $('.product').each(function () {
+            var productCategory = $(this).attr('data-category');
 
-        $('.product').each(function(){
+            var productFabric = $(this).attr('data-fabric');
 
-            var productCategory =
-                $(this).attr('data-category');
+            var productColor = $(this).attr('data-color');
 
-            var productFabric =
-                $(this).attr('data-fabric');
+            // MULTIPLE COLOR SUPPORT
+
+            var productColors = productColor
+                ? productColor.split(',')
+                : [];
 
             // CATEGORY MATCH
             var categoryMatch =
@@ -285,59 +317,73 @@ $(document).ready(function(){
                 selectedFabric.length == 0 ||
                 selectedFabric.includes(productFabric);
 
-            // FINAL MATCH
-            if(categoryMatch && fabricMatch){
-
-                $(this).show();
-
-                visibleProducts++;
+            // COLOR MATCH
+            var colorMatch = false;
+            if (selectedColor.length == 0) {
+                colorMatch = true;
 
             } else {
+                $.each(productColors, function (index, color) {
+                    color = color.trim();
+                    if (selectedColor.includes(color)) {
 
-                $(this).hide();
+                        colorMatch = true;
+                    }
+
+                });
 
             }
-
+            // FINAL FILTER
+            if (categoryMatch && fabricMatch && colorMatch) {
+                $(this).show();
+                visibleProducts++;
+            }
+            else {
+                $(this).hide();
+            }
         });
-
         // NO PRODUCT
-        if(visibleProducts == 0){
-
+        if (visibleProducts == 0) {
             $('#no-product').show();
-
-        } else {
-
-            $('#no-product').hide();
-
         }
-
+        else {
+            $('#no-product').hide();
+        }
     }
-
-    // CATEGORY FILTER
-    $('.filter-category').on('change', function(){
-
+    // ALL FILTERS
+    $('.filter-category, .filter-fabric, .filter-color').on('change', function () {
         filterProducts();
-
     });
-
-    // FABRIC FILTER
-    $('.filter-fabric').on('change', function(){
-
-        filterProducts();
-
-    });
-
-    // PAGE LOAD
     filterProducts();
+
+});
+</script>
+   <script>
+
+const priceRange = document.getElementById("priceRange");
+const priceValue = document.getElementById("priceValue");
+const priceForm = document.getElementById("priceForm");
+
+
+// Change Value Text
+priceRange.addEventListener("input", function () {
+
+    priceValue.innerHTML = this.value;
+
+});
+
+
+// Auto Submit
+priceRange.addEventListener("change", function () {
+
+    priceForm.submit();
 
 });
 
 </script>
-
     <script>
         AOS.init();
     </script>
-
 </body>
 
 </html>

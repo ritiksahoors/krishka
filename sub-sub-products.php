@@ -138,7 +138,7 @@ $row55 = $result55->fetch_assoc();
                             while ($row2 = $result2->fetch_assoc()) {
                                 ?>
 
-                                <label><input type="checkbox" class="filter-color" value="red">
+                                <label><input type="checkbox" class="filter-color" value="<?php echo $row2['id']; ?>">
                                     <?php echo $row2['name']; ?></label><br>
                             <?php } ?>
                         </div>
@@ -170,7 +170,8 @@ $row55 = $result55->fetch_assoc();
                             data-category="<?php echo $row10['category_id']; ?>"
                             data-subcategory="<?php echo $row10['sub_category_id']; ?>"
                             data-subsubcategory="<?php echo $row10['sub_subcategory_id']; ?>"
-                            data-fabric="<?php echo $row10['fabric']; ?>">
+                            data-fabric="<?php echo $row10['fabric']; ?>"
+                            data-color="<?php echo $row10['color']; ?>">
 
                             <div class="product-card border p-3">
 
@@ -231,48 +232,27 @@ $row55 = $result55->fetch_assoc();
                     <?php } ?>
 
                     </div>
-
-                    <div id="no-product"
-                        style="display:none;"
-                        class="text-center mt-4">
-
-                        <h4>No Product Available</h4>
-
-                    </div>
            
                     <!-- NO PRODUCT -->
                             <div id="no-product"
                                 style="display:none;"
                                 class="text-center mt-5">
 
-                                <h4>No Product Available</h4>
+                                <h4>No Product Available 😔</h4>
 
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
                     <div id="loader" class="text-center my-4" style="display:none;">
                         <div class="spinner-border text-danger"></div>
                         <p>Loading more sarees...</p>
                     </div>
-
-                    <div id="noProducts" class="no-products text-center">
-                        <h4>No Sarees Found 😔</h4>
-                        <p>Try changing filters or increase price</p>
-                    </div>
-
                 </div>
-
             </div>
         </div>
-
     </section>
-
-
     <!-- ================= FOOTER ================= -->
     <?php include 'common/footer.php'; ?>
     <!-- Bootstrap -->
@@ -284,123 +264,124 @@ $row55 = $result55->fetch_assoc();
     <script src="assets/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script>
-
 $(document).ready(function () {
-
     function filterProducts() {
-
         var category = [];
         var subcategory = [];
         var subsubcategory = [];
         var fabric = [];
+        var color = [];
 
         // CATEGORY
         $('.filter-category:checked').each(function () {
-
             category.push($(this).val().toString());
-
         });
 
         // SUBCATEGORY
         $('.filter-subcategory:checked').each(function () {
-
             subcategory.push($(this).val().toString());
-
         });
 
         // SUB SUBCATEGORY
         $('.filter-subsubcategory:checked').each(function () {
-
             subsubcategory.push($(this).val().toString());
-
         });
 
         // FABRIC
         $('.filter-fabric:checked').each(function () {
-
             fabric.push($(this).val().toString());
+        });
 
+        // COLOR
+        $('.filter-color:checked').each(function () {
+            color.push($(this).val().toString());
         });
 
         var visibleProducts = 0;
-
         $('.product').each(function () {
-
             var productCategory =
                 $(this).attr('data-category');
-
             var productSubcategory =
                 $(this).attr('data-subcategory');
-
             var productSubsubcategory =
                 $(this).attr('data-subsubcategory');
-
             var productFabric =
                 $(this).attr('data-fabric');
+            var productColor =
+                $(this).attr('data-color');
 
-            // MATCHES
+            // MULTIPLE COLORS SUPPORT
+            var productColors = [];
+            if(productColor != ''){
+                productColors = productColor.split(',');
+            }
 
+            // CATEGORY MATCH
             var categoryMatch =
                 category.length === 0 ||
                 category.includes(productCategory);
 
+            // SUBCATEGORY MATCH
             var subcategoryMatch =
                 subcategory.length === 0 ||
                 subcategory.includes(productSubcategory);
 
+            // SUBSUBCATEGORY MATCH
             var subsubcategoryMatch =
                 subsubcategory.length === 0 ||
                 subsubcategory.includes(productSubsubcategory);
 
+            // FABRIC MATCH
             var fabricMatch =
                 fabric.length === 0 ||
                 fabric.includes(productFabric);
 
-            // FINAL MATCH
-
-            if (categoryMatch &&
-                subcategoryMatch &&
-                subsubcategoryMatch &&
-                fabricMatch) {
-
-                $(this).show();
-
-                visibleProducts++;
-
-            } else {
-
-                $(this).hide();
-
+            // COLOR MATCH
+            var colorMatch = false;
+            if(color.length === 0){
+                colorMatch = true;
+            }
+            else{
+                $.each(productColors, function(index, singleColor){
+                    singleColor = singleColor.trim();
+                    if(color.includes(singleColor)){
+                        colorMatch = true;
+                    }
+                });
             }
 
+            // FINAL MATCH
+            if (
+                categoryMatch &&
+                subcategoryMatch &&
+                subsubcategoryMatch &&
+                fabricMatch &&
+                colorMatch
+            ) {
+                $(this).show();
+                visibleProducts++;
+            }
+            else {
+                $(this).hide();
+            }
         });
 
         // NO PRODUCT
-
         if (visibleProducts === 0) {
-
             $('#no-product').show();
-
-        } else {
-
-            $('#no-product').hide();
-
         }
-
+        else {
+            $('#no-product').hide();
+        }
     }
-
-    $('.filter-category, .filter-subcategory, .filter-subsubcategory, .filter-fabric')
+    $('.filter-category, .filter-subcategory, .filter-subsubcategory, .filter-fabric, .filter-color')
     .on('change', function () {
-
         filterProducts();
-
     });
-
     // PAGE LOAD
     filterProducts();
 
 });
-
 </script>
 
     <script>

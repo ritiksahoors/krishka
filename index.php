@@ -159,13 +159,14 @@
                 $sql = "SELECT * FROM category WHERE status='1'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
+                    $category_id = base64_encode($row['id']);
                     ?>
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
                         <div class="category-card">
                             <img src="admin/upload/category/<?php echo $row['image']; ?>">
                             <div class="category-overlay">
                                 <h4><?php echo $row['category_name']; ?></h4>
-                                <a href="shop.php" class="category-btn">
+                                <a href="shop.php?category_id=<?php echo $category_id; ?>" class="category-btn">
                                     Explore
                                 </a>
                             </div>
@@ -214,7 +215,7 @@
                                     <span class="special-price">₹<?php echo $row3['product_price']; ?></span>
                                 </p>
                                 <button class="gold-btn w-100"
-                                    onclick="product-details.php?id=<?php echo $encoded_id1; ?>'">
+                                    onclick="window.location.href='product-details.php?id=<?php echo $encoded_id1; ?>'">
                                     View Details
                                 </button>
                             </div>

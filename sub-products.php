@@ -122,7 +122,6 @@ $row55 = $result55->fetch_assoc();
                             ?>
 
                                 <label>
-
                                     <input type="checkbox"
                                         class="filter-fabric"
                                         value="<?php echo $row1['id']; ?>">
@@ -145,7 +144,7 @@ $row55 = $result55->fetch_assoc();
                             $result2 = $conn->query($sql2);
                             while ($row2 = $result2->fetch_assoc()) {
                                 ?>
-                                <label><input type="checkbox" class="filter-color" value="red">
+                                <label><input type="checkbox" class="filter-color" value="<?php echo $row2['id']; ?>">
                                     <?php echo $row2['name']; ?></label><br>
                             <?php } ?>
                         </div>
@@ -177,7 +176,8 @@ while ($row10 = $result10->fetch_assoc()) {
     <div class="col-md-4 mb-4 product"
 
          data-subcategory="<?php echo $row10['sub_category_id']; ?>"
-         data-fabric="<?php echo $row10['fabric']; ?>">
+         data-fabric="<?php echo $row10['fabric']; ?>"
+         data-color="<?php echo $row10['color']; ?>">
 
         <div class="product-card border p-3">
 
@@ -224,20 +224,11 @@ while ($row10 = $result10->fetch_assoc()) {
 </div>
 
 <!-- NO PRODUCT -->
-
-<div id="no-product"
-     style="display:none;"
-     class="text-center mt-5">
-
-    <h4>No Product Available</h4>
-
-</div>
-
                         <div id="no-product"
                             style="display:none;"
                             class="text-center mt-4">
 
-                            <h4>No Product Available</h4>
+                            <h4>No Product Available 😔</h4>
 
                         </div>
                         
@@ -246,20 +237,10 @@ while ($row10 = $result10->fetch_assoc()) {
                         <div class="spinner-border text-danger"></div>
                         <p>Loading more sarees...</p>
                     </div>
-
-                    <div id="noProducts" class="no-products text-center">
-                        <h4>No Sarees Found 😔</h4>
-                        <p>Try changing filters or increase price</p>
-                    </div>
-
                 </div>
-
             </div>
         </div>
-
     </section>
-
-
     <!-- ================= FOOTER ================= -->
     <?php include 'common/footer.php'; ?>
     <!-- Bootstrap -->
@@ -271,40 +252,40 @@ while ($row10 = $result10->fetch_assoc()) {
     <script src="assets/js/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
-
 $(document).ready(function(){
-
     function filterProducts(){
-
         var selectedSubcategory = [];
         var selectedFabric = [];
-
+        var selectedColor = [];
         // SUBCATEGORY
         $('.filter-subcategory:checked').each(function(){
-
             selectedSubcategory.push($(this).val());
-
         });
 
         // FABRIC
         $('.filter-fabric:checked').each(function(){
-
             selectedFabric.push($(this).val());
-
         });
 
+        // COLOR
+        $('.filter-color:checked').each(function(){
+            selectedColor.push($(this).val());
+        });
         var visibleProducts = 0;
-
         $('.product').each(function(){
-
             var productSubcategory =
                 $(this).attr('data-subcategory');
-
             var productFabric =
                 $(this).attr('data-fabric');
+            var productColor =
+                $(this).attr('data-color');
+
+            // MULTIPLE COLOR SUPPORT
+            var productColors = [];
+            if(productColor != ''){
+                productColors = productColor.split(',');
+            }
 
             // SUBCATEGORY MATCH
             var subcategoryMatch =
@@ -316,45 +297,48 @@ $(document).ready(function(){
                 selectedFabric.length == 0 ||
                 selectedFabric.includes(productFabric);
 
-            // FINAL MATCH
-            if(subcategoryMatch && fabricMatch){
-
-                $(this).show();
-
-                visibleProducts++;
-
-            } else {
-
-                $(this).hide();
-
+            // COLOR MATCH
+            var colorMatch = false;
+            if(selectedColor.length == 0){
+                colorMatch = true;
+            }
+            else{
+                $.each(productColors, function(index, color){
+                    color = color.trim();
+                    if(selectedColor.includes(color)){
+                        colorMatch = true;
+                    }
+                });
             }
 
+            // FINAL MATCH
+            if(subcategoryMatch && fabricMatch && colorMatch){
+                $(this).show();
+                visibleProducts++;
+            }
+            else{
+                $(this).hide();
+            }
         });
 
         // NO PRODUCT
         if(visibleProducts == 0){
-
             $('#no-product').show();
-
-        } else {
-
-            $('#no-product').hide();
-
         }
-
+        else{
+            $('#no-product').hide();
+        }
     }
 
     // FILTER CHANGE
-    $('.filter-subcategory, .filter-fabric')
+    $('.filter-subcategory, .filter-fabric, .filter-color')
     .on('change', function(){
-
         filterProducts();
 
     });
 
     // PAGE LOAD
     filterProducts();
-
 });
 
 </script>
