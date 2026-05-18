@@ -203,11 +203,11 @@ if (isset($_GET['category_id'])) {
                             
                                 </div>
                             
-                                <h5>
+                                <h5 class="text-center" >
                                     <?php echo $row10['pro_name']; ?>
                                 </h5>
                             
-                                <p class="price">
+                                <p class="price text-center">
                             
                                     <span class="old-price">
                                         ₹<?php echo $row10['product_price']; ?>

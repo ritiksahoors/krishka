@@ -190,21 +190,19 @@ $row55 = $result55->fetch_assoc();
 
                                 </div>
 
-                                <h5 class="mt-2">
+                                <h5 class="mt-2 mb-0 text-center">
 
                                     <?php echo $row10['pro_name']; ?>
 
                                 </h5>
 
-                                <p class="price">
+                                <p class="price mb-0 text-center">
 
                                     <span class="old-price text-decoration-line-through">
 
                                         ₹<?php echo $row10['product_price']; ?>
 
                                     </span>
-
-                                    <br>
 
                                     <span class="new-prices">
 
