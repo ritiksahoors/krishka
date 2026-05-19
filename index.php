@@ -146,18 +146,32 @@
                             </div>
 
                             <!-- Content -->
-                            <div class="card-body d-flex flex-column">
+                            <div class="card-body d-flex flex-column text-center">
 
                                 <h5 class="card-title mb-2">
+                                    <i class="fa-solid fa-bag-shopping me-1 text-danger"></i>
                                     <?php echo $row1['pro_name']; ?>
                                 </h5>
 
-                                <p class="price mb-3">
-                                    ₹<?php echo round($row1['product_discount_price']); ?>
+                                <p class="price">
 
-                                    <span class="text-muted text-decoration-line-through ms-2">
+                                    <!-- Old Price -->
+                                    <span class="text-decoration-line-through text-muted me-2">
+                                        <i class="fa-solid fa-tags me-1"></i>
                                         ₹<?php echo $row1['product_price']; ?>
                                     </span>
+
+                                    <!-- New Price -->
+                                    <span class="fw-bold fs-5" style="color: #800000;">
+
+                                        <i class="fa-solid fa-bolt me-1"></i>
+
+                                        ₹<?php echo round($row1['product_discount_price']); ?>
+
+
+
+                                    </span>
+
                                 </p>
 
                                 <button class="btn btn-dark mt-auto w-100"

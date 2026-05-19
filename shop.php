@@ -199,6 +199,10 @@ if (isset($_GET['category_id'])) {
                         class="card-img-top product-img"
                         alt="<?php echo $row10['pro_name']; ?>">
 
+                         <span class="badge position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill">
+                                    20% OFF
+                                </span>
+
                     <!-- Hover Icons -->
                     <div class="hover-icons">
 
@@ -238,7 +242,7 @@ if (isset($_GET['category_id'])) {
             ₹<?php echo round($row10['product_discount_price']); ?>
 
             <!-- OFF Bracket -->
-            <span style="
+            <!-- <span style="
                 background: #ffe5e5;
                 color: #d10000;
                 font-size: 11px;
@@ -261,7 +265,7 @@ if (isset($_GET['category_id'])) {
 
                 )
 
-            </span>
+            </span> -->
 
         </span>
 
