@@ -160,94 +160,112 @@ $row55 = $result55->fetch_assoc();
                 <!-- PRODUCTS -->
 
                 <div class="col-md-9">
-                    <div class="row" id="productContainer">
 
-                        <?php
-                        include 'admin/conn.php';
+    <div class="row g-4" id="productContainer">
 
-                        $sql10 = "SELECT * FROM product WHERE status='1'";
-                        $result10 = $conn->query($sql10);
+        <?php
+        include 'admin/conn.php';
 
-                        while ($row10 = $result10->fetch_assoc()) {
+        $sql10 = "SELECT * FROM product WHERE status='1'";
+        $result10 = $conn->query($sql10);
 
-                            $encoded_id = base64_encode($row10['id']);
-                        ?>
+        while ($row10 = $result10->fetch_assoc()) {
 
-                            <div class="col-md-4 mb-4 product"
+            $encoded_id = base64_encode($row10['id']);
+        ?>
 
-                                data-subcategory="<?php echo $row10['sub_category_id']; ?>"
-                                data-fabric="<?php echo $row10['fabric']; ?>"
-                                data-color="<?php echo $row10['color']; ?>">
+        <div class="col-xl-4 col-md-6 mb-4 product"
 
-                                <div class="product-card border p-3">
+            data-subcategory="<?php echo $row10['sub_category_id']; ?>"
+            data-fabric="<?php echo $row10['fabric']; ?>"
+            data-color="<?php echo $row10['color']; ?>">
 
-                                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
-                                        class="img-fluid">
+            <!-- Bootstrap 5.3.8 Card -->
+            <div class="card h-100 border-0 shadow-sm product-card">
 
-                                    <div class="hover-icons">
+                <!-- Product Image -->
+                <div class="position-relative overflow-hidden">
 
-                                        <a href="#">
-                                            <i class="fa fa-heart"></i>
-                                        </a>
+                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
+                        class="card-img-top product-img"
+                        alt="<?php echo $row10['pro_name']; ?>">
 
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </a>
+                    <!-- Hover Icons -->
+                    <div class="hover-icons">
 
-                                    </div>
+                        <a href="#" class="icon-btn">
+                            <i class="fa fa-heart"></i>
+                        </a>
 
-                                    <h5 class="mt-2 mb-0 text-center">
-
-                                        <?php echo $row10['pro_name']; ?>
-
-                                    </h5>
-
-                                    <p class="price text-center">
-
-                                        <span class="old-price">
-
-                                            ₹<?php echo $row10['product_price']; ?>
-
-                                        </span>
-
-                                        <span class="new-prices">
-
-                                            ₹<?php echo round($row10['product_discount_price']); ?>
-
-                                        </span>
-
-                                    </p>
-
-                                    <button class="btn btn-dark w-100 mt-2"
-                                        onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
-
-                                        👁️ View Details
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        <?php } ?>
+                        <a href="#" class="icon-btn">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
 
                     </div>
 
-                    <!-- NO PRODUCT -->
-                    <div id="no-product"
-                        style="display:none;"
-                        class="text-center mt-4">
-
-                        <h4>No Product Available 😔</h4>
-
-                    </div>
-
-
-                    <div id="loader" class="text-center my-4" style="display:none;">
-                        <div class="spinner-border text-danger"></div>
-                        <p>Loading more sarees...</p>
-                    </div>
                 </div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column text-center">
+
+                    <h5 class="card-title mt-1 mb-2">
+
+                        <?php echo $row10['pro_name']; ?>
+
+                    </h5>
+
+                    <p class="price mb-3">
+
+                        <span class="text-decoration-line-through text-muted me-2">
+
+                            ₹<?php echo $row10['product_price']; ?>
+
+                        </span>
+
+                        <span class="fw-bold fs-5">
+
+                            ₹<?php echo round($row10['product_discount_price']); ?>
+
+                        </span>
+
+                    </p>
+
+                    <button class="btn btn-dark w-100 mt-auto"
+                        onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+
+                        👁️ View Details
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <?php } ?>
+
+    </div>
+
+    <!-- NO PRODUCT -->
+    <div id="no-product"
+        style="display:none;"
+        class="text-center mt-4">
+
+        <h4>No Product Available 😔</h4>
+
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="text-center my-4" style="display:none;">
+
+        <div class="spinner-border text-danger"></div>
+
+        <p>Loading more sarees...</p>
+
+    </div>
+
+</div>
             </div>
         </div>
     </section>
