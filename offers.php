@@ -94,85 +94,97 @@
 
     <!-- ================= OFFERS PRODUCTS ================= -->
 
-    <section class="offers-products">
-
+    <section class="featured-sarees py-5">
         <div class="container">
+
+            <!-- <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Featured Products</h2>
+                <p>Explore our premium and trending saree collection</p>
+            </div> -->
 
             <div class="row g-4">
                 <?php
                 include 'admin/conn.php';
-                $sql = "SELECT * FROM product WHERE status='1' AND special_off='1'";
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                    ?>
 
-                    <!-- Offer 1 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
+                $sql1 = "SELECT * FROM product WHERE status='1' AND featured_pro='1'";
+                $result1 = $conn->query($sql1);
 
-                        <div class="offer-card">
-                            <img src="admin/upload/product/<?php echo $row['product_image1']; ?>">
-                            <h4><?php echo $row['pro_name']; ?></h4>
-                            <p class="old-price">₹<?php echo $row['product_price']; ?></p>
-                            <p class="new-price">₹<?php echo round($row['product_discount_price']); ?></p>
-                            <span class="discount"><?php echo $row['pro_discount']; ?>% OFF</span>
-                            <div class="offer-buttons">
-                                <a href="product-details.php" class="view-btn">
-                                    View Details
-                                </a>
+                while ($row1 = $result1->fetch_assoc()) {
+
+                    $encoded_id = base64_encode($row1['id']);
+                ?>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+
+                        <!-- Bootstrap Default Card -->
+                        <div class="card h-100 border-0 shadow-sm product-card">
+
+                            <!-- Image -->
+                            <div class="position-relative overflow-hidden">
+
+                                <img src="admin/upload/product/<?php echo $row1['product_image1']; ?>"
+                                    class="card-img-top product-img"
+                                    alt="<?php echo $row1['pro_name']; ?>">
+
+                                <!-- Discount -->
+                                <span class="badge position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill">
+                                    <?php echo $row1['pro_discount']; ?>% OFF
+                                </span>
+
+                                <!-- Hover Icons -->
+                                <div class="hover-icons">
+
+                                    <a href="#" class="icon-btn add-to-wishlist">
+                                        <i class="fa fa-heart"
+                                            data-name="Bridal Saree"
+                                            data-price="4999"
+                                            data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+                                        </i>
+                                    </a>
+
+                                    <a href="#" class="icon-btn add-to-cart">
+                                        <i class="fa fa-shopping-cart"
+                                            data-name="Bridal Saree"
+                                            data-price="4999"
+                                            data-img="assets/img/bhandini_sarees/WhatsApp Image 2026-04-04 at 4.50.38 PM.jpeg">
+                                        </i>
+                                    </a>
+
+                                </div>
+
                             </div>
+
+                            <!-- Content -->
+                            <div class="card-body d-flex flex-column">
+
+                                <h5 class="card-title mb-2">
+                                    <?php echo $row1['pro_name']; ?>
+                                </h5>
+
+                                <p class="price mb-3">
+                                    ₹<?php echo round($row1['product_discount_price']); ?>
+
+                                    <span class="text-muted text-decoration-line-through ms-2">
+                                        ₹<?php echo $row1['product_price']; ?>
+                                    </span>
+                                </p>
+
+                                <button class="btn btn-dark mt-auto w-100"
+                                    onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+
+                                    View Details
+
+                                </button>
+
+                            </div>
+
                         </div>
 
                     </div>
 
-                    <!-- Offer 2 -->
-                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="offer-card">
-                        <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.30 PM.jpeg">
-                        <h4>Designer Saree</h4>
-                        <p class="old-price">₹3,499</p>
-                        <p class="new-price">₹1,999</p>
-                        <span class="discount">42% OFF</span>
-                        <div class="offer-buttons">
-                            <a href="product-details.php" class="view-btn">
-                                View Details
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
-
-                    <!-- Offer 3 -->
-                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="offer-card">
-                        <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.31 PM (1).jpeg">
-                        <h4>Wedding Saree</h4>
-                        <p class="old-price">₹4,999</p>
-                        <p class="new-price">₹2,999</p>
-                        <span class="discount">40% OFF</span>
-                        <div class="offer-buttons">
-                            <a href="product-details.php" class="view-btn">
-                                View Details
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
-
-                    <!-- Offer 4 -->
-                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="offer-card">
-                        <img src="assets/img/kriska_dress_materials/WhatsApp Image 2026-04-04 at 4.52.31 PM (2).jpeg">
-                        <h4>Silk Saree</h4>
-                        <p class="old-price">₹2,999</p>
-                        <p class="new-price">₹1,799</p>
-                        <span class="discount">35% OFF</span>
-                        <div class="offer-buttons">
-                            <a href="product-details.php" class="view-btn">
-                                View Details
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
                 <?php } ?>
             </div>
+
         </div>
     </section>
 
