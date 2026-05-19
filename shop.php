@@ -168,84 +168,105 @@ if (isset($_GET['category_id'])) {
                 </div>
 
                 <!-- PRODUCTS -->
-                <div class="col-md-9">
-                    <div class="row" id="productContainer">
-                    <?php
-                    include 'admin/conn.php';
+               <div class="col-md-9">
 
-                    $sql10 = "SELECT * FROM product WHERE status='1'";
-                    $result10 = $conn->query($sql10);
+    <div class="row g-4" id="productContainer">
 
-                    while ($row10 = $result10->fetch_assoc()) {
+        <?php
+        include 'admin/conn.php';
 
-                        $encoded_id = base64_encode($row10['id']);
-                    ?>
+        $sql10 = "SELECT * FROM product WHERE status='1'";
+        $result10 = $conn->query($sql10);
 
-                        <div class="col-md-4 product"
+        while ($row10 = $result10->fetch_assoc()) {
 
-                            data-category="<?php echo $row10['category_id']; ?>"
-                            data-fabric="<?php echo $row10['fabric']; ?>"
-                            data-color="<?php echo $row10['color']; ?>">
+            $encoded_id = base64_encode($row10['id']);
+        ?>
 
-                            <div class="product-card">
+        <div class="col-xl-4 col-md-6 product"
 
-                                <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>" class="img-fluid">
-                            
-                                <div class="hover-icons">
-                            
-                                    <a href="#">
-                                        <i class="fa fa-heart"></i>
-                                    </a>
-                            
-                                    <a href="#">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </a>
-                            
-                                </div>
-                            
-                                <h5 class="text-center" >
-                                    <?php echo $row10['pro_name']; ?>
-                                </h5>
-                            
-                                <p class="price text-center">
-                            
-                                    <span class="old-price">
-                                        ₹<?php echo $row10['product_price']; ?>
-                                    </span>
-                            
-                                    <span class="new-prices">
-                                        ₹<?php echo round($row10['product_discount_price']); ?>
-                                    </span>
-                            
-                                </p>
-                            
-                                <div class="product-btns">
-                            
-                                    <button onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
-                            
-                                        👁️ View Details
-                            
-                                    </button>
-                            
-                                </div>
-                            
-                            </div>
+            data-category="<?php echo $row10['category_id']; ?>"
+            data-fabric="<?php echo $row10['fabric']; ?>"
+            data-color="<?php echo $row10['color']; ?>">
 
-                        </div>
-                    <?php } ?>
-                            <div id="no-product"
-                                style="display:none;"
-                                class="text-center mt-5">
+            <!-- Bootstrap 5.3.8 Card -->
+            <div class="card h-100 border-0 shadow-sm product-card">
 
-                                <h4>No Product Available 😔</h4>
+                <!-- Product Image -->
+                <div class="position-relative overflow-hidden">
 
-                            </div>
-                    </div>         
-                      <div id="loader" class="text-center my-4" style="display:none;">
-                            <div class="spinner-border text-danger"></div>
-                            <p>Loading more sarees...</p>
+                    <img src="admin/upload/product/<?php echo $row10['product_image1']; ?>"
+                        class="card-img-top product-img"
+                        alt="<?php echo $row10['pro_name']; ?>">
+
+                    <!-- Hover Icons -->
+                    <div class="hover-icons">
+
+                        <a href="#" class="icon-btn">
+                            <i class="fa fa-heart"></i>
+                        </a>
+
+                        <a href="#" class="icon-btn">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+
                     </div>
+
                 </div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column text-center">
+
+                    <h5 class="card-title mb-2">
+                        <?php echo $row10['pro_name']; ?>
+                    </h5>
+
+                    <p class="price mb-3">
+
+                        <span class="text-decoration-line-through text-muted me-2">
+                            ₹<?php echo $row10['product_price']; ?>
+                        </span>
+
+                        <span class="fw-bold fs-5">
+                            ₹<?php echo round($row10['product_discount_price']); ?>
+                        </span>
+
+                    </p>
+
+                    <button class="btn btn-dark mt-auto w-100"
+                        onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+
+                        👁️ View Details
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <?php } ?>
+
+        <div id="no-product"
+            style="display:none;"
+            class="text-center mt-5">
+
+            <h4>No Product Available 😔</h4>
+
+        </div>
+
+    </div>
+
+    <div id="loader" class="text-center my-4" style="display:none;">
+
+        <div class="spinner-border text-danger"></div>
+
+        <p>Loading more sarees...</p>
+
+    </div>
+
+</div>
 
             </div>
         </div>
