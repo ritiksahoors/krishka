@@ -215,32 +215,67 @@ if (isset($_GET['category_id'])) {
                 </div>
 
                 <!-- Card Body -->
-                <div class="card-body d-flex flex-column text-center">
+               <div class="card-body d-flex flex-column text-center">
 
-                    <h5 class="card-title mb-2">
-                        <?php echo $row10['pro_name']; ?>
-                    </h5>
+    <h5 class="card-title mb-2">
+        <i class="fa-solid fa-bag-shopping me-1 text-danger"></i>
+        <?php echo $row10['pro_name']; ?>
+    </h5>
 
-                    <p class="price mb-3">
+    <p class="price">
 
-                        <span class="text-decoration-line-through text-muted me-2">
-                            ₹<?php echo $row10['product_price']; ?>
-                        </span>
+        <!-- Old Price -->
+        <span class="text-decoration-line-through text-muted me-2">
+            <i class="fa-solid fa-tags me-1"></i>
+            ₹<?php echo $row10['product_price']; ?>
+        </span>
 
-                        <span class="fw-bold fs-5">
-                            ₹<?php echo round($row10['product_discount_price']); ?>
-                        </span>
+        <!-- New Price -->
+        <span class="fw-bold fs-5" style="color: #800000;">
 
-                    </p>
+            <i class="fa-solid fa-bolt me-1"></i>
 
-                    <button class="btn btn-dark mt-auto w-100"
-                        onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+            ₹<?php echo round($row10['product_discount_price']); ?>
 
-                        👁️ View Details
+            <!-- OFF Bracket -->
+            <span style="
+                background: #ffe5e5;
+                color: #d10000;
+                font-size: 11px;
+                padding: 4px 10px;
+                border-radius: 30px;
+                margin-left: 8px;
+                font-weight: 600;
+                display: inline-block;
+                vertical-align: middle;
+            ">
 
-                    </button>
+                (
 
-                </div>
+                <?php
+                echo round(
+                    (($row10['product_price'] - $row10['product_discount_price'])
+                    / $row10['product_price']) * 100
+                );
+                ?>% OFF
+
+                )
+
+            </span>
+
+        </span>
+
+    </p>
+
+    <button class="btn btn-dark mt-auto w-100"
+        onclick="window.location.href='product-details.php?id=<?php echo $encoded_id; ?>'">
+
+        <i class="fa-solid fa-eye me-2"></i>
+        View Details
+
+    </button>
+
+</div>
 
             </div>
 
