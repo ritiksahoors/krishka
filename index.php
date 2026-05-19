@@ -118,7 +118,7 @@
                                     alt="<?php echo $row1['pro_name']; ?>">
 
                                 <!-- Discount -->
-                                <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill">
+                                <span class="badge bg-warning position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill">
                                     <?php echo $row1['pro_discount']; ?>% OFF
                                 </span>
 
